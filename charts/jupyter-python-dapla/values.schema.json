@@ -283,12 +283,13 @@
                       "default" : [
                           "datahub-data-service.external.staging.ssb.cloud.nais.io",
                           "datahub-metadata-service.external.staging.ssb.cloud.nais.io",
+                          "files.pythonhosted.org",
                           "github.com",
                           "oauth2.googleapis.com",
                           "pypi.org",
                           "sso.dapla-dev.ssb.no",
                           "storage.googleapis.com",
-                          "www.googleapis.com",
+                          "www.googleapis.com"
                       ],
                       "x-onyxia": {
                         "hidden": true
