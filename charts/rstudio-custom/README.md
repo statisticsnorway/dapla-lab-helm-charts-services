@@ -87,6 +87,8 @@ The RStudio IDE with a collection of standard data science packages.
 | security.networkPolicy.enabled | bool | `false` |  |
 | security.networkPolicy.from | list | `[]` |  |
 | security.password | string | `"changeme"` |  |
+| security.serviceEntry.enabled | bool | `true` |  |
+| security.serviceEntry.hosts | list | `[]` |  |
 | securityContext | object | `{}` |  |
 | service.image.custom.enabled | bool | `false` |  |
 | service.image.custom.version | string | `"inseefrlab/onyxia-rstudio:r4.2.3"` |  |
