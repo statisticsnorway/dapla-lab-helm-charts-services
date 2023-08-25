@@ -46,6 +46,27 @@ entries:
     version: 0.0.1
   jupyter-python-dapla:
   - apiVersion: v2
+    created: "2023-08-25T10:01:27.797481561Z"
+    dependencies:
+    - name: library-chart
+      repository: https://statisticsnorway.github.io/dapla-lab-helm-charts-services
+      version: 0.0.1
+    description: The JupyterLab IDE with Python, tailored for SSB's data platform
+      (Dapla).
+    digest: de30924b78f9b4c312172a1e0f9da434b759df9afba3bff02b201b17b2d5958d
+    home: https://jupyter.org/
+    icon: https://avatars.githubusercontent.com/u/5849578
+    keywords:
+    - Jupyter
+    - Python
+    name: jupyter-python-dapla
+    sources:
+    - https://github.com/johnksv/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/jupyter-python-dapla-0.0.2/jupyter-python-dapla-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
     created: "2023-08-25T09:38:47.887929395Z"
     dependencies:
     - name: library-chart
@@ -97,6 +118,27 @@ entries:
     urls:
     - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/rstudio-0.0.1/rstudio-0.0.1.tgz
     version: 0.0.1
+  rstudio-custom:
+  - apiVersion: v2
+    created: "2023-08-25T10:01:27.961738954Z"
+    dependencies:
+    - name: library-chart
+      repository: https://statisticsnorway.github.io/dapla-lab-helm-charts-services
+      version: 0.0.1
+    description: The RStudio IDE with a collection of standard data science packages.
+    digest: f6693a7e962a7479f07a1bdf24840862795da7ff4b46bb8c6af3ffc96af43d28
+    home: https://www.rstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/rstudio.png
+    keywords:
+    - RStudio
+    - R
+    name: rstudio-custom
+    sources:
+    - https://johnksv.github.io/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/rstudio-custom-0.0.1/rstudio-custom-0.0.1.tgz
+    version: 0.0.1
   vscode-python:
   - apiVersion: v2
     created: "2023-08-25T09:38:48.228087463Z"
@@ -142,4 +184,4 @@ entries:
     urls:
     - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/vscode-r-python-julia-0.0.1/vscode-r-python-julia-0.0.1.tgz
     version: 0.0.1
-generated: "2023-08-25T09:38:48.39737455Z"
+generated: "2023-08-25T10:01:27.961754054Z"
