@@ -1,0 +1,183 @@
+# Default values for jupyter.
+
+service:
+  image:
+    version: "eu.gcr.io/prod-bip/ssb/dapla/dapla-jupyterlab:merge-168a792271455b401e1ea1a4270061d656ea1273"
+    pullPolicy: IfNotPresent
+    custom:
+      enabled: false
+      version: "jupyter/scipy-notebook:lab-4.0.3"
+
+security:
+  password: "changeme"
+  networkPolicy:
+    enabled: false
+    from: []
+  allowlist:
+    enabled: false
+    ip: "0.0.0.0/0"
+  serviceEntry:
+    enabled: true
+    hosts: []
+
+init:
+  #standardInitPath: "/usr/local/bin/before-notebook.d/*.sh"
+  standardInitPath: ""
+  regionInit: ""
+  personalInit: ""
+  personalInitArgs: ""
+
+environment:
+  user: onyxia
+  group: users
+
+userAttributes:
+  environmentVariableName: OIDC_TOKEN
+  userAttribute: "access_token"
+  value: ""
+
+git:
+  # Specifies whether a config map should be created
+  enabled: false
+  # The name of the configmap to use.
+  # If not set and create is true, a name is generated using the fullname template
+  configMapName: ""
+  name: ""
+  email: ""
+  cache: ""
+  token: ""
+  repository: ""
+  branch: ""
+
+oidc:
+  # Specifies whether a config map should be created
+  enabled: true
+  tokenExchangeUrl: "https://sso.dapla-dev.ssb.no/realms/ssb/broker/google/token"
+  # The name of the configmap to use.
+  # If not set and create is true, a name is generated using the fullname template
+  configMapName: ""
+
+repository:
+  configMapName: ""
+  pipRepository: ""
+  condaRepository: ""
+
+# active ou non la recherche d'un hiveMetastore dans le namespace
+# see configmap-hive.yaml et helpers template
+discovery:
+  hive: true
+  mlflow: true
+  metaflow: true
+
+hive:
+  configMapName: ""
+
+mlflow:
+  configMapName: ""
+
+coresite:
+  configMapName: ""
+
+metaflow:
+  configMapName: ""
+  # This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+replicaCount: 1
+
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+kubernetes:
+  enabled: false
+  role: "view"
+
+podAnnotations: {}
+
+podLabels:
+  onyxia.app: "jupyterlab"
+
+podSecurityContext:
+  fsGroup: 100
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+networking:
+  type: ClusterIP
+  clusterIP: None
+  service:
+    port: 8888
+  user:
+    enabled: false
+    port: 5000
+  sparkui:
+    port: 4040
+
+istio:
+  enabled: false
+  gateways:
+    - istio-namespace/example-gateway
+  hostname: chart-example.local
+  userHostname: chart-example-user.local
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+persistence:
+  enabled: false
+  ## database data Persistent Volume Storage Class
+  ## If defined, storageClassName: <storageClass>
+  ## If set to "-", storageClassName: "", which disables dynamic provisioning
+  ## If undefined (the default) or set to null, no storageClassName spec is
+  ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
+  ##   GKE, AWS & OpenStack)
+  ##
+  # storageClass: "-"
+  accessMode: ReadWriteOnce
+  size: 10Gi
+  # existingClaim: ""
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+startupProbe:
+  failureThreshold: 60
+  initialDelaySeconds: 10
+  periodSeconds: 10
+  successThreshold: 1
+  timeoutSeconds: 5
