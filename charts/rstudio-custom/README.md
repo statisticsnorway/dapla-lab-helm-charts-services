@@ -1,6 +1,6 @@
 # rstudio-custom
 
-![Version: 1.12.8](https://img.shields.io/badge/Version-1.12.8-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.0.1](https://img.shields.io/badge/Version-0.0.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 The RStudio IDE with a collection of standard data science packages.
 
@@ -14,7 +14,7 @@ The RStudio IDE with a collection of standard data science packages.
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://johnksv.github.io/helm-charts-interactive-services | library-chart | 1.3.21 |
+| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 0.0.1 |
 
 ## Values
 
