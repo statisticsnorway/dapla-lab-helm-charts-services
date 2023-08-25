@@ -280,7 +280,16 @@
                     "hosts": {
                       "type": "array",
                       "description": "Array of hosts allowed to be accessed from your service",
-                      "default" : ["sso.dapla-dev.ssb.no", "storage.googleapis.com", "www.googleapis.com", "oauth2.googleapis.com", "github.com", "datahub-data-service.external.staging.ssb.cloud.nais.io", "datahub-metadata-service.external.staging.ssb.cloud.nais.io"],
+                      "default" : [
+                          "datahub-data-service.external.staging.ssb.cloud.nais.io",
+                          "datahub-metadata-service.external.staging.ssb.cloud.nais.io",
+                          "github.com",
+                          "oauth2.googleapis.com",
+                          "pypi.org",
+                          "sso.dapla-dev.ssb.no",
+                          "storage.googleapis.com",
+                          "www.googleapis.com",
+                      ],
                       "x-onyxia": {
                         "hidden": true
                       }
