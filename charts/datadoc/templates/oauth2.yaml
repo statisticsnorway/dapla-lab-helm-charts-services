@@ -1,0 +1,85 @@
+{{- if .Values.security.oauth2.enabled }}
+# Should be moved to library-charts
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: oauth2-proxy-client-config
+data:
+  oauth2-proxy-client-config.yaml: |-
+      provider = "azure"
+
+      # This will restrict login to accounts with email address in the
+      # configured domain.
+      email_domains = ["ssb.no"]
+
+      # Request "standard" scopes from Keycloak.
+      scope = "openid email profile"
+
+
+      # The <addr>:<port> to listen on for HTTP/HTTPS clients.
+      http_address = "0.0.0.0:4180"
+
+      # Url(s) of the upstream endpoint. If multiple, routing is based on path.
+      # Does not work with "hostname" based ruting.
+      upstreams = ["http://127.0.0.1:{{ .Values.networking.service.port}}"]
+
+      ## Headers
+
+      # Passing of OIDC ID-Token to upstream in a Authorization Bearer header.
+      pass_authorization_header = true
+
+      # Passing the request Host Header to upstream. If set to "false" the
+      # host of the upstream will be used.
+      pass_host_header = true
+
+      # Passing HTTP Basic Auth, X-Forwarded-User and X-Forwarded-Email
+      # information to upstream.
+      pass_basic_auth = false
+
+      # Passing Oauth access_token to upstream via X-Forwarded-Access-Token
+      # header.
+      pass_access_token = false
+
+      ## Cookie settings
+
+      # Base name of cookies to store tokens.
+      cookie_name = "oauth2_proxy"
+
+      # Generate a random encryption key for encrypting the cookies (AES) to ensures
+      # that only "this" client can read the cookies containing the tokens.
+      cookie_secret = ""
+
+      # An active session can be max 8 hours long.
+      cookie_expire = "8h"
+
+      # Refresh cookies and tokens after max 10 minutes. This value should be larger
+      # than the expiry of the access token and probably less than "cookie_expire".
+      cookie_refresh = "10m"
+
+      # HTTPS only cookies.
+      cookie_secure = true
+
+      # Not available to Javascript.
+      cookie_httponly = true
+
+      ## skip SSL checking for HTTPS requests
+      ssl_insecure_skip_verify = true
+
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  name: oauth2-proxy
+spec:
+  encryptedData:
+    client-id: AgAwhm1ubs+DhQdQ+rlqXGEz/EaSEJzp3UBiDwo4w3HwdSIfK5MMjq70MmPQSKSBad0PNTF1MyO0n6k+s5xTEKgCvQaRszFjYGN6MvKTkgLTw2D55UziLmfkHzDE/+KDuy2flf9nXVaNl6R2YwkANLfQHw8ZqOXUC2lpSeLP8jNqwa0hW8iUd65fDi1AS2WMo/9o9wh8CNIdWrmKthwA858uYZRP7Ged71NXGeqYgi0XgNB81olUTSub7H627lUpjRWp/irJeQMdS8tYPpBKBPJ0NV3+1dtwcfHFVlMX95m23zwJIaCmhk+jGws7Li+QYtszB95lY6d/HAL4oucJZ7oJdKIbvtpS9BkHwOKk7mXe6JIiBMgigxlsV4Upwu/TOcMEsPUlY2JP44gguG67H0Rg4Kl7CRthMHZdPDS/hnUlLj2mLW2MVCrAep67tj+W9UT0dXbkygNujcKDtgowmi/t8DRZ4rVTk+kgjVAq98+sBPp73F7N7kqq9iNgXHGxMAUYxtuFhcWzmjVKyPeFFO2Ap5tkstr6SDIpgDA44sWMAV3P0d5VyF30vEEuhBFIpTsSZFIhmTK0bWk7iGOtrWF5cOkGtNHdoZqytV/G0BTQJu82wXhFA0Qmrj7JFgnNH/aHJSSDJx2116rl1nvXbqi3JsF4fumSN5L4nbqt8CGt1QSlsbolysIMxEul/pfv2vXG6/cUw83JM4KrUex4xM+I2iJxeAj3A05ROFkB7HT5nLeY2BA=
+    client-secret: AgB7W6qTQW/d7anlXBvAudZFLADuMWHD8RUIY1e3p0y2tvfGFCMGTxuTTRLLP4oU0OvIJ8gYJrWHZ0E9II+j9Msbf0bF+4dqy99yeEp0hw0icnYdGfcg2AGZCdgt5RGpTTMolwBHvPicOmvAZ6lXQ3NA61Yxjf9kv4Ngr/8iEFuJwl26roMYslG9jSEzukV4q6RiV1CtzM7FCsmMEsW3heToDy8IUIEJ6arBvA/qkZXRsozG709wFeQ4yT1WGllLTQOEAwAl57EdOP4LsGUic9MJu7uTvjBlrlPRAR58/KqwIpQ+Oq/eM5NQrEnrVcUxc8jFb2+V8LYVawSecfEI2O9JegEaQbKNtfF+Qi8OYKF8w421A8FGQ+1BO+O6blv/VnBgu2IMuCjL/qwCQHVdkTlk0EXtHtbfjl0RvcHMo19JX4F5DmQh8NP1GPhsxubRdj3fHKLgv/+P9BIFhEO/9O6IFCTxmZlyA1ZtiWfM6i1dJXSHBgqG2i5+9qWLMdWM/5+weANiQoamrK7RUXYmfhDL0mu2KjK1btg1t0Q+PzcYMLBzKCi+HTOFRwXH16D+HtJtSCzXWov/676JvC4+1RFS+LXKqOy/9Km6+wzxedhsb7gAwv8IXK+nH7xme80+nBs+3OkIxEAWwnh2wXLwpoVByxIco/vp5OpxPRdxNvUXyefKx++o0sLmkkyv7BGYRpUnjaTOiPmXlPUA+7G9V0zjwK8TTXKqJb/55idjMOn6B7uLRQDkTHAm
+    cookie-secret: AgBJqyrNrbl+jx0EuzMKIzYJ/tDJzuqC2UUXUqHGgkz3cgcNSFGRXtHjQ8KEaqFaZtTYhChY39/y/GIX5KWIqgFm4Z5MMkOCIWavcdqY//k8civh4PahrqRBvASjFjmTbRymbbcK/98CSMs9gEGp/RbMOvuO2LdzvEMH68EmMvgNT8FFwVwBVGbKd/nIGVDCLf5r7CjnwODcGfX229HdGci94XODmHWvF5yBn9PEDrISk3HP0w/aXi14Ltk8Bx3+JGW6ewIXA4AJg1clw37+7QWZghFhpO9hVQkHHTHjSChNCaot//TFt6ALo+ujsYIJZJRIMKvjgcrqP0BOexKFao7dpctcLQlky//CkFA0AeWSN8p/lNYi+koqzDL7kPvkEwyXpLlAzjKZnODehhTcS3Q6ExU5M3HqYDfvj9fKi8r6mhQ5gwvybMlrwvW4abNEita9bN17XmDg5WyFrLAf6dk5p2juTLPROY0b8Ip7da7pRTGk3/xD0ESPx6giSWk4TcwRjw07qc+LGqMlI2hwKyVOCYIlBbHbIYdC3TxPJiMTrUSfTWFTqLvOj64iE1yjxT+PKcj4LYWmpbUIySDzysDbZ230Som3Mold5YD2KFmfZgaOriv0SJVBjYX0PIvJUFqJbXjkiasmBSS1RiCxntv0uL2DjpOwX+vKP7Xzr+aGk4LIxp0EeGnXRHQTmQsRl6tP4tTGbNmqoaRu91RVI00oNAdWSIMNwm7qcR/+nicNfp7oDGCSu5nFT4Itpg==
+
+  template:
+    metadata:
+      data: null
+      name: oauth2-proxy
+      namespace: {{ include "library-chart.fullname" . }}
+
+{{ end }}
