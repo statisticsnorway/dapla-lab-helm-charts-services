@@ -14,8 +14,8 @@ spec:
   clusterIP: {{ .Values.networking.clusterIP }}
   {{- end }}
   ports:
-    - port: {{ .Values.networking.service.port }}
-      targetPort: {{ .Values.networking.service.port }}
+    - port: {{ if .Values.security.oauth2.enabled }}4180{{ else }}{{ .Values.networking.service.port }}{{ end }}
+      targetPort: {{ if .Values.security.oauth2.enabled }}4180{{ else }}{{ .Values.networking.service.port }}{{ end }}
       protocol: TCP
       name: main
     {{ if .Values.networking.user.enabled }}

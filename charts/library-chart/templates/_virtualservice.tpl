@@ -34,10 +34,11 @@ spec:
         - destination:
             host: {{ $fullName }}
             port:
-              number: {{ $svcPort }}
+              number:  {{ if .Values.security.oauth2.enabled }}4180{{ else }}{{ $svcPort }}{{ end }}
 {{- end }}
 {{- end }}
 
+# CONSIDER DISABLE IF .Values.security.oauth2.enabled?
 {{/* Template to generate a custom VirtualService */}}
 {{- define "library-chart.virtualserviceUser" -}}
 {{- if .Values.istio.enabled -}}
