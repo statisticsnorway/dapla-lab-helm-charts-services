@@ -1,0 +1,12 @@
+apiVersion: v1
+entries:
+  library-chart:
+  - apiVersion: v2
+    created: "2023-08-25T09:35:09.485244373Z"
+    digest: 1d6ec6938f62fdd7b18d443ee330cbc5e4083d5452c2033210fd0d28c06a83d7
+    name: library-chart
+    type: library
+    urls:
+    - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/library-chart-0.0.1/library-chart-0.0.1.tgz
+    version: 0.0.1
+generated: "2023-08-25T09:35:09.485251375Z"
