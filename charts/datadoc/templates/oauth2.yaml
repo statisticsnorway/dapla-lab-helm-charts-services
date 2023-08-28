@@ -70,7 +70,7 @@ kind: SealedSecret
 metadata:
   annotations:
     sealedsecrets.bitnami.com/cluster-wide: "true"
-  name: oauth2-proxy
+  name: oauth2-proxy-{{ include "library-chart.fullname" . }}
 spec:
   encryptedData:
     client-id: AgAJcHlMaXuj92hxORu4mmq+2FFhOeFZfSkk3Vf58OebOs42IwUwx5gBckOnPLQjScQAmgmiiw/DgXOL5hf3e5yJwnXQ9+REmAPDByQtdKBeVSbKJjvmdFyGrJ7s+4PWx5VutNfHqqvwimDaLlnorRef6gtLSTC0ECP+Inw+1yLqLg2ZKlvgm8gHqsZ/dW/zl/7lm6AREz0i9epavoAp+0GAAoZ50KAYZ2IlD8D5QGxDbt/5hbac31fLZLfsH4nWQ0/z5GTcCE52ojYHRpSmeMAuL6xTbdHOFNXNDEISFvXphoHsAaU2BX3d2cPLhgd0RUgZ9k7W+naMr21PgbXJ2Az3POTp+84Idv3gJt8uH4o7foRbcZO9ndJBjHH3Vdbp1ta78VmLvMnSKYQ1MGPL0Jc0S5dl/dr47O8iQLOVcS0DjbDapjlj7/vgDL0rfJ75Li+HarF3dDJuLyypJdnf3UOSP6p+cEw73p1aOpRGYE/UvFT2lxCgAsBB2jvYt1GVF+/FtZYsK860NbIC88eTP6GiwWjDX9ruMR7k2Bll4bpcQWfIh+uyIJVlUq3K9v0BKpDiJwIeNPNglgTTnzXY/iW2PLSmgW1+5YSARgL/pXGEqEZDADqC/xSpVPvWPcbg8rxoH8V4cOcEY6UG+Ndum6ExU6MuYjjtwp7srXdUNNkrkrKnRfQX/DKU+pQ02l4+zI+TOPJAuS7yGGVMYUYPMG5yj/QzGsAPaLMyAcIn21JtAS/6z0M=
