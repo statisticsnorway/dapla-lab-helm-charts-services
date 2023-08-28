@@ -257,7 +257,8 @@
                 "sso.dapla-dev.ssb.no",
                 "storage.googleapis.com",
                 "www.googleapis.com",
-                "oauth2.googleapis.com"
+                "oauth2.googleapis.com",
+                "login.microsoftonline.com"
               ],
               "x-onyxia": {
                 "hidden": true
