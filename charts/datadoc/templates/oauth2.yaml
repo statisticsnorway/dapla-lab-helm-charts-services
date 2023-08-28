@@ -3,7 +3,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: oauth2-proxy-client-config
+  name: oauth2-proxy-client-config-{{ include "library-chart.fullname" . }}
 data:
   oauth2-proxy-client-config.yaml: |-
       provider = "azure"
@@ -71,7 +71,7 @@ kind: SealedSecret
 metadata:
   annotations:
     sealedsecrets.bitnami.com/cluster-wide: "true"
-  name: oauth2-proxy
+  name: oauth2-proxy-{{ include "library-chart.fullname" . }}
 spec:
   encryptedData:
     client-id: AgCZdvFVxitx6antGJSl+hynUA+FwEw6HH9MBmF537rIsSUa5vb7yHZXXYv+4yRrPVWu/CBomCe4IOdtrUjdyiSDP3tUc0VNd6N7KmbjdZERV9g6ddpNK88IDfGDGSeef1DH1HgnGpQeCMAu1llSzl9pMTlA5bmrqPqEJReYM1EyrUf50C0W21S7vlaG2XMcomAKwcwYVZC2YoPPpPQSRwGytQ7jYlW7hER1pWE/YCRwkEqeIJwBqz/C/RbUCLU31gAT78UjS2BjXPKuorghr7Dy2H1w8THzi5IWELr7zsisMqaIWkVvbnOQDDMjrkIe4w8SW0UkHFkrCPKeq3/CN4ZjfiBIXkj7bfbFDx0uBwk/LZrrVy3gD2FnsVgTmSDplyF2kUQj1/Yv05gwvs/UxcJpWjngSGJ88Ct9AdxHxch/cBnHdBzNO5dv26KcvxRMEUTF0OB3bjWP0PJAyYK3d77A8Iwcxis1x7r9+B/CxVxZZZhOPfIWvH+ZSsWw/xn7pj/Jpf9TaOQ/P8Ig/+7mQX7IIGfzO399net5aFlLPAyiPM03JscbumjndedvnxUY3yzA/YoqdJqF6P9SRlTx+eOY/GbVZAPNKsZq3bnK7xfGL1tiV+vcKM/pJnk0axn3rjSDhyvmROhvnSVuK8LtvL/F/P3deL05da7rlqaljFMuSSY6P0689Wb325gerlJSOcYLxjIHhfALb7X2k0jm2QWYD0Zro4daKmEaVQF9wHAuRviaDFo=

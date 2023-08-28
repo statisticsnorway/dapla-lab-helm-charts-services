@@ -102,20 +102,20 @@ spec:
             - name: OAUTH2_PROXY_CLIENT_ID
               valueFrom:
                 secretKeyRef:
-                  name: oauth2-proxy
+                  name: oauth2-proxy-{{ include "library-chart.fullname" . }}
                   key: client-id
             - name: OAUTH2_PROXY_CLIENT_SECRET
               valueFrom:
                 secretKeyRef:
-                  name: oauth2-proxy
+                  name: oauth2-proxy-{{ include "library-chart.fullname" . }}
                   key: client-secret
             - name: OAUTH2_PROXY_COOKIE_SECRET
               valueFrom:
                 secretKeyRef:
-                  name: oauth2-proxy
+                  name: oauth2-proxy-{{ include "library-chart.fullname" . }}
                   key: cookie-secret
           volumeMounts:
-            - name: oauth2-proxy-client-config
+            - name: oauth2-proxy-client-config-{{ include "library-chart.fullname" . }}
               mountPath: "/config/"
               readOnly: true
           securityContext:
