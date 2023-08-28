@@ -2,6 +2,29 @@ apiVersion: v1
 entries:
   datadoc:
   - apiVersion: v2
+    created: "2023-08-28T11:36:11.278823564Z"
+    dependencies:
+    - name: library-chart
+      repository: https://statisticsnorway.github.io/dapla-lab-helm-charts-services
+      version: 0.2.0
+    description: Document datasets in Statistics Norway.
+    digest: 031b612d8dd3a695e8dda4fa6198898ae8525e8b77b16e8348701350dd95ebf0
+    home: https://github.com/statisticsnorway/datadoc
+    icon: https://avatars.githubusercontent.com/u/5849578
+    keywords:
+    - Datadoc
+    - Metadata
+    - Variables
+    - Units
+    - Classifications
+    name: datadoc
+    sources:
+    - https://github.com/johnksv/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/datadoc-0.2.6/datadoc-0.2.6.tgz
+    version: 0.2.6
+  - apiVersion: v2
     created: "2023-08-28T11:12:46.053930053Z"
     dependencies:
     - name: library-chart
@@ -339,4 +362,4 @@ entries:
     urls:
     - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/vscode-r-python-julia-0.0.1/vscode-r-python-julia-0.0.1.tgz
     version: 0.0.1
-generated: "2023-08-28T11:12:46.054043058Z"
+generated: "2023-08-28T11:36:11.279001965Z"
