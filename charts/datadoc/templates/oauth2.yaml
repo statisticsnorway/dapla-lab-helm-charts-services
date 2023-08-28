@@ -8,14 +8,12 @@ data:
   oauth2-proxy-client-config.yaml: |-
       provider = "google"
 
-
       # This will restrict login to accounts with email address in the
       # configured domain.
       email_domains = [*]
 
       # Request "standard" scopes from Keycloak.
       scope = "openid email profile"
-
 
       # The <addr>:<port> to listen on for HTTP/HTTPS clients.
       http_address = "0.0.0.0:4180"
