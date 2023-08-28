@@ -6,21 +6,14 @@ metadata:
   name: oauth2-proxy-client-config-{{ include "library-chart.fullname" . }}
 data:
   oauth2-proxy-client-config.yaml: |-
-      provider = "azure"
-
-      # OpenID Connect issuer URL.
-      oidc_issuer_url = "https://login.microsoftonline.com/c7217092-b240-4e1d-bd61-fa97ba975cbc/v2.0"
-
-      # Tenant ID for Microsoft IdP (Azure AD)
-      azure_tenant = "c7217092-b240-4e1d-bd61-fa97ba975cbc"
+      provider = "google"
 
       # This will restrict login to accounts with email address in the
       # configured domain.
-      email_domains = ["ssb.no"]
+      email_domains = [*]
 
       # Request "standard" scopes from Keycloak.
       scope = "openid email profile"
-
 
       # The <addr>:<port> to listen on for HTTP/HTTPS clients.
       http_address = "0.0.0.0:4180"
@@ -77,12 +70,12 @@ kind: SealedSecret
 metadata:
   annotations:
     sealedsecrets.bitnami.com/cluster-wide: "true"
-  name: oauth2-proxy-{{ include "library-chart.fullname" . }}
+  name: oauth2-proxy
 spec:
   encryptedData:
-    client-id: AgCZdvFVxitx6antGJSl+hynUA+FwEw6HH9MBmF537rIsSUa5vb7yHZXXYv+4yRrPVWu/CBomCe4IOdtrUjdyiSDP3tUc0VNd6N7KmbjdZERV9g6ddpNK88IDfGDGSeef1DH1HgnGpQeCMAu1llSzl9pMTlA5bmrqPqEJReYM1EyrUf50C0W21S7vlaG2XMcomAKwcwYVZC2YoPPpPQSRwGytQ7jYlW7hER1pWE/YCRwkEqeIJwBqz/C/RbUCLU31gAT78UjS2BjXPKuorghr7Dy2H1w8THzi5IWELr7zsisMqaIWkVvbnOQDDMjrkIe4w8SW0UkHFkrCPKeq3/CN4ZjfiBIXkj7bfbFDx0uBwk/LZrrVy3gD2FnsVgTmSDplyF2kUQj1/Yv05gwvs/UxcJpWjngSGJ88Ct9AdxHxch/cBnHdBzNO5dv26KcvxRMEUTF0OB3bjWP0PJAyYK3d77A8Iwcxis1x7r9+B/CxVxZZZhOPfIWvH+ZSsWw/xn7pj/Jpf9TaOQ/P8Ig/+7mQX7IIGfzO399net5aFlLPAyiPM03JscbumjndedvnxUY3yzA/YoqdJqF6P9SRlTx+eOY/GbVZAPNKsZq3bnK7xfGL1tiV+vcKM/pJnk0axn3rjSDhyvmROhvnSVuK8LtvL/F/P3deL05da7rlqaljFMuSSY6P0689Wb325gerlJSOcYLxjIHhfALb7X2k0jm2QWYD0Zro4daKmEaVQF9wHAuRviaDFo=
-    client-secret: AgBsmqVWKL9yeCrTGQteYSYEeYPjUXLzIej50NjqtZufZvYvdKOWaCYMwFu3TMHoCofl13OdL5nzedvHcPm1510nX7WJSoeSGYekv+RHgphdAsRm9KtSUdiognPleenwG4oazECKJlTB+6iatHsginRgxk94l2oSN447iCu876q9BCkJsCmDfV1vo8chy4MFvjWAeCIcYHy4fR3m8ixII73pbKkVYXjZHwg5OiGzIN0PW1BWLJMyKqmzDBtYdu3XVzxx3kz1eV9M2YREahrdmfdAuSE0fulLePZqbhoJ7HlsmlBchq9v1OkypD6ZZfIHdu4zA0Px54zQ8JU2Fb0Jcb1o7wDSkhtXQwSKAkE8UQciRQ2md7cUufLy8YC9riOnT+Bme+XTFclDm3iOKSJgBvHz6TSKNyZTnF5ej8cqDYP916n6FjydKs2iFp3ZTYddXn1N5Ih4BsKUnIVaGl+y23NXD+lUz1O7hGsaLb30qAeINclXyNdyAXmLiDAF7gc9OdQZ39MmCCoKRiR4Tqz0HpAAcszprZhdyZTvYNFQTeh2Re4TNqLggHSoZDB1EEXVenf01SWRkQnD2qYixKaq5OxrTr91e2vXfcQeGalrVWyDExYyYltHSZQAxIOGuKZMLbmLIcZTxemJlRQuI5ncQi8oFnQPzIK7aFcmGQ0JezEOSwCVP2o8XJ9Jb0wOgco2BC4q537OnLtGkC03TQ7kS7D6V9bMQWm2s4774oOyFoGqkI2K+wc6Nj+7
-    cookie-secret: AgArOOcjSG0j+dVm8fdpuDhIOx3bJmu9doexnpI4P/NZwGhlNzZXQR4m5cYdMCbuI6qdW/fnPcGjCGrURYIxa4n2/M1Vc53p3f1cyoKTiWBfxn5cNfzuNNnLJCiFwJFtHZuM//e6212hAjqnVcAs0oXzsb7ZjisEb45crWahSJgqA5l/C0WhWs8H2YK7YUAJl8aoodKPmnSJ065YP2i924hwWtEHn8XbGWH6KDoG89ru7zdUUGXZtR6nvmHAb43nmKHQYzIgPc6TIIHdYkHtgt0jMSDxy205Re0SbaAvx40bGubAvqj1rOpw18TxEvl+c1l+JVhpTW/+TKeGpocBnkaziC12nmO8LqB2yD2jiQDVtJ/NMQZJuyyEYSR28v/iwoqKotl+ZsZQsHyj0URNEg4Tp09iEfeqHIN8PPs/mh2aLtEY9mxSx28EY/EbCDeHwcSzYCEawqJITm8wXO2gN+32uvaI9pQPZtwUHZgUjDzH8i2HFhPckwQkyppECld5yne/ji4c8Shw/0eDFQbCMduYI60Tw8lo+19Dm8oJl5YHl7e/lIkMfB4croKAl+HFONwlS5qdlbE2QA0CZQnnQTHqXzoeAVELkDA2fpWSH0x3LvYAObT/3T0I75ypOkUj4Xwk+SfxatCdJ35qQGgJ0nT98SsFDAZ8oAfKEjp6uapARgid2lfk6hBwf80HD4KpC9A0bUYiNon03Xf9n1atz/QGxemJdd9+UPSjwImMCFjc86pWqFGp/fxn7sLWxQ==
+    client-id: AgAJcHlMaXuj92hxORu4mmq+2FFhOeFZfSkk3Vf58OebOs42IwUwx5gBckOnPLQjScQAmgmiiw/DgXOL5hf3e5yJwnXQ9+REmAPDByQtdKBeVSbKJjvmdFyGrJ7s+4PWx5VutNfHqqvwimDaLlnorRef6gtLSTC0ECP+Inw+1yLqLg2ZKlvgm8gHqsZ/dW/zl/7lm6AREz0i9epavoAp+0GAAoZ50KAYZ2IlD8D5QGxDbt/5hbac31fLZLfsH4nWQ0/z5GTcCE52ojYHRpSmeMAuL6xTbdHOFNXNDEISFvXphoHsAaU2BX3d2cPLhgd0RUgZ9k7W+naMr21PgbXJ2Az3POTp+84Idv3gJt8uH4o7foRbcZO9ndJBjHH3Vdbp1ta78VmLvMnSKYQ1MGPL0Jc0S5dl/dr47O8iQLOVcS0DjbDapjlj7/vgDL0rfJ75Li+HarF3dDJuLyypJdnf3UOSP6p+cEw73p1aOpRGYE/UvFT2lxCgAsBB2jvYt1GVF+/FtZYsK860NbIC88eTP6GiwWjDX9ruMR7k2Bll4bpcQWfIh+uyIJVlUq3K9v0BKpDiJwIeNPNglgTTnzXY/iW2PLSmgW1+5YSARgL/pXGEqEZDADqC/xSpVPvWPcbg8rxoH8V4cOcEY6UG+Ndum6ExU6MuYjjtwp7srXdUNNkrkrKnRfQX/DKU+pQ02l4+zI+TOPJAuS7yGGVMYUYPMG5yj/QzGsAPaLMyAcIn21JtAS/6z0M=
+    client-secret: AgClmXe7R+G0GWs6USMHENkCC8V2+lJ8B1iVnyfB6HSaB4ZVLgrSWStvHBOs2aZLtC4EL8qeo/IZDyJbaniUDQ/NvgLwNuV+LVk6cRKjHUigNBc2X6rSJI7LIRHNy+sai2z5dG0CFYq6BqCFU4iyEdZpxCSRkyam8lIfo/c+dayfCh/7/yO7eV0UHse+tf0kllY7ZcCc2+labz7zE39Uryk8nvlfgldSMBvU1yCjLkATHEq0WlZ73NUpg1SFioOQ586DZi7uUWX13tOY1xjsajJb0xj6e7/7t4kIXV67bg8whkvZrkVvVA/1U/qxDQQrYueJLbVsujYYHMcZMSbn8rwPjJPZWlWFpOzNRVQcXsNBAL/STAUKVppl0hGoBvKmOrAVUpVUy+faxwC+p1Ho22zR1dNB6BIOfPodGEcAiSEzBapZYINpA42I4WzAcRdvxl223Sp728uOY+UOhyrd1SnHNSeP9KLezlUhfXRV5cc0/ZNDvvGlTmWL2YZvYuz6I9L9sYyKCyxRYAyJL1JUrPu+/bOOdiCou62xKO7COq1AZj2c4kVEID3fyT4/Dvs1e9/TuaOf6ukrUEkEDnlUtJPDLxBh5qrFUEU1C6nR8fmwxzIIflgeQJrbokB0niMjhFE3Sfw7qWIFo0xEc5WucXCDNj0PeC+yK8ppwHRcW3PeetiYMWPYSIJekIsSa5YOsec6sLSltshvNClaWyCARXDw7Uaq6n0rsMuLk/mv1LqicioDcjMODDXY
+    cookie-secret: AgAfnItkjza3xIg4PIlq6GNiMUTRacyXiV/Lhe07Q/awA/RP/PUe0GY7eU0WqvZYE+2g1DEsP1nOswbrJvz3Xl7t4fH9ElYLfX7GeZwWnpZ5m3HJABP92M2YFPtzHvd/xzynKafskcRFp6xWEXVD+QNpvsw3eU3H4/aOIZDxd+qq/tPJe2UkD8fULr8wXTRtaGg4yMjDnqX4X4skQe3xP2XhtbIj78/wqs2z9t8I4xU4yE5dK/cU8fz7ZeiIXZ4H54sLXEVfDGEK6PcsaZHam+KHRtg1mR1wlSH3EEQBjnVoeAAAEdNlLrOA1z910txLPH9TP65ABREGKs2zb0Gh1PqDO+npOaUdl0mb8MWMWMqQR6dWBR7Y5bStwn0wX0o76jLPGfS634skPiZ739Palf1nRhipwzmLShtjJ8o1wU8xYQODDkYIDrmNMBnl7lqfipiXXVI1xgHCnQYy0WNZiwgbXgrVZytHB0D0KG9qH/ZeM7NxoGpQRWcJXbCI74KWw+LQj9rJFVj7uLTgyvlRurG7YKfDyETJG/d0DlsP2sgqdDiBh5CliPHR1hYqF3ugKGoXAsy0bzWeSU5Sucrh614XLW+tGRRQHOxfpy3EVe5ypDILGV1MOC5sgOGqYhFnFtWjV59HJOKc1IGLrxMJefsjXLDoy66RrnmoVf4Rgp+82pP2oDhejvpjb6b/4onh06laYJcYtqbDhmF8zKFa+Wpg2x49t3dclIv9/Axrh5KNKsA+qnnXRpKfFY2n3g==
   template:
     data: null
     metadata:
