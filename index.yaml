@@ -189,6 +189,26 @@ entries:
     version: 0.0.1
   rstudio-custom:
   - apiVersion: v2
+    created: "2023-08-28T08:12:42.597861274Z"
+    dependencies:
+    - name: library-chart
+      repository: https://statisticsnorway.github.io/dapla-lab-helm-charts-services
+      version: 0.0.1
+    description: The RStudio IDE with a collection of standard data science packages.
+    digest: d69d74ebc7eda3532bb654d679222dc8d4a6fb6a48a4992082ef78b1530450c7
+    home: https://www.rstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/rstudio.png
+    keywords:
+    - RStudio
+    - R
+    name: rstudio-custom
+    sources:
+    - https://johnksv.github.io/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/rstudio-custom-0.1.0/rstudio-custom-0.1.0.tgz
+    version: 0.1.0
+  - apiVersion: v2
     created: "2023-08-25T10:01:27.961738954Z"
     dependencies:
     - name: library-chart
@@ -253,4 +273,4 @@ entries:
     urls:
     - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/vscode-r-python-julia-0.0.1/vscode-r-python-julia-0.0.1.tgz
     version: 0.0.1
-generated: "2023-08-28T07:43:29.825560072Z"
+generated: "2023-08-28T08:12:42.597881374Z"
