@@ -10,7 +10,7 @@ data:
 
       # This will restrict login to accounts with email address in the
       # configured domain.
-      email_domains = [*]
+      email_domains = "*"
 
       # Request "standard" scopes from Keycloak.
       scope = "openid email profile"
