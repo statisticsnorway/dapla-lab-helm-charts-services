@@ -42,7 +42,7 @@ jobs:
           if [[ `git status --porcelain` ]]; then
             git add -A
             git commit -m "Generate child charts"
-            git push https://oauth2:${{ steps.generate_token.outputs.token }}@$GITHUB_SERVER_URL/$GITHUB_REPOSITORY.git
+            git push https://oauth2:${{ steps.generate_token.outputs.token }}@github.com/$GITHUB_REPOSITORY.git
           fi
 
       - name: Install Helm
@@ -63,7 +63,7 @@ jobs:
           if [[ `git status --porcelain` ]]; then
             git add -A
             git commit -m "Generate Helm docs"
-            git push https://oauth2:${{ steps.generate_token.outputs.token }}@$GITHUB_SERVER_URL/$GITHUB_REPOSITORY.git
+            git push https://oauth2:${{ steps.generate_token.outputs.token }}@github.com/$GITHUB_REPOSITORY.git
           fi
 
       - name: Run chart-releaser
