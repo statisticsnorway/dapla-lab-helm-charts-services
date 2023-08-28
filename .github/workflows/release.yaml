@@ -27,8 +27,8 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config user.name "Dapla Bot"
-          git config user.email "dapla.bot@ssb.no"
+          git config user.name "dapla-bot[bot]"
+          git config user.email "143391972+dapla-bot[bot]@users.noreply.github.com"
 
       - name: Install Python
         uses: actions/setup-python@v4
