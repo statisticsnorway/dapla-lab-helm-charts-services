@@ -18,15 +18,22 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Generate token
+        id: generate_token
+        uses: tibdex/github-app-token@v1
+        with:
+          app_id: ${{ secrets.DAPLA_BOT_APP_ID }}
+          private_key: ${{ secrets.DAPLA_BOT_PRIVATE_KEY }}
+
       - name: Configure Git
         run: |
-          git config user.name "$GITHUB_ACTOR"
-          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git config user.name "Dapla Bot"
+          git config user.email "dapla.bot@ssb.no"
 
       - name: Install Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10' 
+          python-version: '3.10'
 
       - name: Generate children charts
         run: |
@@ -34,8 +41,8 @@ jobs:
           python3 utils/generate-children-charts.py
           if [[ `git status --porcelain` ]]; then
             git add -A
-            git commit -m "Automated changes"
-            git push
+            git commit -m "Generate child charts"
+            git push https://oauth2:${{ steps.generate_token.outputs.token }}@$GITHUB_SERVER_URL/$GITHUB_REPOSITORY.git
           fi
 
       - name: Install Helm
@@ -56,10 +63,10 @@ jobs:
           if [[ `git status --porcelain` ]]; then
             git add -A
             git commit -m "Generate Helm docs"
-            git push
+            git push https://oauth2:${{ steps.generate_token.outputs.token }}@$GITHUB_SERVER_URL/$GITHUB_REPOSITORY.git
           fi
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.5.0
         env:
-          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          CR_TOKEN: "${{ steps.generate_token.outputs.token }}"
