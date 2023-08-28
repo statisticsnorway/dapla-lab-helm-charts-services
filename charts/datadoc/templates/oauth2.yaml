@@ -85,4 +85,4 @@ spec:
       creationTimestamp: null
       name: oauth2-proxy
 
-{{- end }}
+{{ end }}

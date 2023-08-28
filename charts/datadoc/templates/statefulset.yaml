@@ -29,11 +29,6 @@ spec:
         {{- end }}
     spec:
       volumes:
-        {{- if .Values.security.oauth2.enabled }}
-        - name: conf
-          configMap:
-            name: oauth2-proxy-client-config-{{ include "library-chart.fullname" . }}
-        {{- end }}
         - name: home
         {{- if .Values.persistence.enabled }}
           persistentVolumeClaim:
@@ -119,16 +114,15 @@ spec:
                 secretKeyRef:
                   name: oauth2-proxy-{{ include "library-chart.fullname" . }}
                   key: cookie-secret
-
           volumeMounts:
-            - name: conf
+            - name: oauth2-proxy-client-config-{{ include "library-chart.fullname" . }}
               mountPath: "/config/"
               readOnly: true
           securityContext:
             runAsNonRoot: true
             runAsUser: 1000
             allowPrivilegeEscalation: false
-      {{- end }}
+      {{ end }}
 
       {{- with .Values.nodeSelector }}
       nodeSelector:
