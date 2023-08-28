@@ -8,6 +8,12 @@ data:
   oauth2-proxy-client-config.yaml: |-
       provider = "azure"
 
+        # OpenID Connect issuer URL.
+      oidc_issuer_url = "https://login.microsoftonline.com/c7217092-b240-4e1d-bd61-fa97ba975cbc/v2.0"
+
+        # Tenant ID for Microsoft IdP (Azure AD)
+      azure_tenant = "c7217092-b240-4e1d-bd61-fa97ba975cbc"
+
       # This will restrict login to accounts with email address in the
       # configured domain.
       email_domains = ["ssb.no"]
