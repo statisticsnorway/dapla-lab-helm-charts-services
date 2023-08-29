@@ -22,7 +22,6 @@ security:
       - "storage.googleapis.com"
 
 init:
-  #standardInitPath: "/usr/local/bin/before-notebook.d/*.sh"
   standardInitPath: ""
   regionInit: ""
   personalInit: ""
