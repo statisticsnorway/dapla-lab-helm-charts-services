@@ -18,10 +18,10 @@ security:
     ip: "0.0.0.0/0"
   serviceEntry:
     enabled: true
-    hosts: []
+    hosts:
+      - "storage.googleapis.com"
 
 init:
-  #standardInitPath: "/usr/local/bin/before-notebook.d/*.sh"
   standardInitPath: ""
   regionInit: ""
   personalInit: ""

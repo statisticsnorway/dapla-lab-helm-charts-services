@@ -13,12 +13,12 @@ spec:
   exportTo:
   - .
   hosts:
-  {{- toYaml .Values.security.serviceEntry.hosts | nindent 2 }}
+  {{- toYaml .Values.security.serviceEntry.hosts | nindent 2 -}}
   location: MESH_EXTERNAL
   ports:
   - name: https
     number: 443
     protocol: HTTPS
   resolution: DNS
-{{- end }}
-{{- end }}
+{{- end -}}
+{{- end -}}

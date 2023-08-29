@@ -1,5 +1,5 @@
 apiVersion: v2
-name: rstudio-custom
+name: rstudio-dapla
 description: The RStudio IDE with a collection of standard data science packages.
 icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/rstudio.png
 keywords:
@@ -7,7 +7,7 @@ keywords:
   - R
 home: https://www.rstudio.com/
 sources:
-  - https://johnksv.github.io/helm-charts-interactive-services
+  - https://statisticsnorway.github.io/dapla-lab-helm-charts-services
 # A chart can be either an 'application' or a 'library' chart.
 #
 # Application charts are a collection of templates that can be packaged into versioned archives
