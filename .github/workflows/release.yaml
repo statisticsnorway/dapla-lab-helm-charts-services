@@ -18,12 +18,12 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Generate token
-        id: generate_token
-        uses: tibdex/github-app-token@v1
-        with:
-          app_id: ${{ secrets.DAPLA_BOT_APP_ID }}
-          private_key: ${{ secrets.DAPLA_BOT_PRIVATE_KEY }}
+      # - name: Generate token
+      #   id: generate_token
+      #   uses: tibdex/github-app-token@v1
+      #   with:
+      #     app_id: ${{ secrets.DAPLA_BOT_APP_ID }}
+      #     private_key: ${{ secrets.DAPLA_BOT_PRIVATE_KEY }}
 
       - name: Configure Git
         run: |
@@ -42,7 +42,7 @@ jobs:
           if [[ `git status --porcelain` ]]; then
             git add -A
             git commit -m "Generate child charts"
-            git push https://oauth2:${{ steps.generate_token.outputs.token }}@github.com/$GITHUB_REPOSITORY.git
+            git push
           fi
 
       - name: Install Helm
@@ -63,7 +63,7 @@ jobs:
           if [[ `git status --porcelain` ]]; then
             git add -A
             git commit -m "Generate Helm docs"
-            git push https://oauth2:${{ steps.generate_token.outputs.token }}@github.com/$GITHUB_REPOSITORY.git
+            git push
           fi
 
       - name: Run chart-releaser
