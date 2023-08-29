@@ -1,6 +1,6 @@
 apiVersion: v2
 name: rstudio-dapla
-description: The RStudio IDE with a collection of standard data science packages.
+description: The RStudio IDE with a collection of standard data science packages, adapted to work for Dapla.
 icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/rstudio.png
 keywords:
   - RStudio
@@ -21,7 +21,7 @@ type: application
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 0.1.0
+version: 0.1.1
 
 dependencies:
   - name: library-chart
