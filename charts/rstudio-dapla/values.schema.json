@@ -606,6 +606,31 @@
                 }
             }
         },
+        "userAttributes": {
+            "description": "User attributes to pass into the service",
+            "type": "object",
+            "properties": {
+                "environmentVariableName": {
+                    "type": "string",
+                    "description": "Name of the environment variable to use",
+                    "default": "OIDC_TOKEN"
+                },
+                "userAttribute": {
+                    "type": "string",
+                    "description": "The user attribute to map to the environment variable",
+                    "default": "access_token"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "The value of the user attribute (will be replaced by backend)",
+                    "default": "",
+                    "x-onyxia": {
+                        "hidden": true,
+                        "overwriteDefaultWith": ""
+                    }
+                }
+            }
+        },
         "route": {
             "type": "object",
             "form": true,
