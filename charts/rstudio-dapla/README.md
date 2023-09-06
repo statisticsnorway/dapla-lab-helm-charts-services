@@ -1,6 +1,6 @@
 # rstudio-dapla
 
-![Version: 0.1.2](https://img.shields.io/badge/Version-0.1.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.1.3](https://img.shields.io/badge/Version-0.1.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 The RStudio IDE with a collection of standard data science packages, adapted to work for Dapla.
 
@@ -14,7 +14,7 @@ The RStudio IDE with a collection of standard data science packages, adapted to 
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 0.0.1 |
+| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 0.2.0 |
 
 ## Values
 
@@ -60,6 +60,9 @@ The RStudio IDE with a collection of standard data science packages, adapted to 
 | networking.user.enabled | bool | `false` |  |
 | networking.user.port | int | `5000` |  |
 | nodeSelector | object | `{}` |  |
+| oidc.configMapName | string | `""` |  |
+| oidc.enabled | bool | `true` |  |
+| oidc.tokenExchangeUrl | string | `"https://sso.dapla-dev.ssb.no/realms/ssb/broker/google/token"` |  |
 | persistence.accessMode | string | `"ReadWriteOnce"` |  |
 | persistence.enabled | bool | `true` |  |
 | persistence.size | string | `"10Gi"` |  |
@@ -86,6 +89,7 @@ The RStudio IDE with a collection of standard data science packages, adapted to 
 | security.allowlist.ip | string | `"0.0.0.0/0"` |  |
 | security.networkPolicy.enabled | bool | `false` |  |
 | security.networkPolicy.from | list | `[]` |  |
+| security.oauth2.enabled | bool | `false` |  |
 | security.password | string | `"changeme"` |  |
 | security.serviceEntry.enabled | bool | `true` |  |
 | security.serviceEntry.hosts[0] | string | `"storage.googleapis.com"` |  |
@@ -98,6 +102,9 @@ The RStudio IDE with a collection of standard data science packages, adapted to 
 | serviceAccount.create | bool | `true` |  |
 | serviceAccount.name | string | `""` |  |
 | tolerations | list | `[]` |  |
+| userAttributes.environmentVariableName | string | `"OIDC_TOKEN"` |  |
+| userAttributes.userAttribute | string | `"access_token"` |  |
+| userAttributes.value | string | `""` |  |
 | vault.configMapName | string | `""` |  |
 | vault.directory | string | `""` |  |
 | vault.enabled | bool | `true` |  |
