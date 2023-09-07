@@ -645,6 +645,28 @@ entries:
     version: 0.1.0
   vscode-python:
   - apiVersion: v2
+    created: "2023-09-07T08:36:35.651601944Z"
+    dependencies:
+    - name: library-chart
+      repository: https://statisticsnorway.github.io/dapla-lab-helm-charts-services
+      version: 0.2.2
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: 2fa5c82b383a5d11d8f76cdd799ad2df0cd208941a31bfe3ed53a0d480c75a41
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/vscode-python-0.0.3/vscode-python-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v2
     created: "2023-09-07T06:56:29.423662534Z"
     dependencies:
     - name: library-chart
@@ -690,6 +712,27 @@ entries:
     version: 0.0.1
   vscode-r-python-julia:
   - apiVersion: v2
+    created: "2023-09-07T08:36:35.791985408Z"
+    dependencies:
+    - name: library-chart
+      repository: https://statisticsnorway.github.io/dapla-lab-helm-charts-services
+      version: 0.2.2
+    description: The VSCode IDE with minimal installations of R, Python and Julia.
+    digest: 26dd30c438611e6075937ed589d0adc180faac7de22372ea86ec3a0cb7c417d1
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-r-python-julia
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/vscode-r-python-julia-0.0.3/vscode-r-python-julia-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v2
     created: "2023-09-07T06:56:29.598788618Z"
     dependencies:
     - name: library-chart
@@ -731,4 +774,4 @@ entries:
     urls:
     - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/vscode-r-python-julia-0.0.1/vscode-r-python-julia-0.0.1.tgz
     version: 0.0.1
-generated: "2023-09-07T08:30:57.581809037Z"
+generated: "2023-09-07T08:36:35.792070911Z"
