@@ -13,12 +13,26 @@ security:
   allowlist:
     enabled: false
     ip: 0.0.0.0/0
+  serviceEntry:
+    enabled: true
+    hosts:
+    - storage.googleapis.com
+  oauth2:
+    enabled: false
 init:
   standardInitPath: /opt/onyxia-init.sh
   regionInit: ''
   regionInitCheckSum: ''
   personalInit: ''
   personalInitArgs: ''
+userAttributes:
+  environmentVariableName: OIDC_TOKEN
+  userAttribute: access_token
+  value: ''
+oidc:
+  enabled: true
+  tokenExchangeUrl: https://sso.dapla-dev.ssb.no/realms/ssb/broker/google/token
+  configMapName: ''
 s3:
   enabled: true
   configMapName: ''

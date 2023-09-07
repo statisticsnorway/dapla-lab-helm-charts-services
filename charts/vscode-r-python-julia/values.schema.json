@@ -296,6 +296,35 @@
               }
             }
           }
+        },
+        "serviceEntry": {
+          "type": "object",
+          "description": "Service entry to give access to external services",
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "title": "Enable service entry",
+              "description": "Enable access to external services",
+              "default": true
+            },
+            "hosts": {
+              "type": "array",
+              "description": "Array of hosts allowed to be accessed from your service",
+              "default": [
+                "pypi.python.org",
+                "files.pythonhosted.org",
+                "pypi.org",
+                "github.com",
+                "oauth2.googleapis.com",
+                "sso.dapla-dev.ssb.no",
+                "storage.googleapis.com",
+                "www.googleapis.com"
+              ],
+              "x-onyxia": {
+                "hidden": true
+              }
+            }
+          }
         }
       }
     },
@@ -676,6 +705,31 @@
           "x-onyxia": {
             "hidden": true,
             "overwriteDefaultWith": "{{project.id}}-{{k8s.randomSubdomain}}-user.{{k8s.domain}}"
+          }
+        }
+      }
+    },
+    "userAttributes": {
+      "description": "User attributes to pass into the service",
+      "type": "object",
+      "properties": {
+        "environmentVariableName": {
+          "type": "string",
+          "description": "Name of the environment variable to use",
+          "default": "OIDC_TOKEN"
+        },
+        "userAttribute": {
+          "type": "string",
+          "description": "The user attribute to map to the environment variable",
+          "default": "access_token"
+        },
+        "value": {
+          "type": "string",
+          "description": "The value of the user attribute (will be replaced by backend)",
+          "default": "",
+          "x-onyxia": {
+            "hidden": true,
+            "overwriteDefaultWith": ""
           }
         }
       }
