@@ -76,8 +76,6 @@ jobs:
             - 'charts/rstudio-gpu/**'
           rstudio-sparkr:
             - 'charts/rstudio-sparkr/**'
-          vscode-python:
-            - 'charts/vscode-python/**'
           vscode-python-gpu:
             - 'charts/vscode-python-gpu/**'
           vscode-pytorch:
