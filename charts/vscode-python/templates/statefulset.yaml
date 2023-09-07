@@ -19,6 +19,9 @@ spec:
         {{- if .Values.git.enabled }}
         checksum/git: {{ include (print $.Template.BasePath "/configmap-git.yaml") . | sha256sum }}
         {{- end }}
+        {{- if .Values.oidc.enabled }}
+        checksum/oidc: {{ include (print $.Template.BasePath "/configmap-oidc.yaml") . | sha256sum }}
+        {{- end }}
         {{- if .Values.s3.enabled }}
         checksum/s3: {{ include (print $.Template.BasePath "/configmap-s3.yaml") . | sha256sum }}
         {{- end }}
@@ -109,8 +112,12 @@ spec:
             {{- if  .Values.fauxpilot.enabled }}
             - name: FAUXPILOT_SERVER
               value: "{{ .Values.fauxpilot.server }}" 
-            {{- end }}  
-          envFrom: 
+            {{- end }}
+          envFrom:
+            {{- if .Values.oidc.enabled }}
+            - configMapRef:
+                name: {{ include "library-chart.configMapNameOidc" . }}
+            {{- end }}
             {{- if .Values.s3.enabled }}
             - configMapRef:
                 name: {{ include "library-chart.configMapNameS3" . }}
