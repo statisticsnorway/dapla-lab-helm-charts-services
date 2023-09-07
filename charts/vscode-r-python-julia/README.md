@@ -1,6 +1,6 @@
 # vscode-r-python-julia
 
-![Version: 0.0.1](https://img.shields.io/badge/Version-0.0.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.0.2](https://img.shields.io/badge/Version-0.0.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 The VSCode IDE with minimal installations of R, Python and Julia.
 
@@ -15,7 +15,7 @@ The VSCode IDE with minimal installations of R, Python and Julia.
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 0.0.1 |
+| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 0.2.1 |
 
 ## Values
 
@@ -69,6 +69,9 @@ The VSCode IDE with minimal installations of R, Python and Julia.
 | networking.user.enabled | bool | `false` |  |
 | networking.user.port | int | `5000` |  |
 | nodeSelector | object | `{}` |  |
+| oidc.configMapName | string | `""` |  |
+| oidc.enabled | bool | `true` |  |
+| oidc.tokenExchangeUrl | string | `"https://sso.dapla-dev.ssb.no/realms/ssb/broker/google/token"` |  |
 | persistence.accessMode | string | `"ReadWriteOnce"` |  |
 | persistence.enabled | bool | `true` |  |
 | persistence.size | string | `"10Gi"` |  |
@@ -96,7 +99,10 @@ The VSCode IDE with minimal installations of R, Python and Julia.
 | security.allowlist.ip | string | `"0.0.0.0/0"` |  |
 | security.networkPolicy.enabled | bool | `false` |  |
 | security.networkPolicy.from | list | `[]` |  |
+| security.oauth2.enabled | bool | `false` |  |
 | security.password | string | `"changeme"` |  |
+| security.serviceEntry.enabled | bool | `true` |  |
+| security.serviceEntry.hosts[0] | string | `"storage.googleapis.com"` |  |
 | securityContext | object | `{}` |  |
 | service.image.custom.enabled | bool | `false` |  |
 | service.image.custom.version | string | `"inseefrlab/onyxia-vscode-r-python-julia:r4.2.3"` |  |
@@ -106,6 +112,9 @@ The VSCode IDE with minimal installations of R, Python and Julia.
 | serviceAccount.create | bool | `true` |  |
 | serviceAccount.name | string | `""` |  |
 | tolerations | list | `[]` |  |
+| userAttributes.environmentVariableName | string | `"OIDC_TOKEN"` |  |
+| userAttributes.userAttribute | string | `"access_token"` |  |
+| userAttributes.value | string | `""` |  |
 | vault.configMapName | string | `""` |  |
 | vault.directory | string | `""` |  |
 | vault.enabled | bool | `true` |  |
