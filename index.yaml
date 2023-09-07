@@ -444,6 +444,14 @@ entries:
     version: 0.0.1
   library-chart:
   - apiVersion: v2
+    created: "2023-09-07T08:30:57.581632835Z"
+    digest: 683912893e6fc791b4eedbc189767312996c873789a4b50b99a0dc72da53237b
+    name: library-chart
+    type: library
+    urls:
+    - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/library-chart-0.2.2/library-chart-0.2.2.tgz
+    version: 0.2.2
+  - apiVersion: v2
     created: "2023-08-29T08:42:01.295559703Z"
     digest: 569da644c22e2f4f473d6aab7d76b89ff3d5c172c850b43f8776b126ce62bb8b
     name: library-chart
@@ -723,4 +731,4 @@ entries:
     urls:
     - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/vscode-r-python-julia-0.0.1/vscode-r-python-julia-0.0.1.tgz
     version: 0.0.1
-generated: "2023-09-07T06:56:29.599055819Z"
+generated: "2023-09-07T08:30:57.581809037Z"
