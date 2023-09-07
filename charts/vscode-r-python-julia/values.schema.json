@@ -315,6 +315,7 @@
                 "files.pythonhosted.org",
                 "pypi.org",
                 "github.com",
+                "install.python-poetry.org",
                 "oauth2.googleapis.com",
                 "sso.dapla-dev.ssb.no",
                 "storage.googleapis.com",
