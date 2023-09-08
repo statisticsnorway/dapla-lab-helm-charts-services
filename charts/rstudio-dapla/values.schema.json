@@ -266,6 +266,7 @@
                                 "packagemanager.posit.co",
                                 "rspm-sync.rstudio.com",
                                 "github.com",
+                                "api.github.com",
                                 "oauth2.googleapis.com",
                                 "sso.dapla-dev.ssb.no",
                                 "storage.googleapis.com",
