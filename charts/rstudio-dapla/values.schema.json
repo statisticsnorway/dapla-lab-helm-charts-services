@@ -261,6 +261,8 @@
                             "type": "array",
                             "description": "Array of hosts allowed to be accessed from your service",
                             "default": [
+                                "sso.dapla-dev.ssb.no",
+                                "data.ssb.no",
                                 "cran.uib.no",
                                 "packagemanager.rstudio.com",
                                 "packagemanager.posit.co",
@@ -269,7 +271,6 @@
                                 "api.github.com",
                                 "objects.githubusercontent.com",
                                 "oauth2.googleapis.com",
-                                "sso.dapla-dev.ssb.no",
                                 "storage.googleapis.com",
                                 "www.googleapis.com"
                             ],
