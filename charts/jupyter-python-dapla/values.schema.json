@@ -289,7 +289,8 @@
                           "pypi.org",
                           "sso.dapla-dev.ssb.no",
                           "storage.googleapis.com",
-                          "www.googleapis.com"
+                          "www.googleapis.com",
+                          "codeload.github.com"
                       ],
                       "x-onyxia": {
                         "hidden": true
