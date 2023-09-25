@@ -1,6 +1,6 @@
 # jupyter-python-dapla
 
-![Version: 0.0.4](https://img.shields.io/badge/Version-0.0.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.0.5](https://img.shields.io/badge/Version-0.0.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 The JupyterLab IDE with Python, tailored for SSB's data platform (Dapla).
 
@@ -64,7 +64,7 @@ The JupyterLab IDE with Python, tailored for SSB's data platform (Dapla).
 | nodeSelector | object | `{}` |  |
 | oidc.configMapName | string | `""` |  |
 | oidc.enabled | bool | `true` |  |
-| oidc.tokenExchangeUrl | string | `"https://sso.dapla-dev.ssb.no/realms/ssb/broker/google/token"` |  |
+| oidc.tokenExchangeUrl | string | `"https://sso.dapla-dev.ssb.no/realms/ssb/protocol/openid-connect/token"` |  |
 | persistence.accessMode | string | `"ReadWriteOnce"` |  |
 | persistence.enabled | bool | `false` |  |
 | persistence.size | string | `"10Gi"` |  |

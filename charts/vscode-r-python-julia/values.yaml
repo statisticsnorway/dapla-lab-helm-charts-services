@@ -31,7 +31,7 @@ userAttributes:
   value: ''
 oidc:
   enabled: true
-  tokenExchangeUrl: https://sso.dapla-dev.ssb.no/realms/ssb/broker/google/token
+  tokenExchangeUrl: https://sso.dapla-dev.ssb.no/realms/ssb/protocol/openid-connect/token
   configMapName: ''
 s3:
   enabled: true

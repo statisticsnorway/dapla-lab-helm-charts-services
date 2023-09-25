@@ -1,6 +1,6 @@
 # datadoc
 
-![Version: 0.2.14](https://img.shields.io/badge/Version-0.2.14-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.2.15](https://img.shields.io/badge/Version-0.2.15-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Document datasets in Statistics Norway.
 
@@ -44,7 +44,7 @@ Document datasets in Statistics Norway.
 | nodeSelector | object | `{}` |  |
 | oidc.configMapName | string | `""` |  |
 | oidc.enabled | bool | `true` |  |
-| oidc.tokenExchangeUrl | string | `"https://sso.dapla-dev.ssb.no/realms/ssb/broker/google/token"` |  |
+| oidc.tokenExchangeUrl | string | `"https://sso.dapla-dev.ssb.no/realms/ssb/protocol/openid-connect/token"` |  |
 | persistence.accessMode | string | `"ReadWriteOnce"` |  |
 | persistence.enabled | bool | `false` |  |
 | persistence.size | string | `"10Gi"` |  |
