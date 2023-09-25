@@ -9,7 +9,7 @@ The JupyterLab IDE with Python, Julia, and a collection of standard data science
 ## Source Code
 
 * <https://github.com/InseeFrLab/images-datascience>
-* <https://github.com/johnksv/helm-charts-interactive-services>
+* <https://github.com/statisticsnorway/helm-charts-interactive-services>
 
 ## Requirements
 

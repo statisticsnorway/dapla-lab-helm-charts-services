@@ -10,8 +10,8 @@ keywords:
   - Classifications
 home: https://github.com/statisticsnorway/datadoc
 sources:
-  - https://github.com/johnksv/helm-charts-interactive-services
 # A chart can be either an 'application' or a 'library' chart.
+  - https://github.com/statisticsnorway/dapla-lab-helm-charts-services
 #
 # Application charts are a collection of templates that can be packaged into versioned archives
 # to be deployed.
