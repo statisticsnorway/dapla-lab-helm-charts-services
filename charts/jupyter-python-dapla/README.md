@@ -8,7 +8,7 @@ The JupyterLab IDE with Python, tailored for SSB's data platform (Dapla).
 
 ## Source Code
 
-* <https://github.com/statisticsnorway/helm-charts-interactive-services>
+* <https://github.com/statisticsnorway/dapla-lab-helm-charts-services>
 
 ## Requirements
 

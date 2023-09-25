@@ -1,6 +1,6 @@
 # jupyter-python
 
-![Version: 0.0.1](https://img.shields.io/badge/Version-0.0.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.0.2](https://img.shields.io/badge/Version-0.0.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 The JupyterLab IDE with Python, Julia, and a collection of standard data science packages.
 
@@ -9,7 +9,7 @@ The JupyterLab IDE with Python, Julia, and a collection of standard data science
 ## Source Code
 
 * <https://github.com/InseeFrLab/images-datascience>
-* <https://github.com/statisticsnorway/helm-charts-interactive-services>
+* <https://github.com/statisticsnorway/dapla-lab-helm-charts-services>
 
 ## Requirements
 

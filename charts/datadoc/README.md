@@ -8,7 +8,7 @@ Document datasets in Statistics Norway.
 
 ## Source Code
 
-* <https://github.com/statisticsnorway/helm-charts-interactive-services>
+* <https://github.com/statisticsnorway/dapla-lab-helm-charts-services>
 
 ## Requirements
 
