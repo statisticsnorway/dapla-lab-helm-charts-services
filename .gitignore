@@ -6,3 +6,4 @@ utils/prepull-deployment-manifest.yaml
 utils/prepull-daemon-manifest.yaml
 **/nohup.out
 **/prepull.log
+/.idea/

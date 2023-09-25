@@ -41,7 +41,7 @@ userAttributes:
 oidc:
   # Specifies whether a config map should be created
   enabled: true
-  tokenExchangeUrl: "https://sso.dapla-dev.ssb.no/realms/ssb/broker/google/token"
+  tokenExchangeUrl: "https://sso.dapla-dev.ssb.no/realms/ssb/protocol/openid-connect/token"
   # The name of the configmap to use.
   # If not set and create is true, a name is generated using the fullname template
   configMapName: ""

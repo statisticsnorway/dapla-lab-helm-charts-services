@@ -1,6 +1,6 @@
 # vscode-python
 
-![Version: 0.0.4](https://img.shields.io/badge/Version-0.0.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.0.5](https://img.shields.io/badge/Version-0.0.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
 
@@ -71,7 +71,7 @@ The Visual Studio Code IDE with Python, Julia, and a collection of standard data
 | nodeSelector | object | `{}` |  |
 | oidc.configMapName | string | `""` |  |
 | oidc.enabled | bool | `true` |  |
-| oidc.tokenExchangeUrl | string | `"https://sso.dapla-dev.ssb.no/realms/ssb/broker/google/token"` |  |
+| oidc.tokenExchangeUrl | string | `"https://sso.dapla-dev.ssb.no/realms/ssb/protocol/openid-connect/token"` |  |
 | persistence.accessMode | string | `"ReadWriteOnce"` |  |
 | persistence.enabled | bool | `true` |  |
 | persistence.size | string | `"10Gi"` |  |
