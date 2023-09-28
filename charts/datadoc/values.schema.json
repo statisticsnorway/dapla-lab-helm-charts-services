@@ -39,7 +39,7 @@
               "description": "supported versions",
               "type": "string",
               "render": "list",
-              "default": "eu.gcr.io/prod-bip/ssb/dapla/datadoc"
+              "default": "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-lab-docker/onyxia/datadoc:master"
             }
           }
         }
