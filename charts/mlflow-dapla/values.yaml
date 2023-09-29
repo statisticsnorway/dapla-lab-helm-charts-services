@@ -78,7 +78,9 @@ postgresql:
 networking:
   type: ClusterIP
   service:
-    port: 80
+    port: 8000
+  user:
+    enabled: false
 
 istio:
   enabled: false
