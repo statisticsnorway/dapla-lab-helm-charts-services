@@ -15,7 +15,7 @@ service:
   proxyArtifact:
     enabled: true
   gunicornTimeout: "600"
-  customArgs: # []
+  customArgs:  # []
     - --workers=2
 
 s3:
