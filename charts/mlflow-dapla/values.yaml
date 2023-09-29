@@ -47,6 +47,8 @@ security:
   allowlist:
     enabled: true
     ip: "0.0.0.0/0"
+  oauth2:
+    enabled: false
   serviceEntry:
     enabled: true
     hosts:
