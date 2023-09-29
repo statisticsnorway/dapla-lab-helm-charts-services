@@ -1,7 +1,7 @@
 # Default values for postgres.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
-  
+
 replicaCount: 1
 
 service:
@@ -13,9 +13,9 @@ service:
       version: ""
   directory: /tmp/mlflow/artifacts/
   proxyArtifact:
-    enabled : true
+    enabled: true
   gunicornTimeout: "600"
-  customArgs: #[]
+  customArgs: # []
     - --workers=2
 
 s3:
@@ -34,19 +34,19 @@ discoverable:
   allow: true
 
 liveness:
-  enabled : "true"
+  enabled: "true"
 
 security:
-  networkPolicy: 
+  networkPolicy:
     enabled: false
-    from: 
+    from:
     - ipBlock:
         cidr: 10.233.103.0/32
     - ipBlock:
         cidr: 10.233.111.0/32
   allowlist:
     enabled: true
-    ip: "0.0.0.0/0" 
+    ip: "0.0.0.0/0"
   serviceEntry:
     enabled: true
     hosts:
@@ -140,8 +140,6 @@ resources_init:
   limits:
     cpu: "100m"
     memory: "128Mi"
-
-
 
 autoscaling:
   enabled: false
