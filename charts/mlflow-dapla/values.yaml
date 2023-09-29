@@ -80,6 +80,7 @@ postgresql:
 
 networking:
   type: ClusterIP
+  clusterIP: None
   service:
     port: 8000
   user:
