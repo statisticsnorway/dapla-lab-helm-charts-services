@@ -51,6 +51,9 @@ security:
     enabled: true
     hosts:
       - "storage.googleapis.com"
+  oauth2:
+    enabled: false
+
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
