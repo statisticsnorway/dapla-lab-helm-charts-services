@@ -51,6 +51,9 @@ security:
     enabled: true
     hosts:
       - "storage.googleapis.com"
+  oauth2:
+    enabled: false
+
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
@@ -77,8 +80,11 @@ postgresql:
 
 networking:
   type: ClusterIP
+  clusterIP: None
   service:
-    port: 80
+    port: 8000
+  user:
+    enabled: false
 
 istio:
   enabled: false
