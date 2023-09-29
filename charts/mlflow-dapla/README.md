@@ -1,6 +1,6 @@
 # mlflow-dapla
 
-![Version: 0.0.1](https://img.shields.io/badge/Version-0.0.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.0.2](https://img.shields.io/badge/Version-0.0.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 MLflow is an open source platform to manage the ML lifecycle, including experimentation, reproducibility, deployment, and a central model registry.
 
@@ -36,8 +36,10 @@ MLflow is an open source platform to manage the ML lifecycle, including experime
 | liveness.enabled | string | `"true"` |  |
 | nameOverride | string | `""` |  |
 | networkPolicy.enabled | bool | `false` |  |
-| networking.service.port | int | `80` |  |
+| networking.clusterIP | string | `"None"` |  |
+| networking.service.port | int | `8000` |  |
 | networking.type | string | `"ClusterIP"` |  |
+| networking.user.enabled | bool | `false` |  |
 | nodeSelector | object | `{}` |  |
 | podAnnotations | object | `{}` |  |
 | podSecurityContext | object | `{}` |  |
@@ -75,6 +77,7 @@ MLflow is an open source platform to manage the ML lifecycle, including experime
 | security.networkPolicy.enabled | bool | `false` |  |
 | security.networkPolicy.from[0].ipBlock.cidr | string | `"10.233.103.0/32"` |  |
 | security.networkPolicy.from[1].ipBlock.cidr | string | `"10.233.111.0/32"` |  |
+| security.oauth2.enabled | bool | `false` |  |
 | security.serviceEntry.enabled | bool | `true` |  |
 | security.serviceEntry.hosts[0] | string | `"storage.googleapis.com"` |  |
 | securityContext | object | `{}` |  |
