@@ -32,20 +32,6 @@ jobs:
           git config user.name "dapla-bot[bot]"
           git config user.email "143391972+dapla-bot[bot]@users.noreply.github.com"
 
-      - name: Install Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-
-      - name: Generate children charts
-        run: |
-          pip install pyyaml
-          python3 utils/generate-children-charts.py
-          if [[ `git status --porcelain` ]]; then
-            git add -A
-            git commit -m "Generate child charts"
-          fi
-
       - name: Install Helm
         uses: azure/setup-helm@v3
         with:
