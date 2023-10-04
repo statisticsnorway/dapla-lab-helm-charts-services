@@ -15,7 +15,7 @@ rstudio: []
 vscode-python:
 #  vscode-python-gpu:
 #    description: The VSCOde IDE with Python, Julia, and a collection of standard data science packages, with GPU support.
-  vscode-r-python-julia:
-    description: The VSCode IDE with minimal installations of R, Python and Julia.
-    images:
-      - inseefrlab/onyxia-vscode-r-python-julia:r4.2.3
+#  vscode-r-python-julia:
+#    description: The VSCode IDE with minimal installations of R, Python and Julia.
+#    images:
+#      - inseefrlab/onyxia-vscode-r-python-julia:r4.2.3
