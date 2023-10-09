@@ -517,12 +517,18 @@
               "environmentVariableName": {
                 "type": "string",
                 "description": "Name of the environment variable to use",
-                "default": "OIDC_TOKEN"
+                "default": "OIDC_TOKEN",
+                "x-onyxia": {
+                  "hidden": true
+                }
               },
               "userAttribute": {
                 "type": "string",
                 "description": "The user attribute to map to the environment variable",
-                "default": "access_token"
+                "default": "access_token",
+                "x-onyxia": {
+                  "hidden": true
+                }
               },
               "value": {
                 "type": "string",
@@ -533,9 +539,6 @@
                   "overwriteDefaultWith": ""
                 }
               }
-            },
-            "x-onyxia": {
-              "hidden": true
             }
         },
         "repository": {
