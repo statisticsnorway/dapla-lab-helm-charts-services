@@ -20,7 +20,7 @@
                         "description": "supported versions",
                         "type": "string",
                         "listEnum": [
-                            "eu.gcr.io/prod-bip/ssb/dapla/dapla-jupyterlab:main-8ae23f13eea45a1c3a6397ac87087a43a8f2ec1c",
+                            "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-lab-docker/onyxia/jupyter-python-dapla:latest",
                             "jupyter/scipy-notebook:lab-4.0.3",
                             "inseefrlab/onyxia-jupyter-python:py3.10.9"
                         ],
@@ -306,7 +306,10 @@
             "enabled": {
               "type": "boolean",
               "description": "allow your service to access your namespace ressources",
-              "default": true
+              "default": true,
+              "x-onyxia": {
+                "hidden": true
+              }
             },
             "role": {
               "type": "string",
@@ -320,11 +323,11 @@
                 "view",
                 "edit",
                 "admin"
-              ]
+              ],
+              "x-onyxia": {
+                "hidden": true
+              }
             }
-          },
-          "x-onyxia": {
-            "hidden": true
           }
         },
         "git": {
@@ -498,16 +501,19 @@
               "personalInit": {
                 "type": "string",
                 "description": "user initialization script",
-                "default": ""
+                "default": "",
+                "x-onyxia": {
+                  "hidden": true
+                }
               },
               "personalInitArgs": {
                 "type": "string",
                 "description": "args for user initialization script",
-                "default": ""
+                "default": "",
+                "x-onyxia": {
+                  "hidden": true
+                }
               }
-            },
-            "x-onyxia": {
-              "hidden": true
             }
         },
         "userAttributes": {
