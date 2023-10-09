@@ -30,7 +30,7 @@
                             "value": true,
                             "path": "service/image/custom/enabled"
                         },
-                        "default": "eu.gcr.io/prod-bip/ssb/dapla/dapla-jupyterlab:main-8ae23f13eea45a1c3a6397ac87087a43a8f2ec1c"
+                        "default": "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-lab-docker/onyxia/jupyter-python-dapla:latest"
                       },
                       "custom" : {
                         "description": "use a custom jupyter docker image",
@@ -315,10 +315,6 @@
               "type": "string",
               "description": "bind your service account to this kubernetes default role",
               "default": "view",
-              "hidden": {
-                "value": false,
-                "path": "kubernetes/enabled"
-              },
               "enum": [
                 "view",
                 "edit",
