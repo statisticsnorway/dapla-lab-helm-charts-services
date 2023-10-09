@@ -322,6 +322,9 @@
                 "admin"
               ]
             }
+          },
+          "x-onyxia": {
+            "hidden": true
           }
         },
         "git": {
@@ -502,6 +505,9 @@
                 "description": "args for user initialization script",
                 "default": ""
               }
+            },
+            "x-onyxia": {
+              "hidden": true
             }
         },
         "userAttributes": {
@@ -527,6 +533,9 @@
                   "overwriteDefaultWith": ""
                 }
               }
+            },
+            "x-onyxia": {
+              "hidden": true
             }
         },
         "repository": {
