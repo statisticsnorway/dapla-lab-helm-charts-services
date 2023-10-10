@@ -47,13 +47,7 @@ spec:
             {{- end }}
           imagePullPolicy: {{ .Values.service.image.pullPolicy }}
           envFrom: 
-            {{- if .Values.s3.enabled }}
-            - configMapRef:
-                name: {{ include "library-chart.configMapNameS3" . }}
-            {{- end }}
           env:
-            - name: MLFLOW_S3_ENDPOINT_URL
-              value: "https://{{ .Values.s3.endpoint }}"
             - name: GUNICORN_CMD_ARGS
               value: "--timeout {{ .Values.service.gunicornTimeout }}"
           ports:
