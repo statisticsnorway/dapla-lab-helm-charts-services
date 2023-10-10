@@ -225,6 +225,29 @@ entries:
     version: 0.0.1
   mlflow-dapla:
   - apiVersion: v2
+    created: "2023-10-10T16:32:22.939737888Z"
+    dependencies:
+    - name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.6.6
+    - name: library-chart
+      repository: https://statisticsnorway.github.io/dapla-lab-helm-charts-services
+      version: 0.2.0
+    description: MLflow is an open source platform to manage the ML lifecycle, including
+      experimentation, reproducibility, deployment, and a central model registry.
+    digest: 9473b95baa0d0c2f88e3219b89a57747877f55a435bd003b445fbb163fa9e132
+    home: https://mlflow.org
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/mlflow.png
+    keywords:
+    - ML
+    name: mlflow-dapla
+    sources:
+    - https://github.com/statisticsnorway/dapla-lab-helm-charts-services
+    type: application
+    urls:
+    - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/mlflow-dapla-0.0.3/mlflow-dapla-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v2
     created: "2023-09-29T10:36:36.169694586Z"
     dependencies:
     - name: postgresql
@@ -655,4 +678,4 @@ entries:
     urls:
     - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/vscode-python-0.0.1/vscode-python-0.0.1.tgz
     version: 0.0.1
-generated: "2023-10-10T07:38:44.262664715Z"
+generated: "2023-10-10T16:32:22.939796388Z"
