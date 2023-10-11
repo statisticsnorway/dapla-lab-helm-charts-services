@@ -366,13 +366,13 @@
               }
             },
             "authenticatedEmails": {
-              "type": "array",
+              "type": "string",
               "title": "OAuth2 authenticated emails",
-              "description": "OAuth2 authenticated emails",
+              "description": "OAuth2 authenticated emails, comma seperated",
               "default": [],
               "x-onyxia": {
                 "hidden": true,
-                "overwriteDefaultWith": "[ {{user.email}} ]"
+                "overwriteDefaultWith": "{{user.email}}"
               }
             }
           }

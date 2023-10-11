@@ -25,7 +25,7 @@ security:
     provider: keycloak-oidc
     oidcIssuerUrl: ""
     clientId: "my-client"
-    authenticatedEmails: []
+    authenticatedEmails: ""
 
 init:
   standardInitPath: "/opt/onyxia-init.sh"
