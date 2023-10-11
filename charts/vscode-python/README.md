@@ -1,6 +1,6 @@
 # vscode-python
 
-![Version: 1.0.0-alpha3](https://img.shields.io/badge/Version-1.0.0--alpha3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 1.0.0-alpha4](https://img.shields.io/badge/Version-1.0.0--alpha4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
 
@@ -15,7 +15,7 @@ The Visual Studio Code IDE with Python, Julia, and a collection of standard data
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 1.0.0-alpha2 |
+| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 1.0.0-alpha3 |
 
 ## Values
 
@@ -77,7 +77,7 @@ The Visual Studio Code IDE with Python, Julia, and a collection of standard data
 | security.allowlist.ip | string | `"0.0.0.0/0"` |  |
 | security.networkPolicy.enabled | bool | `false` |  |
 | security.networkPolicy.from | list | `[]` |  |
-| security.oauth2.authenticatedEmails | list | `[]` |  |
+| security.oauth2.authenticatedEmails | string | `""` |  |
 | security.oauth2.clientId | string | `"my-client"` |  |
 | security.oauth2.enabled | bool | `false` |  |
 | security.oauth2.oidcIssuerUrl | string | `""` |  |
