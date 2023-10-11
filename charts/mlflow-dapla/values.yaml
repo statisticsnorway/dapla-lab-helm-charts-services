@@ -71,15 +71,12 @@ networking:
   clusterIP: None
   service:
     port: 8000
-  user:
-    enabled: false
 
 istio:
   enabled: false
   gateways:
     - istio-namespace/example-gateway
   hostname: chart-example.local
-  userHostname: chart-example-user.local
 
 readiness:
   enabled: "true"

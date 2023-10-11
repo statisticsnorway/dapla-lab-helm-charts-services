@@ -481,15 +481,6 @@
             "hidden": true,
             "overwriteDefaultWith": "{{project.id}}-{{k8s.randomSubdomain}}-0.{{k8s.domain}}"
           }
-        },
-        "userHostname": {
-          "type": "string",
-          "form": true,
-          "title": "Hostname",
-          "x-onyxia": {
-            "hidden": true,
-            "overwriteDefaultWith": "{{project.id}}-{{k8s.randomSubdomain}}-user.{{k8s.domain}}"
-          }
         }
       }
     },

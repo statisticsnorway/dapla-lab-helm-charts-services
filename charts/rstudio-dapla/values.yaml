@@ -99,9 +99,6 @@ networking:
   clusterIP: None
   service:
     port: 8787
-  user:
-    enabled: false
-    port: 5000
   sparkui:
     port: 4040
 
@@ -110,7 +107,6 @@ istio:
   gateways:
     - istio-namespace/example-gateway
   hostname: chart-example.local
-  userHostname: chart-example-user.local
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious

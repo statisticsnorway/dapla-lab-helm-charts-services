@@ -124,16 +124,12 @@ networking:
   clusterIP: None
   service:
     port: 8080
-  user:
-    enabled: false
-    port: 5000
 
 istio:
   enabled: false
   gateways:
     - istio-namespace/example-gateway
   hostname: chart-example.local
-  userHostname: chart-example-user.local
 
 resources:
   {}
