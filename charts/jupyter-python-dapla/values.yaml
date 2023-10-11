@@ -20,6 +20,8 @@ security:
     enabled: true
     hosts:
       - "storage.googleapis.com"
+  oauth2:
+    enabled: false
 
 init:
   standardInitPath: ""
