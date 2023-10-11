@@ -45,6 +45,9 @@ spec:
         {{- else }}
           emptyDir: {}
         {{- end }}
+        {{- if .Values.security.oauth2.enabled }}
+        - {{ include "library-chart.oauth2ProxyVolume" . | indent 10 | trim }}
+        {{- end }}
         {{- if .Values.discovery.hive }}
         - name: hive-config
           configMap:
@@ -76,7 +79,8 @@ spec:
           image: "{{ .Values.service.image.version }}"
           {{- end }} 
           command: ["/bin/sh","-c"]
-          args: ["{{ .Values.init.standardInitPath }} /usr/bin/code-server --host 0.0.0.0 /home/{{ .Values.environment.user }}/work"]
+          {{- $authMethod := ternary "none" "password" .Values.security.oauth2.enabled }}
+          args: ["{{ .Values.init.standardInitPath }} /usr/bin/code-server --host 0.0.0.0 --auth {{ $authMethod }} /home/{{ .Values.environment.user }}/work"]
           imagePullPolicy: {{ .Values.service.image.pullPolicy }}
           env:
             {{- if .Values.init.regionInit }}
@@ -148,7 +152,10 @@ spec:
               subPath: config.json
             {{- end }}
             - mountPath: /dev/shm
-              name: dshm        
+              name: dshm
+        {{- if .Values.security.oauth2.enabled }}
+        - {{ include "library-chart.oauth2ProxyPod" . | indent 10 | trim }}
+        {{ end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
