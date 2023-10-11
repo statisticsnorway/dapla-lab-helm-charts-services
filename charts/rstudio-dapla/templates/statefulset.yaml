@@ -94,6 +94,10 @@ spec:
             - name: PERSONAL_INIT_ARGS
               value: {{ .Values.init.personalInitArgs }}
             {{- end }}
+            {{- if .Values.security.oauth2.enabled}}
+            - name: DISABLE_AUTH
+              value: "true"
+            {{- end }}
           envFrom:
             {{- if .Values.oidc.enabled }}
             - configMapRef:
