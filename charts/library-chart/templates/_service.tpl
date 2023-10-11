@@ -18,12 +18,6 @@ spec:
       targetPort: {{ if .Values.security.oauth2.enabled }}4180{{ else }}{{ .Values.networking.service.port }}{{ end }}
       protocol: TCP
       name: main
-    {{ if .Values.networking.user.enabled }}
-    - port: {{ .Values.networking.user.port }}
-      targetPort: {{ .Values.networking.user.port }}
-      protocol: TCP
-      name: user
-    {{- end }}
     {{ if .Values.spark }}
     {{ if .Values.spark.sparkui }}
     - port: {{ .Values.networking.sparkui.port }}
