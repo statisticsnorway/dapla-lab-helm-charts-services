@@ -22,6 +22,10 @@ security:
       - "storage.googleapis.com"
   oauth2:
     enabled: false
+    provider: keycloak-oidc
+    oidcIssuerUrl: ""
+    clientId: "my-client"
+    authenticatedEmails: [ ]
 
 init:
   standardInitPath: "/opt/onyxia-init.sh"
