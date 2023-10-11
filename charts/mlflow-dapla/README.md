@@ -1,6 +1,6 @@
 # mlflow-dapla
 
-![Version: 0.0.3](https://img.shields.io/badge/Version-0.0.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 1.0.0-alpha1](https://img.shields.io/badge/Version-1.0.0--alpha1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 MLflow is an open source platform to manage the ML lifecycle, including experimentation, reproducibility, deployment, and a central model registry.
 
@@ -15,7 +15,7 @@ MLflow is an open source platform to manage the ML lifecycle, including experime
 | Repository | Name | Version |
 |------------|------|---------|
 | https://charts.bitnami.com/bitnami | postgresql | 12.6.6 |
-| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 0.2.0 |
+| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 1.0.0-alpha1 |
 
 ## Values
 
@@ -32,14 +32,12 @@ MLflow is an open source platform to manage the ML lifecycle, including experime
 | istio.enabled | bool | `false` |  |
 | istio.gateways[0] | string | `"istio-namespace/example-gateway"` |  |
 | istio.hostname | string | `"chart-example.local"` |  |
-| istio.userHostname | string | `"chart-example-user.local"` |  |
 | liveness.enabled | string | `"true"` |  |
 | nameOverride | string | `""` |  |
 | networkPolicy.enabled | bool | `false` |  |
 | networking.clusterIP | string | `"None"` |  |
 | networking.service.port | int | `8000` |  |
 | networking.type | string | `"ClusterIP"` |  |
-| networking.user.enabled | bool | `false` |  |
 | nodeSelector | object | `{}` |  |
 | podAnnotations | object | `{}` |  |
 | podSecurityContext | object | `{}` |  |
@@ -60,11 +58,6 @@ MLflow is an open source platform to manage the ML lifecycle, including experime
 | resources | object | `{}` |  |
 | resources_init.limits.cpu | string | `"100m"` |  |
 | resources_init.limits.memory | string | `"128Mi"` |  |
-| route.annotations | list | `[]` |  |
-| route.enabled | bool | `false` |  |
-| route.hostname | string | `"chart-example.local"` |  |
-| route.tls.termination | string | `"edge"` |  |
-| route.wildcardPolicy | string | `"None"` |  |
 | security.allowlist.enabled | bool | `true` |  |
 | security.allowlist.ip | string | `"0.0.0.0/0"` |  |
 | security.networkPolicy.enabled | bool | `false` |  |

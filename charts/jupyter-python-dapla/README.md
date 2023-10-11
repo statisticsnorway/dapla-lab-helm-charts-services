@@ -1,6 +1,6 @@
 # jupyter-python-dapla
 
-![Version: 0.0.9](https://img.shields.io/badge/Version-0.0.9-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 1.0.0-alpha1](https://img.shields.io/badge/Version-1.0.0--alpha1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 The JupyterLab IDE with Python, tailored for SSB's data platform (Dapla).
 
@@ -14,7 +14,7 @@ The JupyterLab IDE with Python, tailored for SSB's data platform (Dapla).
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 0.0.1 |
+| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 1.0.0-alpha1 |
 
 ## Values
 
@@ -49,7 +49,6 @@ The JupyterLab IDE with Python, tailored for SSB's data platform (Dapla).
 | istio.enabled | bool | `false` |  |
 | istio.gateways[0] | string | `"istio-namespace/example-gateway"` |  |
 | istio.hostname | string | `"chart-example.local"` |  |
-| istio.userHostname | string | `"chart-example-user.local"` |  |
 | kubernetes.enabled | bool | `false` |  |
 | kubernetes.role | string | `"view"` |  |
 | metaflow.configMapName | string | `""` |  |
@@ -59,8 +58,6 @@ The JupyterLab IDE with Python, tailored for SSB's data platform (Dapla).
 | networking.service.port | int | `8888` |  |
 | networking.sparkui.port | int | `4040` |  |
 | networking.type | string | `"ClusterIP"` |  |
-| networking.user.enabled | bool | `false` |  |
-| networking.user.port | int | `5000` |  |
 | nodeSelector | object | `{}` |  |
 | oidc.configMapName | string | `""` |  |
 | oidc.enabled | bool | `true` |  |
@@ -80,6 +77,7 @@ The JupyterLab IDE with Python, tailored for SSB's data platform (Dapla).
 | security.allowlist.ip | string | `"0.0.0.0/0"` |  |
 | security.networkPolicy.enabled | bool | `false` |  |
 | security.networkPolicy.from | list | `[]` |  |
+| security.oauth2.enabled | bool | `false` |  |
 | security.password | string | `"changeme"` |  |
 | security.serviceEntry.enabled | bool | `true` |  |
 | security.serviceEntry.hosts[0] | string | `"storage.googleapis.com"` |  |

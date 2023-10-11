@@ -1,6 +1,6 @@
 # rstudio-dapla
 
-![Version: 0.1.11](https://img.shields.io/badge/Version-0.1.11-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 1.0.0-alpha1](https://img.shields.io/badge/Version-1.0.0--alpha1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 The RStudio IDE with a collection of standard data science packages, adapted to work for Dapla.
 
@@ -14,7 +14,7 @@ The RStudio IDE with a collection of standard data science packages, adapted to 
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 0.2.2 |
+| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 1.0.0-alpha1 |
 
 ## Values
 
@@ -37,11 +37,6 @@ The RStudio IDE with a collection of standard data science packages, adapted to 
 | git.repository | string | `""` |  |
 | git.token | string | `""` |  |
 | imagePullSecrets | list | `[]` |  |
-| ingress.annotations | list | `[]` |  |
-| ingress.enabled | bool | `false` |  |
-| ingress.hostname | string | `"chart-example.local"` |  |
-| ingress.tls | bool | `true` |  |
-| ingress.userHostname | string | `"chart-example-user.local"` |  |
 | init.personalInit | string | `""` |  |
 | init.personalInitArgs | string | `""` |  |
 | init.regionInit | string | `""` |  |
@@ -49,7 +44,6 @@ The RStudio IDE with a collection of standard data science packages, adapted to 
 | istio.enabled | bool | `false` |  |
 | istio.gateways[0] | string | `"istio-namespace/example-gateway"` |  |
 | istio.hostname | string | `"chart-example.local"` |  |
-| istio.userHostname | string | `"chart-example-user.local"` |  |
 | kubernetes.enabled | bool | `true` |  |
 | kubernetes.role | string | `"view"` |  |
 | nameOverride | string | `""` |  |
@@ -57,8 +51,6 @@ The RStudio IDE with a collection of standard data science packages, adapted to 
 | networking.service.port | int | `8787` |  |
 | networking.sparkui.port | int | `4040` |  |
 | networking.type | string | `"ClusterIP"` |  |
-| networking.user.enabled | bool | `false` |  |
-| networking.user.port | int | `5000` |  |
 | nodeSelector | object | `{}` |  |
 | oidc.configMapName | string | `""` |  |
 | oidc.enabled | bool | `true` |  |
@@ -72,12 +64,6 @@ The RStudio IDE with a collection of standard data science packages, adapted to 
 | repository.configMapName | string | `""` |  |
 | repository.rRepository | string | `""` |  |
 | resources | object | `{}` |  |
-| route.annotations | list | `[]` |  |
-| route.enabled | bool | `false` |  |
-| route.hostname | string | `"chart-example.local"` |  |
-| route.tls.termination | string | `"edge"` |  |
-| route.userHostname | string | `"chart-example-user.local"` |  |
-| route.wildcardPolicy | string | `"None"` |  |
 | security.allowlist.enabled | bool | `false` |  |
 | security.allowlist.ip | string | `"0.0.0.0/0"` |  |
 | security.networkPolicy.enabled | bool | `false` |  |

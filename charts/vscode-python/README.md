@@ -1,6 +1,6 @@
 # vscode-python
 
-![Version: 0.0.6](https://img.shields.io/badge/Version-0.0.6-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 1.0.0-alpha1](https://img.shields.io/badge/Version-1.0.0--alpha1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
 
@@ -15,7 +15,7 @@ The Visual Studio Code IDE with Python, Julia, and a collection of standard data
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 0.2.2 |
+| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 1.0.0-alpha1 |
 
 ## Values
 
@@ -43,12 +43,6 @@ The Visual Studio Code IDE with Python, Julia, and a collection of standard data
 | git.name | string | `""` |  |
 | hive.configMapName | string | `""` |  |
 | imagePullSecrets | list | `[]` |  |
-| ingress.annotations | list | `[]` |  |
-| ingress.enabled | bool | `false` |  |
-| ingress.hostname | string | `"chart-example.local"` |  |
-| ingress.ingressClassName | string | `""` |  |
-| ingress.tls | bool | `true` |  |
-| ingress.userHostname | string | `"chart-example-user.local"` |  |
 | init.personalInit | string | `""` |  |
 | init.personalInitArgs | string | `""` |  |
 | init.regionInit | string | `""` |  |
@@ -57,7 +51,6 @@ The Visual Studio Code IDE with Python, Julia, and a collection of standard data
 | istio.enabled | bool | `false` |  |
 | istio.gateways[0] | string | `"istio-namespace/example-gateway"` |  |
 | istio.hostname | string | `"chart-example.local"` |  |
-| istio.userHostname | string | `"chart-example-user.local"` |  |
 | kubernetes.enabled | bool | `true` |  |
 | kubernetes.role | string | `"view"` |  |
 | metaflow.configMapName | string | `""` |  |
@@ -66,8 +59,6 @@ The Visual Studio Code IDE with Python, Julia, and a collection of standard data
 | networking.clusterIP | string | `"None"` |  |
 | networking.service.port | int | `8080` |  |
 | networking.type | string | `"ClusterIP"` |  |
-| networking.user.enabled | bool | `false` |  |
-| networking.user.port | int | `5000` |  |
 | nodeSelector | object | `{}` |  |
 | oidc.configMapName | string | `""` |  |
 | oidc.enabled | bool | `true` |  |
@@ -82,12 +73,6 @@ The Visual Studio Code IDE with Python, Julia, and a collection of standard data
 | repository.configMapName | string | `""` |  |
 | repository.pipRepository | string | `""` |  |
 | resources | object | `{}` |  |
-| route.annotations | list | `[]` |  |
-| route.enabled | bool | `false` |  |
-| route.hostname | string | `"chart-example.local"` |  |
-| route.tls.termination | string | `"edge"` |  |
-| route.userHostname | string | `"chart-example-user.local"` |  |
-| route.wildcardPolicy | string | `"None"` |  |
 | security.allowlist.enabled | bool | `false` |  |
 | security.allowlist.ip | string | `"0.0.0.0/0"` |  |
 | security.networkPolicy.enabled | bool | `false` |  |
