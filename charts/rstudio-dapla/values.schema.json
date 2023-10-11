@@ -301,9 +301,8 @@
                                 "keycloak-oidc"
                             ],
                             "x-onyxia": {
-                                "hidden": true,
+                                "hidden": false,
                                 "overwriteDefaultWith": "region.oauth2.provider"
-                            }
                             }
                         },
                         "oidcIssuerUrl": {
@@ -311,7 +310,7 @@
                             "title": "OIDC issuer url",
                             "description": "Url to the OIDC issuer",
                             "x-onyxia": {
-                                "hidden": true,
+                                "hidden": false,
                                 "overwriteDefaultWith": "region.oauth2.oidcIssuerUrl"
                             }
                         },
@@ -320,18 +319,18 @@
                             "title": "Client id",
                             "description": "Client id",
                             "x-onyxia": {
-                                "hidden": true,
+                                "hidden": false,
                                 "overwriteDefaultWith": "region.oauth2.clientId"
                             }
                         },
                         "authenticatedEmails": {
-                            "type": "list",
+                            "type": "array",
                             "title": "OAuth2 authenticated emails",
                             "description": "OAuth2 authenticated emails",
                             "default": [],
                             "x-onyxia": {
                                 "hidden": true,
-                                "overwriteDefaultWith": "region.oauth2.authenticatedEmails"
+                                "overwriteDefaultWith": "user.email"
                             }
                         }
                     }
