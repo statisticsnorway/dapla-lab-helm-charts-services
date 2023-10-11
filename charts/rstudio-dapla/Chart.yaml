@@ -25,5 +25,5 @@ version: 1.0.0-alpha1
 
 dependencies:
   - name: library-chart
-    version: 1.0.0-alpha1
+    version: 1.0.0-alpha2
     repository: https://statisticsnorway.github.io/dapla-lab-helm-charts-services
