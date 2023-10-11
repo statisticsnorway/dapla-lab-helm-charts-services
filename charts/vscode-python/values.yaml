@@ -128,38 +128,12 @@ networking:
     enabled: false
     port: 5000
 
-ingress:
-  enabled: false
-  tls: true
-  ingressClassName: ""
-  annotations: []
-    # kubernetes.io/tls-acme: "true"
-  hostname: chart-example.local
-  userHostname: chart-example-user.local
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
-
 istio:
   enabled: false
   gateways:
     - istio-namespace/example-gateway
   hostname: chart-example.local
   userHostname: chart-example-user.local
-
-route:
-  enabled: false
-  annotations: []
-    # route.openshift.io/termination: "reencrypt"
-  hostname: chart-example.local
-  userHostname: chart-example-user.local
-  tls:
-    termination: edge
-    # key:
-    # certificate:
-    # caCertificate:
-    # destinationCACertificate:
-  wildcardPolicy: None
 
 resources:
   {}

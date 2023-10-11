@@ -81,19 +81,6 @@ istio:
   hostname: chart-example.local
   userHostname: chart-example-user.local
 
-route:
-  enabled: false
-  annotations: []
-    # route.openshift.io/termination: "reencrypt"
-  hostname: chart-example.local
-  tls:
-    termination: edge
-    # key:
-    # certificate:
-    # caCertificate:
-    # destinationCACertificate:
-  wildcardPolicy: None
-
 readiness:
   enabled: "true"
 
