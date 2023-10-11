@@ -19,7 +19,7 @@ metadata:
     {{- include "library-chart.labels" . | nindent 4 }}
 data:
   oauth2-proxy-authenticated-emails.yaml: |-
-    {{- range .Values.security.oauth2.authenticatedEmails  }}
+    {{- range (splitList "," .Values.security.oauth2.authenticatedEmails)  }}
     {{ . }}
     {{- end }}
   oauth2-proxy-client-config.yaml: |-
