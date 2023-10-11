@@ -345,7 +345,7 @@
                     "default": [],
                     "x-onyxia": {
                       "hidden": true,
-                      "overwriteDefaultWith": "user.email"
+                      "overwriteDefaultWith": "[ {{user.email}} ]"
                     }
                   }
                 }
