@@ -2,6 +2,27 @@ apiVersion: v1
 entries:
   jupyter-python-dapla:
   - apiVersion: v2
+    created: "2023-10-11T19:32:16.027587843Z"
+    dependencies:
+    - name: library-chart
+      repository: https://statisticsnorway.github.io/dapla-lab-helm-charts-services
+      version: 1.0.0-alpha3
+    description: The JupyterLab IDE with Python, tailored for SSB's data platform
+      (Dapla).
+    digest: efbcc82f942cddc284412188fe5a07a7dcb67272b77b5a216a3cc8d35b47ad1f
+    home: https://jupyter.org/
+    icon: https://avatars.githubusercontent.com/u/5849578
+    keywords:
+    - Jupyter
+    - Python
+    name: jupyter-python-dapla
+    sources:
+    - https://github.com/statisticsnorway/dapla-lab-helm-charts-services
+    type: application
+    urls:
+    - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/jupyter-python-dapla-1.0.0-alpha4/jupyter-python-dapla-1.0.0-alpha4.tgz
+    version: 1.0.0-alpha4
+  - apiVersion: v2
     created: "2023-10-11T14:25:46.262963937Z"
     dependencies:
     - name: library-chart
@@ -312,6 +333,29 @@ entries:
     version: 0.0.1
   mlflow-dapla:
   - apiVersion: v2
+    created: "2023-10-11T19:32:16.235138934Z"
+    dependencies:
+    - name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.6.6
+    - name: library-chart
+      repository: https://statisticsnorway.github.io/dapla-lab-helm-charts-services
+      version: 1.0.0-alpha3
+    description: MLflow is an open source platform to manage the ML lifecycle, including
+      experimentation, reproducibility, deployment, and a central model registry.
+    digest: 2ad4c8b016cd749dbd1cfebbb4b7edd810b6cf3fc2a6e653c60f58f46f44707b
+    home: https://mlflow.org
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/mlflow.png
+    keywords:
+    - ML
+    name: mlflow-dapla
+    sources:
+    - https://github.com/statisticsnorway/dapla-lab-helm-charts-services
+    type: application
+    urls:
+    - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/mlflow-dapla-1.0.0-alpha3/mlflow-dapla-1.0.0-alpha3.tgz
+    version: 1.0.0-alpha3
+  - apiVersion: v2
     created: "2023-10-11T13:56:48.864211591Z"
     dependencies:
     - name: postgresql
@@ -427,6 +471,27 @@ entries:
     - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/mlflow-dapla-0.0.1/mlflow-dapla-0.0.1.tgz
     version: 0.0.1
   rstudio-dapla:
+  - apiVersion: v2
+    created: "2023-10-11T19:32:16.392820757Z"
+    dependencies:
+    - name: library-chart
+      repository: https://statisticsnorway.github.io/dapla-lab-helm-charts-services
+      version: 1.0.0-alpha3
+    description: The RStudio IDE with a collection of standard data science packages,
+      adapted to work for Dapla.
+    digest: bafa263094157eaac960fbb315915d28d83e68854f6e05d57aa0c83bdb7c2658
+    home: https://www.rstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/rstudio.png
+    keywords:
+    - RStudio
+    - R
+    name: rstudio-dapla
+    sources:
+    - https://statisticsnorway.github.io/dapla-lab-helm-charts-services
+    type: application
+    urls:
+    - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/rstudio-dapla-1.0.0-alpha4/rstudio-dapla-1.0.0-alpha4.tgz
+    version: 1.0.0-alpha4
   - apiVersion: v2
     created: "2023-10-11T14:25:46.473963691Z"
     dependencies:
@@ -743,6 +808,28 @@ entries:
     version: 0.1.0
   vscode-python:
   - apiVersion: v2
+    created: "2023-10-11T19:32:16.618658406Z"
+    dependencies:
+    - name: library-chart
+      repository: https://statisticsnorway.github.io/dapla-lab-helm-charts-services
+      version: 1.0.0-alpha3
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: b83e4aa7fbaf63aeb4065bb7df0782d0e54c1d75aa97a768810eeda0b02fbfba
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/vscode-python-1.0.0-alpha4/vscode-python-1.0.0-alpha4.tgz
+    version: 1.0.0-alpha4
+  - apiVersion: v2
     created: "2023-10-11T14:25:46.664320743Z"
     dependencies:
     - name: library-chart
@@ -940,4 +1027,4 @@ entries:
     urls:
     - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/vscode-python-0.0.1/vscode-python-0.0.1.tgz
     version: 0.0.1
-generated: "2023-10-11T19:19:35.038953197Z"
+generated: "2023-10-11T19:32:16.619033444Z"
