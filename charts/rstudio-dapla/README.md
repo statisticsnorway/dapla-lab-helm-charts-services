@@ -1,6 +1,6 @@
 # rstudio-dapla
 
-![Version: 1.0.0-alpha2](https://img.shields.io/badge/Version-1.0.0--alpha2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 1.0.0-alpha3](https://img.shields.io/badge/Version-1.0.0--alpha3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 The RStudio IDE with a collection of standard data science packages, adapted to work for Dapla.
 
