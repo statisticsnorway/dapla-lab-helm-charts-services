@@ -1,6 +1,6 @@
 # mlflow-dapla
 
-![Version: 0.0.2](https://img.shields.io/badge/Version-0.0.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.0.3](https://img.shields.io/badge/Version-0.0.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 MLflow is an open source platform to manage the ML lifecycle, including experimentation, reproducibility, deployment, and a central model registry.
 
@@ -65,13 +65,6 @@ MLflow is an open source platform to manage the ML lifecycle, including experime
 | route.hostname | string | `"chart-example.local"` |  |
 | route.tls.termination | string | `"edge"` |  |
 | route.wildcardPolicy | string | `"None"` |  |
-| s3.accessKeyId | string | `""` |  |
-| s3.configMapName | string | `""` |  |
-| s3.defaultRegion | string | `""` |  |
-| s3.enabled | bool | `true` |  |
-| s3.endpoint | string | `""` |  |
-| s3.secretAccessKey | string | `""` |  |
-| s3.sessionToken | string | `""` |  |
 | security.allowlist.enabled | bool | `true` |  |
 | security.allowlist.ip | string | `"0.0.0.0/0"` |  |
 | security.networkPolicy.enabled | bool | `false` |  |
