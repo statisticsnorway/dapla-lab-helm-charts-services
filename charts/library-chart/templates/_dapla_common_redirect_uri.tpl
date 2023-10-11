@@ -22,7 +22,7 @@ metadata:
     {{- include "library-chart.labels" . | nindent 4 }}
 spec:
   clientId: {{ .Values.security.oauth2.clientId | quote }}
-  redirectUri: {{ .Values.istio.hostname | quote }}
+  redirectUri: "https://{{ .Values.istio.hostname }}/oauth2/callback"
   secretName: {{ include "library-chart.daplaCommonClientRedirectUriSecretName" . | quote }}
 
 {{- end }}
