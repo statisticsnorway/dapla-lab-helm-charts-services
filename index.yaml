@@ -2,6 +2,27 @@ apiVersion: v1
 entries:
   jupyter-python-dapla:
   - apiVersion: v2
+    created: "2023-10-11T14:25:46.262963937Z"
+    dependencies:
+    - name: library-chart
+      repository: https://statisticsnorway.github.io/dapla-lab-helm-charts-services
+      version: 1.0.0-alpha2
+    description: The JupyterLab IDE with Python, tailored for SSB's data platform
+      (Dapla).
+    digest: c2be7363b61378e0346a9626e05da6a45539f65f41dbc9ebb99124d829d9e931
+    home: https://jupyter.org/
+    icon: https://avatars.githubusercontent.com/u/5849578
+    keywords:
+    - Jupyter
+    - Python
+    name: jupyter-python-dapla
+    sources:
+    - https://github.com/statisticsnorway/dapla-lab-helm-charts-services
+    type: application
+    urls:
+    - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/jupyter-python-dapla-1.0.0-alpha3/jupyter-python-dapla-1.0.0-alpha3.tgz
+    version: 1.0.0-alpha3
+  - apiVersion: v2
     created: "2023-10-11T13:56:48.694533302Z"
     dependencies:
     - name: library-chart
@@ -399,6 +420,27 @@ entries:
     version: 0.0.1
   rstudio-dapla:
   - apiVersion: v2
+    created: "2023-10-11T14:25:46.473963691Z"
+    dependencies:
+    - name: library-chart
+      repository: https://statisticsnorway.github.io/dapla-lab-helm-charts-services
+      version: 1.0.0-alpha2
+    description: The RStudio IDE with a collection of standard data science packages,
+      adapted to work for Dapla.
+    digest: 0a1c3fd7b06d5eec563a23ad6dbca14555a750ea8ccc7093634738f1a70c52ef
+    home: https://www.rstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/rstudio.png
+    keywords:
+    - RStudio
+    - R
+    name: rstudio-dapla
+    sources:
+    - https://statisticsnorway.github.io/dapla-lab-helm-charts-services
+    type: application
+    urls:
+    - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/rstudio-dapla-1.0.0-alpha3/rstudio-dapla-1.0.0-alpha3.tgz
+    version: 1.0.0-alpha3
+  - apiVersion: v2
     created: "2023-10-11T13:56:49.007675533Z"
     dependencies:
     - name: library-chart
@@ -693,6 +735,28 @@ entries:
     version: 0.1.0
   vscode-python:
   - apiVersion: v2
+    created: "2023-10-11T14:25:46.664320743Z"
+    dependencies:
+    - name: library-chart
+      repository: https://statisticsnorway.github.io/dapla-lab-helm-charts-services
+      version: 1.0.0-alpha2
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: a6d951dfd0102078ad48ba8b3328798d7205ec8b8f25e999457ca15c0665330a
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/vscode-python-1.0.0-alpha3/vscode-python-1.0.0-alpha3.tgz
+    version: 1.0.0-alpha3
+  - apiVersion: v2
     created: "2023-10-11T13:56:49.162727872Z"
     dependencies:
     - name: library-chart
@@ -868,4 +932,4 @@ entries:
     urls:
     - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/vscode-python-0.0.1/vscode-python-0.0.1.tgz
     version: 0.0.1
-generated: "2023-10-11T13:56:49.163382183Z"
+generated: "2023-10-11T14:25:46.664539946Z"
