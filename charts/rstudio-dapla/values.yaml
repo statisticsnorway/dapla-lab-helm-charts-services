@@ -99,43 +99,14 @@ networking:
   clusterIP: None
   service:
     port: 8787
-  user:
-    enabled: false
-    port: 5000
   sparkui:
     port: 4040
-
-ingress:
-  enabled: false
-  tls: true
-  annotations: []
-    # kubernetes.io/tls-acme: "true"
-  hostname: chart-example.local
-  userHostname: chart-example-user.local
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
 
 istio:
   enabled: false
   gateways:
     - istio-namespace/example-gateway
   hostname: chart-example.local
-  userHostname: chart-example-user.local
-
-route:
-  enabled: false
-  annotations: []
-    # route.openshift.io/termination: "reencrypt"
-  hostname: chart-example.local
-  userHostname: chart-example-user.local
-  tls:
-    termination: edge
-    # key:
-    # certificate:
-    # caCertificate:
-    # destinationCACertificate:
-  wildcardPolicy: None
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious

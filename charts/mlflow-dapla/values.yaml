@@ -71,28 +71,12 @@ networking:
   clusterIP: None
   service:
     port: 8000
-  user:
-    enabled: false
 
 istio:
   enabled: false
   gateways:
     - istio-namespace/example-gateway
   hostname: chart-example.local
-  userHostname: chart-example-user.local
-
-route:
-  enabled: false
-  annotations: []
-    # route.openshift.io/termination: "reencrypt"
-  hostname: chart-example.local
-  tls:
-    termination: edge
-    # key:
-    # certificate:
-    # caCertificate:
-    # destinationCACertificate:
-  wildcardPolicy: None
 
 readiness:
   enabled: "true"
