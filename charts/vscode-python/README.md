@@ -1,6 +1,6 @@
 # vscode-python
 
-![Version: 1.0.0-alpha4](https://img.shields.io/badge/Version-1.0.0--alpha4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
 
@@ -15,7 +15,7 @@ The Visual Studio Code IDE with Python, Julia, and a collection of standard data
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 1.0.0-alpha3 |
+| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 1.0.0 |
 
 ## Values
 
