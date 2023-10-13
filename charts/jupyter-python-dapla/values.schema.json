@@ -305,7 +305,10 @@
                     "type": "boolean",
                     "title": "Enable OAuth2",
                     "description": "Enable authorization of your service with OAuth2",
-                    "default": true
+                    "default": true,
+                    "x-onyxia": {
+                      "hidden": true
+                    }
                   },
                   "provider": {
                     "type": "string",
