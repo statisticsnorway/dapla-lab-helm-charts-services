@@ -301,7 +301,7 @@
                                 "keycloak-oidc"
                             ],
                             "x-onyxia": {
-                                "hidden": false,
+                                "hidden": true,
                                 "overwriteDefaultWith": "region.oauth2.provider"
                             }
                         },
@@ -309,8 +309,9 @@
                             "type": "string",
                             "title": "OIDC issuer url",
                             "description": "Url to the OIDC issuer",
+                            "default": "https://sso.dapla-dev.ssb.no/realms/ssb",
                             "x-onyxia": {
-                                "hidden": false,
+                                "hidden": true,
                                 "overwriteDefaultWith": "region.oauth2.oidcIssuerUrl"
                             }
                         },
@@ -318,8 +319,9 @@
                             "type": "string",
                             "title": "Client id",
                             "description": "Client id",
+                            "default": "onyxia-services",
                             "x-onyxia": {
-                                "hidden": false,
+                                "hidden": true,
                                 "overwriteDefaultWith": "region.oauth2.clientId"
                             }
                         },
