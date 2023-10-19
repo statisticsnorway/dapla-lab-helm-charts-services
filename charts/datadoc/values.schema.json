@@ -1,0 +1,407 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "properties": {
+    "dataset": {
+      "description": "Select the dataset to document",
+      "type": "object",
+      "properties": {
+        "dataset_path": {
+          "title": "Dataset path",
+          "type": "string",
+          "description": "Path to a dataset file in a GCS bucket. Must start with 'gs://'. Supported file types are .parquet, .parquet.gzip, .sas7bdat.",
+          "default": "gs://ssb-staging-dapla-felles-data-delt/datadoc/klargjorte_data/person_data_v1.parquet"
+        }
+      }
+    },
+    "service": {
+      "description": "Service specific configuration",
+      "type": "object",
+      "properties": {
+        "image": {
+          "description": "image docker",
+          "type": "object",
+          "properties": {
+            "pullPolicy": {
+              "type": "string",
+              "description": "option when pulling the docker image",
+              "default": "Always",
+              "x-onyxia": {
+                "hidden": true
+              },
+              "enum": [
+                "IfNotPresent",
+                "Always",
+                "Never"
+              ]
+            },
+            "version": {
+              "description": "supported versions",
+              "type": "string",
+              "render": "list",
+              "default": "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-lab-docker/onyxia/datadoc:master"
+            }
+          }
+        }
+      }
+    },
+    "resources": {
+      "description": "Your service will have at least the requested resources and never more than its limits. No limit for a resource and you can consume everything left on the host machine.",
+      "type": "object",
+      "properties": {
+        "requests": {
+          "description": "Guaranteed resources",
+          "type": "object",
+          "properties": {
+            "cpu": {
+              "description": "The amount of cpu guaranteed",
+              "title": "CPU",
+              "type": "string",
+              "default": "100m",
+              "render": "slider",
+              "sliderMin": 50,
+              "sliderMax": 40000,
+              "sliderStep": 50,
+              "sliderUnit": "m",
+              "sliderExtremity": "down",
+              "sliderExtremitySemantic": "guaranteed",
+              "sliderRangeId": "cpu",
+              "x-onyxia": {
+                "overwriteDefaultWith": "region.resources.cpuRequest",
+                "useRegionSliderConfig": "cpu"
+              }
+            },
+            "memory": {
+              "description": "The amount of memory guaranteed",
+              "title": "memory",
+              "type": "string",
+              "default": "2Gi",
+              "render": "slider",
+              "sliderMin": 1,
+              "sliderMax": 200,
+              "sliderStep": 1,
+              "sliderUnit": "Gi",
+              "sliderExtremity": "down",
+              "sliderExtremitySemantic": "guaranteed",
+              "sliderRangeId": "memory",
+              "x-onyxia": {
+                "overwriteDefaultWith": "region.resources.memoryRequest",
+                "useRegionSliderConfig": "memory"
+              }
+            }
+          }
+        },
+        "limits": {
+          "description": "max resources",
+          "type": "object",
+          "properties": {
+            "cpu": {
+              "description": "The maximum amount of cpu",
+              "title": "CPU",
+              "type": "string",
+              "default": "30000m",
+              "render": "slider",
+              "sliderMin": 50,
+              "sliderMax": 40000,
+              "sliderStep": 50,
+              "sliderUnit": "m",
+              "sliderExtremity": "up",
+              "sliderExtremitySemantic": "Maximum",
+              "sliderRangeId": "cpu",
+              "x-onyxia": {
+                "overwriteDefaultWith": "region.resources.cpuLimit",
+                "useRegionSliderConfig": "cpu"
+              }
+            },
+            "memory": {
+              "description": "The maximum amount of memory",
+              "title": "Memory",
+              "type": "string",
+              "default": "50Gi",
+              "render": "slider",
+              "sliderMin": 1,
+              "sliderMax": 200,
+              "sliderStep": 1,
+              "sliderUnit": "Gi",
+              "sliderExtremity": "up",
+              "sliderExtremitySemantic": "Maximum",
+              "sliderRangeId": "memory",
+              "x-onyxia": {
+                "overwriteDefaultWith": "region.resources.memoryLimit",
+                "useRegionSliderConfig": "memory"
+              }
+            }
+          }
+        }
+      }
+    },
+    "persistence": {
+      "description": "Configuration for persistence",
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "Create a persistent volume",
+          "default": true
+        },
+        "size": {
+          "type": "string",
+          "title": "Persistent volume size",
+          "description": "Size of the persistent volume",
+          "default": "10Gi",
+          "form": true,
+          "render": "slider",
+          "sliderMin": 1,
+          "sliderMax": 100,
+          "sliderStep": 1,
+          "sliderUnit": "Gi",
+          "x-onyxia": {
+            "overwriteDefaultWith": "region.resources.disk",
+            "useRegionSliderConfig": "disk"
+          },
+          "hidden": {
+            "value": false,
+            "path": "persistence/enabled"
+          }
+        }
+      }
+    },
+    "security": {
+      "description": "security specific configuration",
+      "type": "object",
+      "properties": {
+        "password": {
+          "type": "string",
+          "description": "Password",
+          "default": "changeme",
+          "render": "password",
+          "x-onyxia": {
+            "overwriteDefaultWith": "{{project.password}}"
+          }
+        },
+        "allowlist": {
+          "type": "object",
+          "description": "IP protection",
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "title": "Enable IP protection",
+              "description": "Only the configured set of IPs will be able to reach the service",
+              "default": true,
+              "x-onyxia": {
+                "overwriteDefaultWith": "region.defaultIpProtection"
+              }
+            },
+            "ip": {
+              "type": "string",
+              "description": "the white list of IP is whitespace",
+              "title": "Whitelist of IP",
+              "x-onyxia": {
+                "overwriteDefaultWith": "{{user.ip}}"
+              },
+              "hidden": {
+                "value": false,
+                "path": "security/allowlist/enabled"
+              }
+            }
+          }
+        },
+        "networkPolicy": {
+          "type": "object",
+          "description": "Define access policy to the service",
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "title": "Enable network policy",
+              "description": "Only pod from the same namespace will be allowed",
+              "default": true,
+              "x-onyxia": {
+                "overwriteDefaultWith": "region.defaultNetworkPolicy"
+              }
+            },
+            "from": {
+              "type": "array",
+              "description": "Array of source allowed to have network access to your service",
+              "default": [],
+              "x-onyxia": {
+                "hidden": true,
+                "overwriteDefaultWith": "region.from"
+              }
+            }
+          }
+        },
+        "serviceEntry": {
+          "type": "object",
+          "description": "Service entry to give access to external services",
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "title": "Enable service entry",
+              "description": "Enable access to external services",
+              "default": true
+            },
+            "hosts": {
+              "type": "array",
+              "description": "Array of hosts allowed to be accessed from your service",
+              "default": [
+                "sso.dapla-dev.ssb.no",
+                "storage.googleapis.com",
+                "www.googleapis.com",
+                "oauth2.googleapis.com",
+                "login.microsoftonline.com"
+              ],
+              "x-onyxia": {
+                "hidden": true
+              }
+            }
+          }
+        },
+        "oauth2": {
+          "type": "object",
+          "description": "OAuth2 configuration",
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "title": "Enable OAuth2",
+              "description": "Enable authorization of your service with OAuth2",
+              "default": true,
+              "x-onyxia": {
+                "hidden": true
+              }
+            },
+            "provider": {
+              "type": "string",
+              "title": "OAuth2 provider",
+              "description": "Which OAuth2 provider to use, keycloak-oidc is the only one available for now",
+              "default": "keycloak-oidc",
+              "enum": [
+                "keycloak-oidc"
+              ],
+              "x-onyxia": {
+                "hidden": true,
+                "overwriteDefaultWith": "region.oauth2.provider"
+              }
+            },
+            "oidcIssuerUrl": {
+              "type": "string",
+              "title": "OIDC issuer url",
+              "description": "Url to the OIDC issuer",
+              "default": "https://sso.dapla-dev.ssb.no/realms/ssb",
+              "x-onyxia": {
+                "hidden": true,
+                "overwriteDefaultWith": "region.oauth2.oidcIssuerUrl"
+              }
+            },
+            "clientId": {
+              "type": "string",
+              "title": "Client id",
+              "description": "Client id",
+              "default": "onyxia-services",
+              "x-onyxia": {
+                "hidden": true,
+                "overwriteDefaultWith": "region.oauth2.clientId"
+              }
+            },
+            "authenticatedEmails": {
+              "type": "string",
+              "title": "OAuth2 authenticated emails",
+              "description": "OAuth2 authenticated emails, comma seperated",
+              "default": [],
+              "x-onyxia": {
+                "hidden": true,
+                "overwriteDefaultWith": "{{user.email}}"
+              }
+            }
+          }
+        }
+      }
+    },
+    "istio": {
+      "type": "object",
+      "form": true,
+      "title": "Ingress Details",
+      "properties": {
+        "enabled": {
+          "description": "Enable istio ingress",
+          "type": "boolean",
+          "default": true,
+          "x-onyxia": {
+            "hidden": true,
+            "overwriteDefaultWith": "k8s.istio.enabled"
+          }
+        },
+        "gateways": {
+          "description": "Path of istio ingress gateways to be used",
+          "type": "array",
+          "title": "Istio gateways",
+          "x-onyxia": {
+            "hidden": true,
+            "overwriteDefaultWith": "k8s.istio.gateways"
+          },
+          "default": []
+        },
+        "hostname": {
+          "type": "string",
+          "form": true,
+          "title": "Hostname",
+          "x-onyxia": {
+            "hidden": true,
+            "overwriteDefaultWith": "{{project.id}}-{{k8s.randomSubdomain}}-0.{{k8s.domain}}"
+          }
+        },
+        "userHostname": {
+          "type": "string",
+          "form": true,
+          "title": "Hostname",
+          "x-onyxia": {
+            "hidden": true,
+            "overwriteDefaultWith": "{{project.id}}-{{k8s.randomSubdomain}}-user.{{k8s.domain}}"
+          }
+        }
+      }
+    },
+    "userAttributes": {
+      "description": "User attributes to pass into the service",
+      "type": "object",
+      "properties": {
+        "environmentVariableName": {
+          "type": "string",
+          "description": "Name of the environment variable to use",
+          "default": "OIDC_TOKEN"
+        },
+        "userAttribute": {
+          "type": "string",
+          "description": "The user attribute to map to the environment variable",
+          "default": "access_token"
+        },
+        "value": {
+          "type": "string",
+          "description": "The value of the user attribute (will be replaced by backend)",
+          "default": "",
+          "x-onyxia": {
+            "hidden": true,
+            "overwriteDefaultWith": ""
+          }
+        }
+      }
+    },
+    "tolerations": {
+      "type": "array",
+      "description": "Array of tolerations",
+      "default": [],
+      "x-onyxia": {
+        "hidden": true,
+        "overwriteDefaultWith": "region.tolerations"
+      }
+    },
+    "nodeSelector": {
+      "type": "object",
+      "description": "NodeSelector",
+      "default": {},
+      "x-onyxia": {
+        "hidden": true,
+        "overwriteDefaultWith": "region.nodeSelector"
+      }
+    }
+  }
+}
