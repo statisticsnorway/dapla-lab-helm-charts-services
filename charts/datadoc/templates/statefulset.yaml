@@ -1,0 +1,143 @@
+{{- $fullName := include "library-chart.fullname" . -}}
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "library-chart.fullname" . }}
+  labels:
+    {{- include "library-chart.labels" . | nindent 4 }}
+spec:
+{{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+{{- end }}
+  serviceName: {{ include "library-chart.fullname" . }}
+  selector:
+    matchLabels:
+      {{- include "library-chart.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      annotations:
+        {{- if .Values.oidc.enabled }}
+        checksum/oidc: {{ include (print $.Template.BasePath "/configmap-oidc.yaml") . | sha256sum }}
+        {{- end }}
+        {{- with .Values.podAnnotations }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+      labels:
+        {{- include "library-chart.selectorLabels" . | nindent 8 }}
+        {{- with .Values.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+    spec:
+      volumes:
+        {{- if .Values.security.oauth2.enabled }}
+        - name: conf
+          configMap:
+            name: oauth2-proxy-client-config-{{ include "library-chart.fullname" . }}
+        {{- end }}
+        - name: home
+        {{- if .Values.persistence.enabled }}
+          persistentVolumeClaim:
+            claimName: {{ .Values.persistence.existingClaim | default (include "library-chart.fullname" .) }}
+        {{- else }}
+          emptyDir: {}
+        {{- end }}
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "library-chart.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      subdomain: {{ include "library-chart.fullname" . }}
+      hostname: datadoc
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.service.image.version }}"
+          imagePullPolicy: {{ .Values.service.image.pullPolicy }}
+          port: {{ .Values.networking.service.port }}
+          env:
+            - name: KUBERNETES_POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: IMAGE_NAME
+              value: "{{ .Values.service.image.version }}"
+            - name: DATADOC_DATASET_PATH
+              value: {{ .Values.dataset.dataset_path }}
+            - name: PASSWORD
+              value: {{ .Values.security.password }}
+            - name: PROJECT_USER
+              value: {{ .Values.environment.user }}
+            - name: PROJECT_GROUP
+              value: {{ .Values.environment.group }}
+          envFrom:
+            {{- if .Values.oidc.enabled }}
+            - configMapRef:
+                name: {{ include "library-chart.configMapNameOidc" . }}
+            {{- end }}
+          livenessProbe:
+            httpGet:
+              path: /healthz/live
+              port: {{ .Values.networking.service.port }}
+          readinessProbe:
+            httpGet:
+              path: /healthz/ready
+              port: {{ .Values.networking.service.port }}
+          startupProbe:
+            httpGet:
+              path: /healthz/startup
+              port: {{ .Values.networking.service.port }}
+            {{- toYaml .Values.startupProbe | nindent 12 }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+
+        {{- if .Values.security.oauth2.enabled }}
+          # SHOULD BE MOVED TO CHARTS AND ADDED WITH INLCUDE
+        - name: oauth2-proxy
+          image: bitnami/oauth2-proxy:7.4.0
+          imagePullPolicy: Always
+          ports:
+            - name: http-oauth2
+              containerPort: 4180
+          args:
+            - --config=/config/oauth2-proxy-client-config.yaml
+          env:
+            - name: OAUTH2_PROXY_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: oauth2-proxy-{{ include "library-chart.fullname" . }}
+                  key: client-id
+            - name: OAUTH2_PROXY_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: oauth2-proxy-{{ include "library-chart.fullname" . }}
+                  key: client-secret
+            - name: OAUTH2_PROXY_COOKIE_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: oauth2-proxy-{{ include "library-chart.fullname" . }}
+                  key: cookie-secret
+          volumeMounts:
+            - name: conf
+              mountPath: "/config/"
+              readOnly: true
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 1000
+            allowPrivilegeEscalation: false
+      {{- end }}
+
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
