@@ -17,6 +17,12 @@ security:
     enabled: true
     hosts:
       - "storage.googleapis.com"
+  oauth2:
+    enabled: false
+    provider: keycloak-oidc
+    oidcIssuerUrl: ""
+    clientId: "my-client"
+    authenticatedEmails: ""
 
 environment:
   user: onyxia

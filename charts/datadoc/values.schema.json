@@ -255,6 +255,64 @@
               }
             }
           }
+        },
+        "oauth2": {
+          "type": "object",
+          "description": "OAuth2 configuration",
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "title": "Enable OAuth2",
+              "description": "Enable authorization of your service with OAuth2",
+              "default": true,
+              "x-onyxia": {
+                "hidden": true
+              }
+            },
+            "provider": {
+              "type": "string",
+              "title": "OAuth2 provider",
+              "description": "Which OAuth2 provider to use, keycloak-oidc is the only one available for now",
+              "default": "keycloak-oidc",
+              "enum": [
+                "keycloak-oidc"
+              ],
+              "x-onyxia": {
+                "hidden": true,
+                "overwriteDefaultWith": "region.oauth2.provider"
+              }
+            },
+            "oidcIssuerUrl": {
+              "type": "string",
+              "title": "OIDC issuer url",
+              "description": "Url to the OIDC issuer",
+              "default": "https://sso.dapla-dev.ssb.no/realms/ssb",
+              "x-onyxia": {
+                "hidden": true,
+                "overwriteDefaultWith": "region.oauth2.oidcIssuerUrl"
+              }
+            },
+            "clientId": {
+              "type": "string",
+              "title": "Client id",
+              "description": "Client id",
+              "default": "onyxia-services",
+              "x-onyxia": {
+                "hidden": true,
+                "overwriteDefaultWith": "region.oauth2.clientId"
+              }
+            },
+            "authenticatedEmails": {
+              "type": "string",
+              "title": "OAuth2 authenticated emails",
+              "description": "OAuth2 authenticated emails, comma seperated",
+              "default": [],
+              "x-onyxia": {
+                "hidden": true,
+                "overwriteDefaultWith": "{{user.email}}"
+              }
+            }
+          }
         }
       }
     },
