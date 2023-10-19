@@ -29,11 +29,6 @@ spec:
         {{- end }}
     spec:
       volumes:
-        {{- if .Values.security.oauth2.enabled }}
-        - name: conf
-          configMap:
-            name: oauth2-proxy-client-config-{{ include "library-chart.fullname" . }}
-        {{- end }}
         - name: home
         {{- if .Values.persistence.enabled }}
           persistentVolumeClaim:
@@ -92,43 +87,6 @@ spec:
             {{- toYaml .Values.startupProbe | nindent 12 }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-
-        {{- if .Values.security.oauth2.enabled }}
-          # SHOULD BE MOVED TO CHARTS AND ADDED WITH INLCUDE
-        - name: oauth2-proxy
-          image: bitnami/oauth2-proxy:7.4.0
-          imagePullPolicy: Always
-          ports:
-            - name: http-oauth2
-              containerPort: 4180
-          args:
-            - --config=/config/oauth2-proxy-client-config.yaml
-          env:
-            - name: OAUTH2_PROXY_CLIENT_ID
-              valueFrom:
-                secretKeyRef:
-                  name: oauth2-proxy-{{ include "library-chart.fullname" . }}
-                  key: client-id
-            - name: OAUTH2_PROXY_CLIENT_SECRET
-              valueFrom:
-                secretKeyRef:
-                  name: oauth2-proxy-{{ include "library-chart.fullname" . }}
-                  key: client-secret
-            - name: OAUTH2_PROXY_COOKIE_SECRET
-              valueFrom:
-                secretKeyRef:
-                  name: oauth2-proxy-{{ include "library-chart.fullname" . }}
-                  key: cookie-secret
-          volumeMounts:
-            - name: conf
-              mountPath: "/config/"
-              readOnly: true
-          securityContext:
-            runAsNonRoot: true
-            runAsUser: 1000
-            allowPrivilegeEscalation: false
-      {{- end }}
-
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

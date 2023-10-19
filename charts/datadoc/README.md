@@ -54,10 +54,6 @@ Document datasets in Statistics Norway.
 | replicaCount | int | `1` |  |
 | resources | object | `{}` |  |
 | security.allowlist.enabled | bool | `false` |  |
-| security.allowlist.ip | string | `"0.0.0.0/0"` |  |
-| security.networkPolicy.enabled | bool | `false` |  |
-| security.networkPolicy.from | list | `[]` |  |
-| security.oauth2.enabled | bool | `false` |  |
 | security.password | string | `"changeme"` |  |
 | security.serviceEntry.enabled | bool | `true` |  |
 | security.serviceEntry.hosts[0] | string | `"storage.googleapis.com"` |  |
