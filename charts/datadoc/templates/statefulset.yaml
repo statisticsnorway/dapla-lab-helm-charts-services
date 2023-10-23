@@ -36,6 +36,9 @@ spec:
         {{- else }}
           emptyDir: {}
         {{- end }}
+      {{- if .Values.security.oauth2.enabled }}
+      - {{ include "library-chart.oauth2ProxyVolume" . | indent 10 | trim }}
+      {{- end }}
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
@@ -61,8 +64,6 @@ spec:
               value: "{{ .Values.service.image.version }}"
             - name: DATADOC_DATASET_PATH
               value: {{ .Values.dataset.dataset_path }}
-            - name: PASSWORD
-              value: {{ .Values.security.password }}
             - name: PROJECT_USER
               value: {{ .Values.environment.user }}
             - name: PROJECT_GROUP
@@ -87,6 +88,9 @@ spec:
             {{- toYaml .Values.startupProbe | nindent 12 }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+      {{- if .Values.security.oauth2.enabled }}
+        - {{ include "library-chart.oauth2ProxyPod" . | indent 10 | trim }}
+      {{ end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
