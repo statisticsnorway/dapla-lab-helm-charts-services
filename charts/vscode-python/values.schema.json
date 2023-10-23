@@ -153,7 +153,8 @@
                 "default": "inseefrlab/onyxia-vscode-python:py3.10.9",
                 "listEnum": [
                   "inseefrlab/onyxia-vscode-python:py3.10.9",
-                  "inseefrlab/onyxia-vscode-python:py3.9.16"
+                  "inseefrlab/onyxia-vscode-python:py3.9.16",
+                  "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-lab-docker/onyxia/dapla-vscode-python:main"
                 ],
                 "render": "list",
                 "pattern": "^[a-z0-9-_./]+(:[a-z0-9-_.]+)?$",
