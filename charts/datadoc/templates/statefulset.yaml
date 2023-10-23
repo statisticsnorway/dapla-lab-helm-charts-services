@@ -36,9 +36,9 @@ spec:
         {{- else }}
           emptyDir: {}
         {{- end }}
-      {{- if .Values.security.oauth2.enabled }}
-      - {{ include "library-chart.oauth2ProxyVolume" . | indent 10 | trim }}
-      {{- end }}
+        {{- if .Values.security.oauth2.enabled }}
+        - {{ include "library-chart.oauth2ProxyVolume" . | indent 10 | trim }}
+        {{- end }}
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
