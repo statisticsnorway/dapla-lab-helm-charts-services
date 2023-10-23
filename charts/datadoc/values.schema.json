@@ -10,7 +10,7 @@
           "title": "Dataset path",
           "type": "string",
           "description": "Path to a dataset file in a GCS bucket. Must start with 'gs://'. Supported file types are .parquet, .parquet.gzip, .sas7bdat.",
-          "default": "gs://ssb-staging-dapla-felles-data-delt/datadoc/klargjorte_data/person_data_v1.parquet"
+          "default": ""
         }
       }
     },
@@ -374,7 +374,7 @@
                           "value": false,
                           "path": "networking/user/enabled"
                       },
-                      "default": 5000
+                      "default": 8050
                   }
               }
           }
