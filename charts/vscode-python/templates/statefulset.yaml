@@ -80,7 +80,7 @@ spec:
           {{- end }} 
           command: ["/bin/sh","-c"]
           {{- $authMethod := ternary "none" "password" .Values.security.oauth2.enabled }}
-          args: ["{{ .Values.init.standardInitPath }} /usr/bin/code-server --host 0.0.0.0 --auth {{ $authMethod }} /home/{{ .Values.environment.user }}/work"]
+          args: ["/usr/bin/code-server --host 0.0.0.0 --auth {{ $authMethod }} /home/{{ .Values.environment.user }}/work"]
           imagePullPolicy: {{ .Values.service.image.pullPolicy }}
           env:
             {{- if .Values.init.regionInit }}
