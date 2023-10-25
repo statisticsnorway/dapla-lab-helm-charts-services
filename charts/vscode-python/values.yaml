@@ -28,7 +28,7 @@ security:
     authenticatedEmails: ""
 
 init:
-  standardInitPath: "/opt/onyxia-init.sh"
+  standardInitPath: ""
   regionInit: ""
   regionInitCheckSum: ""
   personalInit: ""
