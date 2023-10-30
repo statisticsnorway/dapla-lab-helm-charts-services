@@ -150,10 +150,8 @@
               "version": {
                 "description": "vscode supported version",
                 "type": "string",
-                "default": "inseefrlab/onyxia-vscode-python:py3.10.9",
+                "default": "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-lab-docker/onyxia/dapla-vscode-python:main",
                 "listEnum": [
-                  "inseefrlab/onyxia-vscode-python:py3.10.9",
-                  "inseefrlab/onyxia-vscode-python:py3.9.16",
                   "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-lab-docker/onyxia/dapla-vscode-python:main"
                 ],
                 "render": "list",
