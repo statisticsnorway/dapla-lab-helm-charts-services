@@ -2,7 +2,7 @@
 
 service:
   image:
-    version: "eu.gcr.io/prod-bip/ssb/dapla/dapla-jupyterlab:merge-168a792271455b401e1ea1a4270061d656ea1273"
+    version: "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-stat-docker/jupyter/jupyterlab-dapla:v1"
     pullPolicy: IfNotPresent
 
 security:

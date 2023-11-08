@@ -20,13 +20,12 @@
                         "description": "supported versions",
                         "type": "string",
                         "listEnum": [
-                            "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-lab-docker/onyxia/jupyter-python-dapla:latest",
-                            "jupyter/scipy-notebook:lab-4.0.3",
-                            "inseefrlab/onyxia-jupyter-python:py3.10.9"
+                            "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-stat-docker/jupyter/jupyterlab-dapla:v1",
+                            "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-stat-docker/jupyter/jupyterlab-dapla:latest"
                         ],
                         "render": "list",
                         "pattern": "^[a-z0-9-_./]+(:[a-z0-9-_.]+)?$",
-                        "default": "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-lab-docker/onyxia/jupyter-python-dapla:latest"
+                        "default": "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-stat-docker/jupyter/jupyterlab-dapla:v1"
                       }
                     }
                 }
