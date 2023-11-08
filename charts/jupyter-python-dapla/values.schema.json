@@ -31,28 +31,6 @@
                             "path": "service/image/custom/enabled"
                         },
                         "default": "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-lab-docker/onyxia/jupyter-python-dapla:latest"
-                      },
-                      "custom" : {
-                        "description": "use a custom jupyter docker image",
-                        "type": "object",
-                        "properties": {
-                          "enabled": {
-                            "title": "custom image",
-                            "type": "boolean",
-                            "description": "use a custom jupyter docker image",
-                            "default": false
-                          },
-                          "version": {
-                            "description": "jupyter unsupported version",
-                            "type": "string",
-                            "default": "jupyter/scipy-notebook:lab-4.0.3",
-                            "pattern": "^[a-z0-9-_./]+(:[a-z0-9-_.]+)?$",
-                            "hidden": {
-                                "value": false,
-                                "path": "service/image/custom/enabled"
-                            }
-                          }
-                        }
                       }
                     }
                 }

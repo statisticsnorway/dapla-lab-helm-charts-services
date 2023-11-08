@@ -4,9 +4,6 @@ service:
   image:
     version: "eu.gcr.io/prod-bip/ssb/dapla/dapla-jupyterlab:merge-168a792271455b401e1ea1a4270061d656ea1273"
     pullPolicy: IfNotPresent
-    custom:
-      enabled: false
-      version: "jupyter/scipy-notebook:lab-4.0.3"
 
 security:
   password: "changeme"
