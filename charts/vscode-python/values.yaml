@@ -4,9 +4,6 @@ service:
   image:
     version: "inseefrlab/onyxia-vscode-python:py3.10.9"
     pullPolicy: IfNotPresent
-    custom:
-      enabled: false
-      version: "inseefrlab/onyxia-vscode-python:py3.10.9"
 
 security:
   password: "changeme"
