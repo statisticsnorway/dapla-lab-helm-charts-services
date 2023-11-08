@@ -1,6 +1,6 @@
 # jupyter-python-dapla
 
-![Version: 1.1.0](https://img.shields.io/badge/Version-1.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 1.1.1](https://img.shields.io/badge/Version-1.1.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 The JupyterLab IDE with Python, tailored for SSB's data platform (Dapla).
 
@@ -86,8 +86,6 @@ The JupyterLab IDE with Python, tailored for SSB's data platform (Dapla).
 | security.serviceEntry.enabled | bool | `true` |  |
 | security.serviceEntry.hosts[0] | string | `"storage.googleapis.com"` |  |
 | securityContext | object | `{}` |  |
-| service.image.custom.enabled | bool | `false` |  |
-| service.image.custom.version | string | `"jupyter/scipy-notebook:lab-4.0.3"` |  |
 | service.image.pullPolicy | string | `"IfNotPresent"` |  |
 | service.image.version | string | `"eu.gcr.io/prod-bip/ssb/dapla/dapla-jupyterlab:merge-168a792271455b401e1ea1a4270061d656ea1273"` |  |
 | serviceAccount.annotations | object | `{}` |  |
