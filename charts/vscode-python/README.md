@@ -86,8 +86,6 @@ The Visual Studio Code IDE with Python, Julia, and a collection of standard data
 | security.serviceEntry.enabled | bool | `true` |  |
 | security.serviceEntry.hosts[0] | string | `"storage.googleapis.com"` |  |
 | securityContext | object | `{}` |  |
-| service.image.custom.enabled | bool | `false` |  |
-| service.image.custom.version | string | `"inseefrlab/onyxia-vscode-python:py3.10.9"` |  |
 | service.image.pullPolicy | string | `"IfNotPresent"` |  |
 | service.image.version | string | `"inseefrlab/onyxia-vscode-python:py3.10.9"` |  |
 | serviceAccount.annotations | object | `{}` |  |

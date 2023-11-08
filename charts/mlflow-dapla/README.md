@@ -70,7 +70,6 @@ MLflow is an open source platform to manage the ML lifecycle, including experime
 | service.customArgs[0] | string | `"--workers=2"` |  |
 | service.directory | string | `"/tmp/mlflow/artifacts/"` |  |
 | service.gunicornTimeout | string | `"600"` |  |
-| service.image.custom.enabled | bool | `false` |  |
 | service.image.custom.version | string | `""` |  |
 | service.image.pullPolicy | string | `"IfNotPresent"` |  |
 | service.image.version | string | `"inseefrlab/mlflow:v2.5.0"` |  |
