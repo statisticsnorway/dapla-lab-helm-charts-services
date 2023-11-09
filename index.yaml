@@ -164,6 +164,27 @@ entries:
     version: 0.2.17
   jupyter-python-dapla:
   - apiVersion: v2
+    created: "2023-11-09T13:43:41.372206005Z"
+    dependencies:
+    - name: library-chart
+      repository: https://statisticsnorway.github.io/dapla-lab-helm-charts-services
+      version: 1.0.0
+    description: The JupyterLab IDE with Python, tailored for SSB's data platform
+      (Dapla).
+    digest: bc5acbfe9d44a1f64cfd6513c14ed21130fb0e7a8d98e6b9709c12a436cf07e4
+    home: https://jupyter.org/
+    icon: https://avatars.githubusercontent.com/u/5849578
+    keywords:
+    - Jupyter
+    - Python
+    name: jupyter-python-dapla
+    sources:
+    - https://github.com/statisticsnorway/dapla-lab-helm-charts-services
+    type: application
+    urls:
+    - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/jupyter-python-dapla-1.1.4/jupyter-python-dapla-1.1.4.tgz
+    version: 1.1.4
+  - apiVersion: v2
     created: "2023-11-08T15:03:38.477497621Z"
     dependencies:
     - name: library-chart
@@ -1661,4 +1682,4 @@ entries:
     urls:
     - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/vscode-python-0.0.1/vscode-python-0.0.1.tgz
     version: 0.0.1
-generated: "2023-11-08T15:03:38.818167125Z"
+generated: "2023-11-09T13:43:41.372549268Z"
