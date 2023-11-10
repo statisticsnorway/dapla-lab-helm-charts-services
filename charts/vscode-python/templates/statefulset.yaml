@@ -96,7 +96,7 @@ spec:
               value: {{ .Values.init.personalInitArgs }}
             {{- end }}
             - name: PASSWORD
-              value: {{ .Values.security.password }}  
+              value: ""
             - name: PROJECT_USER
               value: {{ .Values.environment.user }}
             - name: PROJECT_GROUP

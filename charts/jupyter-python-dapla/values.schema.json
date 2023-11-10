@@ -183,16 +183,6 @@
             "description": "security specific configuration",
             "type": "object",
             "properties": {
-                "password": {
-                    "type": "string",
-                    "description": "Password",
-                    "default": "changeme",
-                    "render": "password",
-                    "hidden": true,
-                    "x-onyxia": {
-                        "overwriteDefaultWith": "{{project.password}}"
-                    }
-                },
                 "allowlist": {
                     "type": "object",
                     "description": "IP protection",
