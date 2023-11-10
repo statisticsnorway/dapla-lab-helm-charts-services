@@ -103,10 +103,6 @@ spec:
               value: {{ .Values.environment.group }}
             - name: ROOT_PROJECT_DIRECTORY
               value: /home/{{ .Values.environment.user }}/work  
-            {{- if  .Values.fauxpilot.enabled }}
-            - name: FAUXPILOT_SERVER
-              value: "{{ .Values.fauxpilot.server }}" 
-            {{- end }}
           envFrom:
             {{- if .Values.oidc.enabled }}
             - configMapRef:
