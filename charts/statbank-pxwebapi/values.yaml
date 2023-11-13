@@ -83,7 +83,7 @@ networking:
   type: ClusterIP
   clusterIP: None
   service:
-    port: 8050
+    port: 8080
   user:
     enabled: false
 
