@@ -75,15 +75,15 @@ spec:
             {{- end }}
           livenessProbe:
             httpGet:
-              path: /healthz/live
+              path: /api/v2/navigation
               port: {{ .Values.networking.service.port }}
           readinessProbe:
             httpGet:
-              path: /healthz/ready
+              path: /api/v2/navigation
               port: {{ .Values.networking.service.port }}
           startupProbe:
             httpGet:
-              path: /healthz/startup
+              path: /api/v2/navigation
               port: {{ .Values.networking.service.port }}
             {{- toYaml .Values.startupProbe | nindent 12 }}
           resources:
