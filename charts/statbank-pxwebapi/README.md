@@ -49,7 +49,7 @@ Document datasets in Statistics Norway.
 | persistence.enabled | bool | `false` |  |
 | persistence.size | string | `"10Gi"` |  |
 | podAnnotations | object | `{}` |  |
-| podLabels."onyxia.app" | string | `"datadoc"` |  |
+| podLabels."onyxia.app" | string | `"statbank-pxwebapi"` |  |
 | podSecurityContext.fsGroup | int | `100` |  |
 | replicaCount | int | `1` |  |
 | resources | object | `{}` |  |

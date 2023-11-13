@@ -47,7 +47,7 @@ spec:
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       subdomain: {{ include "library-chart.fullname" . }}
-      hostname: datadoc
+      hostname: statbank-pxwebapi
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
@@ -62,7 +62,7 @@ spec:
                   fieldPath: metadata.name
             - name: IMAGE_NAME
               value: "{{ .Values.service.image.version }}"
-            - name: DATADOC_DATASET_PATH
+            - name: PXWEBAPI_DATASET_PATH
               value: {{ .Values.dataset.dataset_path }}
             - name: PROJECT_USER
               value: {{ .Values.environment.user }}
