@@ -1263,6 +1263,29 @@ entries:
     urls:
     - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/rstudio-dapla-0.1.0/rstudio-dapla-0.1.0.tgz
     version: 0.1.0
+  statbank-pxwebapi:
+  - apiVersion: v2
+    created: "2023-11-14T11:54:29.415384665Z"
+    dependencies:
+    - name: library-chart
+      repository: https://statisticsnorway.github.io/dapla-lab-helm-charts-services
+      version: 1.0.0
+    description: API for queries towards all StatBank Norway’s tables. Output formats
+      are JSON-stat, csv and xlsx.
+    digest: 86e2d749d86c83922799fbfe1cc3c5a3be361e879bb09d1ea7c2ae321b0adae5
+    home: https://github.com/statisticsnorway/statbank-pxwebapi
+    icon: https://avatars.githubusercontent.com/u/148870020
+    keywords:
+    - Statbank
+    - Statistikkbanken
+    - JSON-stat
+    name: statbank-pxwebapi
+    sources:
+    - https://github.com/statisticsnorway/dapla-lab-helm-charts-services
+    type: application
+    urls:
+    - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/statbank-pxwebapi-0.1.0/statbank-pxwebapi-0.1.0.tgz
+    version: 0.1.0
   vscode-python:
   - apiVersion: v2
     created: "2023-11-08T15:03:38.817804341Z"
@@ -1682,4 +1705,4 @@ entries:
     urls:
     - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/vscode-python-0.0.1/vscode-python-0.0.1.tgz
     version: 0.0.1
-generated: "2023-11-09T13:43:41.372549268Z"
+generated: "2023-11-14T11:54:29.415546689Z"
