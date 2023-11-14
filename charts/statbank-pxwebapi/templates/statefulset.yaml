@@ -1,0 +1,105 @@
+{{- $fullName := include "library-chart.fullname" . -}}
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "library-chart.fullname" . }}
+  labels:
+    {{- include "library-chart.labels" . | nindent 4 }}
+spec:
+{{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+{{- end }}
+  serviceName: {{ include "library-chart.fullname" . }}
+  selector:
+    matchLabels:
+      {{- include "library-chart.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      annotations:
+        {{- if .Values.oidc.enabled }}
+        checksum/oidc: {{ include (print $.Template.BasePath "/configmap-oidc.yaml") . | sha256sum }}
+        {{- end }}
+        {{- with .Values.podAnnotations }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+      labels:
+        {{- include "library-chart.selectorLabels" . | nindent 8 }}
+        {{- with .Values.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+    spec:
+      volumes:
+        - name: home
+        {{- if .Values.persistence.enabled }}
+          persistentVolumeClaim:
+            claimName: {{ .Values.persistence.existingClaim | default (include "library-chart.fullname" .) }}
+        {{- else }}
+          emptyDir: {}
+        {{- end }}
+        {{- if .Values.security.oauth2.enabled }}
+        - {{ include "library-chart.oauth2ProxyVolume" . | indent 10 | trim }}
+        {{- end }}
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "library-chart.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      subdomain: {{ include "library-chart.fullname" . }}
+      hostname: statbank-pxwebapi
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.service.image.version }}"
+          imagePullPolicy: {{ .Values.service.image.pullPolicy }}
+          port: {{ .Values.networking.service.port }}
+          env:
+            - name: KUBERNETES_POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: IMAGE_NAME
+              value: "{{ .Values.service.image.version }}"
+            - name: PXWEBAPI_DATASET_PATH
+              value: {{ .Values.dataset.dataset_path }}
+            - name: PROJECT_USER
+              value: {{ .Values.environment.user }}
+            - name: PROJECT_GROUP
+              value: {{ .Values.environment.group }}
+          envFrom:
+            {{- if .Values.oidc.enabled }}
+            - configMapRef:
+                name: {{ include "library-chart.configMapNameOidc" . }}
+            {{- end }}
+          livenessProbe:
+            httpGet:
+              path: /api/v2/navigation
+              port: {{ .Values.networking.service.port }}
+          readinessProbe:
+            httpGet:
+              path: /api/v2/navigation
+              port: {{ .Values.networking.service.port }}
+          startupProbe:
+            httpGet:
+              path: /api/v2/navigation
+              port: {{ .Values.networking.service.port }}
+            {{- toYaml .Values.startupProbe | nindent 12 }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- if .Values.security.oauth2.enabled }}
+        - {{ include "library-chart.oauth2ProxyPod" . | indent 10 | trim }}
+      {{ end }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

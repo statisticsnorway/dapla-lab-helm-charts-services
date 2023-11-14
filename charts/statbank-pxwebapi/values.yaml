@@ -1,0 +1,132 @@
+# Default values.
+
+service:
+  image:
+    version: ""
+    pullPolicy: IfNotPresent
+
+security:
+  password: "changeme"
+  networkPolicy:
+    enabled: false
+    from: []
+  allowlist:
+    enabled: false
+    ip: "0.0.0.0/0"
+  serviceEntry:
+    enabled: true
+    hosts:
+      - "storage.googleapis.com"
+  oauth2:
+    enabled: false
+    provider: keycloak-oidc
+    oidcIssuerUrl: ""
+    clientId: "my-client"
+    authenticatedEmails: ""
+
+environment:
+  user: onyxia
+  group: users
+
+dataset:
+  dataset_path: "Undefined"
+
+userAttributes:
+  environmentVariableName: OIDC_TOKEN
+  userAttribute: "access_token"
+  value: ""
+
+oidc:
+  # Specifies whether a config map should be created
+  enabled: true
+  tokenExchangeUrl: "https://sso.dapla-dev.ssb.no/realms/ssb/protocol/openid-connect/token"
+  # The name of the configmap to use.
+  # If not set and create is true, a name is generated using the fullname template
+  configMapName: ""
+
+replicaCount: 1
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+kubernetes:
+  enabled: false
+  role: "view"
+
+podAnnotations: {}
+
+podLabels:
+  onyxia.app: "statbank-pxwebapi"
+
+podSecurityContext:
+  fsGroup: 100
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+networking:
+  type: ClusterIP
+  clusterIP: None
+  service:
+    port: 8080
+  user:
+    enabled: false
+
+istio:
+  enabled: false
+  gateways:
+    - istio-namespace/example-gateway
+  hostname: chart-example.local
+  userHostname: chart-example-user.local
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+persistence:
+  enabled: false
+  accessMode: ReadWriteOnce
+  size: 10Gi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+startupProbe:
+  failureThreshold: 60
+  initialDelaySeconds: 10
+  periodSeconds: 10
+  successThreshold: 1
+  timeoutSeconds: 30
