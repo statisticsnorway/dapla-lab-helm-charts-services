@@ -1,8 +1,8 @@
 # statbank-pxwebapi
 
-![Version: 0.2.23](https://img.shields.io/badge/Version-0.2.23-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
-Document datasets in Statistics Norway.
+API for queries towards all StatBank Norway’s tables. Output formats are JSON-stat, csv and xlsx.
 
 **Homepage:** <https://github.com/statisticsnorway/statbank-pxwebapi>
 
@@ -38,7 +38,7 @@ Document datasets in Statistics Norway.
 | kubernetes.role | string | `"view"` |  |
 | nameOverride | string | `""` |  |
 | networking.clusterIP | string | `"None"` |  |
-| networking.service.port | int | `8050` |  |
+| networking.service.port | int | `8080` |  |
 | networking.type | string | `"ClusterIP"` |  |
 | networking.user.enabled | bool | `false` |  |
 | nodeSelector | object | `{}` |  |
