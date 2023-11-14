@@ -34,8 +34,7 @@
             "version": {
               "description": "supported versions",
               "type": "string",
-              "render": "list",
-              "default": "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-lab-docker/onyxia/statbank-pxwebapi:main"
+              "default": "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-lab-docker/onyxia/statbank-pxwebapi:dapla-lab"
             }
           }
         }
