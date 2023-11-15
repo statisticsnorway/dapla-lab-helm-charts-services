@@ -1,7 +1,6 @@
 {{- if .Values.istio.enabled }}
 - You can connect to the mlflow UI with your browser on this [link](https://{{ .Values.istio.hostname }})
 {{- end }}
-- Your access token is **{{ .Values.security.password }}**
 
 *NOTES about deletion :*
 

@@ -92,23 +92,6 @@
           }
       }
     },
-    "fauxpilot": {
-    "description": "An extension that is equivalent to Copilot",
-    "type": "object",
-    "properties": {
-      "enabled": {
-        "type": "boolean",
-        "title": "Enable Fauxpilot extension",
-        "default": false
-      },
-      "server": {
-        "type": "string",
-        "title": "Server's URL",
-        "description": "the default URL is hosted on Datalab",
-        "default": "http://fauxpilot-proxy.fauxpilot:5000/v1/engines"
-      }
-    }
-    },
     "discovery": {
       "description": "configure your service to autodetect some ressources.",
       "type": "object",
@@ -117,19 +100,22 @@
           "type": "boolean",
           "title": "Enable hive metastore discovery",
           "description": "discover your hive metastore service",
-          "default": true
+          "default": true,
+          "hidden": true
         },
         "mlflow": {
           "type": "boolean",
           "title": "Enable mlflow discovery",
           "description": "discover your mlflow service",
-          "default": true
+          "default": true,
+          "hidden": true
         },
         "metaflow": {
           "type": "boolean",
           "title": "Enable metaflow discovery",
           "description": "discover your metaflow service",
-          "default": true
+          "default": true,
+          "hidden": true
         }
       }
     },
@@ -159,7 +145,7 @@
               }
             }        
         }
-    }
+      }
     },  
     "persistence": {
       "description": "Configuration for persistence",
@@ -196,18 +182,6 @@
       "description": "security specific configuration",
       "type": "object",
       "properties": {
-        "password": {
-          "type": "string",
-          "description": "Password",
-          "default": "changeme",
-          "render": "password",
-          "x-form": {
-            "value": "{{project.password}}"
-          },
-          "x-onyxia": {
-              "overwriteDefaultWith": "{{project.password}}"
-          }
-        },
         "allowlist": {
           "type": "object",
           "description": "IP protection",
@@ -217,6 +191,7 @@
               "title": "Enable IP protection",
               "description": "Only the configured set of IPs will be able to reach the service",
               "default": true,
+              "hidden": true,
               "x-form": {
                 "value": "{{region.defaultIpProtection}}"
               },
@@ -228,6 +203,7 @@
               "type": "string",
               "description": "the white list of IP is whitespace",
               "title": "Whitelist of IP",
+              "hidden": true,
               "x-form": {
                 "value": "{{user.ip}}"
               },
@@ -246,6 +222,7 @@
               "title": "Enable network policy",
               "description": "Only pod from the same namespace will be allowed",
               "default": true,
+              "hidden": true,
               "x-form": {
                 "value": "{{region.defaultNetworkPolicy}}"
               },
@@ -276,7 +253,8 @@
               "type": "boolean",
               "title": "Enable service entry",
               "description": "Enable access to external services",
-              "default": true
+              "default": true,
+              "hidden": true
             },
             "hosts": {
               "type": "array",
@@ -560,7 +538,8 @@
               "type": "boolean",
               "title": "Enable a custom service port",
               "description": "Enable a custom service port",
-              "default": false
+              "default": false,
+              "hidden": true
             },
             "port": {
               "type": "integer",
