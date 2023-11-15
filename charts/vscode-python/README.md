@@ -32,6 +32,8 @@ The Visual Studio Code IDE with Python, Julia, and a collection of standard data
 | discovery.mlflow | bool | `true` |  |
 | environment.group | string | `"users"` |  |
 | environment.user | string | `"onyxia"` |  |
+| fauxpilot.enabled | bool | `false` |  |
+| fauxpilot.server | string | `"http://fauxpilot-proxy.fauxpilot:5000/v1/engines"` |  |
 | fullnameOverride | string | `""` |  |
 | git.branch | string | `""` |  |
 | git.cache | string | `""` |  |

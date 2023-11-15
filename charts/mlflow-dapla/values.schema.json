@@ -52,7 +52,6 @@
           "description": "Enable route",
           "type": "boolean",
           "default": false,
-          "hidden": true,
           "x-onyxia": {
             "hidden": false,
             "overwriteDefaultWith": "k8s.route"
@@ -62,7 +61,6 @@
           "type": "string",
           "form": true,
           "title": "Hostname",
-          "hidden": true,
           "x-onyxia": {
             "hidden": false,
             "overwriteDefaultWith": "{{project.id}}-{{k8s.randomSubdomain}}.{{k8s.domain}}"
@@ -74,6 +72,14 @@
       "description": "security specific configuration",
       "type": "object",
       "properties": {
+        "password": {
+          "type": "string",
+          "description": "Password",
+          "default": "changeme",
+          "x-onyxia": {
+            "overwriteDefaultWith": "{{project.password}}"
+          }
+        },
         "allowlist": {
           "type": "object",
           "description": "IP protection",
@@ -136,8 +142,7 @@
           "type": "boolean",
           "title": "Enable service entry",
           "description": "Enable access to external services",
-          "default": true,
-          "hidden": true
+          "default": true
         },
         "hosts": {
           "type": "array",
@@ -292,7 +297,6 @@
               "type": "string",
               "title": "User",
               "default": "user",
-              "hidden": true,
               "x-onyxia": {
                 "overwriteDefaultWith": "{{project.id}}"
               }
@@ -301,7 +305,6 @@
               "type": "string",
               "title": "User Password",
               "default": "changeme",
-              "hidden": true,
               "x-onyxia": {
                 "overwriteDefaultWith": "{{project.password}}"
               }
@@ -310,7 +313,6 @@
               "type": "string",
               "title": "Admin Password",
               "default": "changeme",
-              "hidden": true,
               "x-onyxia": {
                 "overwriteDefaultWith": "{{project.password}}"
               }

@@ -1,3 +1,4 @@
 {{- if .Values.istio.enabled }}
 - You can connect to this vscode with your browser on this [link](https://{{ .Values.istio.hostname }})
 {{- end }}
+- Your access token is **{{ .Values.security.password }}**
