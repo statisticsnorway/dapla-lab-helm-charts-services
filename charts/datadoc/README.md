@@ -1,6 +1,6 @@
 # datadoc
 
-![Version: 0.2.25](https://img.shields.io/badge/Version-0.2.25-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.2.26](https://img.shields.io/badge/Version-0.2.26-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Document datasets in Statistics Norway.
 
