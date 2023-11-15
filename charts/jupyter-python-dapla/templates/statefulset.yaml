@@ -88,11 +88,7 @@ spec:
             - name: NB_USER
               value: {{ .Values.environment.user }}
             - name: PASSWORD
-              {{- if .Values.security.oauth2.enabled}}
               value: ""
-              {{- else }}
-              value: {{ .Values.security.password }}
-              {{- end }}
             - name: PROJECT_USER
               value: {{ .Values.environment.user }}
             - name: PROJECT_GROUP

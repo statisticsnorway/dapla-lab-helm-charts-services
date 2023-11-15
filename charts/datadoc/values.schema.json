@@ -36,10 +36,14 @@
               ]
             },
             "version": {
-              "description": "supported versions",
+              "description": "datadoc supported versions",
               "type": "string",
+              "default": "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-lab-docker/onyxia/datadoc:master",
+              "listEnum": [
+                "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-lab-docker/onyxia/datadoc:master"
+              ],
               "render": "list",
-              "default": "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-lab-docker/onyxia/datadoc:master"
+              "pattern": "^[a-z0-9-_./]+(:[a-z0-9-_.]+)?$"
             }
           }
         }
@@ -170,15 +174,6 @@
       "description": "security specific configuration",
       "type": "object",
       "properties": {
-        "password": {
-          "type": "string",
-          "description": "Password",
-          "default": "changeme",
-          "render": "password",
-          "x-onyxia": {
-            "overwriteDefaultWith": "{{project.password}}"
-          }
-        },
         "allowlist": {
           "type": "object",
           "description": "IP protection",
@@ -189,6 +184,7 @@
               "description": "Only the configured set of IPs will be able to reach the service",
               "default": true,
               "x-onyxia": {
+                "hidden": true,
                 "overwriteDefaultWith": "region.defaultIpProtection"
               }
             },
@@ -197,6 +193,7 @@
               "description": "the white list of IP is whitespace",
               "title": "Whitelist of IP",
               "x-onyxia": {
+                "hidden": true,
                 "overwriteDefaultWith": "{{user.ip}}"
               },
               "hidden": {
@@ -216,6 +213,7 @@
               "description": "Only pod from the same namespace will be allowed",
               "default": true,
               "x-onyxia": {
+                "hidden": true,
                 "overwriteDefaultWith": "region.defaultNetworkPolicy"
               }
             },
@@ -238,7 +236,10 @@
               "type": "boolean",
               "title": "Enable service entry",
               "description": "Enable access to external services",
-              "default": true
+              "default": true,
+              "x-onyxia": {
+                "hidden": true
+              }
             },
             "hosts": {
               "type": "array",
@@ -364,12 +365,18 @@
                       "type": "boolean",
                       "title": "Enable a custom service port",
                       "description": "Enable a custom service port",
-                      "default": false
+                      "default": false,
+                      "x-onyxia": {
+                        "hidden": true
+                      }
                   },
                   "port": {
                       "type": "integer",
                       "description": "port of the custom service",
                       "title": "Custom service port",
+                      "x-onyxia": {
+                        "hidden": true
+                      },
                       "hidden": {
                           "value": false,
                           "path": "networking/user/enabled"

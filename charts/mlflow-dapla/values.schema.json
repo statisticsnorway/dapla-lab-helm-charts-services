@@ -38,6 +38,7 @@
           "type": "string",
           "default": "/tmp/mlflow/artifacts/",
           "x-onyxia": {
+            "hidden": true,
             "overwriteDefaultWith": "s3://{{s3.AWS_BUCKET_NAME}}/mlflow-artifacts"
           }
         }
@@ -53,7 +54,7 @@
           "type": "boolean",
           "default": false,
           "x-onyxia": {
-            "hidden": false,
+            "hidden": true,
             "overwriteDefaultWith": "k8s.route"
           }
         },
@@ -62,7 +63,7 @@
           "form": true,
           "title": "Hostname",
           "x-onyxia": {
-            "hidden": false,
+            "hidden": true,
             "overwriteDefaultWith": "{{project.id}}-{{k8s.randomSubdomain}}.{{k8s.domain}}"
           }
         }
@@ -72,14 +73,6 @@
       "description": "security specific configuration",
       "type": "object",
       "properties": {
-        "password": {
-          "type": "string",
-          "description": "Password",
-          "default": "changeme",
-          "x-onyxia": {
-            "overwriteDefaultWith": "{{project.password}}"
-          }
-        },
         "allowlist": {
           "type": "object",
           "description": "IP protection",
@@ -90,6 +83,7 @@
               "description": "Only the configured set of IPs will be able to reach the service",
               "default": true,
               "x-onyxia": {
+                "hidden": true,
                 "overwriteDefaultWith": "region.defaultIpProtection"
               }
             },
@@ -99,6 +93,7 @@
               "title": "Whitelist of IP",
               "default": "0.0.0.0",
               "x-onyxia": {
+                "hidden": true,
                 "overwriteDefaultWith": "{{user.ip}}"
               },
               "hidden": {
@@ -118,6 +113,7 @@
               "description": "Only pod from the same namespace will be allowed",
               "default": true,
               "x-onyxia": {
+                "hidden": true,
                 "overwriteDefaultWith": "region.defaultNetworkPolicy"
               }
             },
@@ -142,7 +138,10 @@
           "type": "boolean",
           "title": "Enable service entry",
           "description": "Enable access to external services",
-          "default": true
+          "default": true,
+          "x-onyxia": {
+            "hidden": true
+          }
         },
         "hosts": {
           "type": "array",
@@ -298,6 +297,7 @@
               "title": "User",
               "default": "user",
               "x-onyxia": {
+                "hidden": true,
                 "overwriteDefaultWith": "{{project.id}}"
               }
             },
@@ -306,6 +306,7 @@
               "title": "User Password",
               "default": "changeme",
               "x-onyxia": {
+                "hidden": true,
                 "overwriteDefaultWith": "{{project.password}}"
               }
             },
@@ -314,6 +315,7 @@
               "title": "Admin Password",
               "default": "changeme",
               "x-onyxia": {
+                "hidden": true,
                 "overwriteDefaultWith": "{{project.password}}"
               }
             },

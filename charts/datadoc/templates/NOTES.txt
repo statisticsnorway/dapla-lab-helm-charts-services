@@ -5,4 +5,3 @@
 If you don't run your custom service you will get a 502 bad gateway error.
 {{- end }}
 {{- end }}
-- Your access token is **{{ .Values.security.password }}**
