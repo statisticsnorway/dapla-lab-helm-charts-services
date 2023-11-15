@@ -38,6 +38,7 @@
           "type": "string",
           "default": "/tmp/mlflow/artifacts/",
           "x-onyxia": {
+            "hidden": true,
             "overwriteDefaultWith": "s3://{{s3.AWS_BUCKET_NAME}}/mlflow-artifacts"
           }
         }
@@ -52,9 +53,8 @@
           "description": "Enable route",
           "type": "boolean",
           "default": false,
-          "hidden": true,
           "x-onyxia": {
-            "hidden": false,
+            "hidden": true,
             "overwriteDefaultWith": "k8s.route"
           }
         },
@@ -62,9 +62,8 @@
           "type": "string",
           "form": true,
           "title": "Hostname",
-          "hidden": true,
           "x-onyxia": {
-            "hidden": false,
+            "hidden": true,
             "overwriteDefaultWith": "{{project.id}}-{{k8s.randomSubdomain}}.{{k8s.domain}}"
           }
         }
@@ -84,6 +83,7 @@
               "description": "Only the configured set of IPs will be able to reach the service",
               "default": true,
               "x-onyxia": {
+                "hidden": true,
                 "overwriteDefaultWith": "region.defaultIpProtection"
               }
             },
@@ -93,6 +93,7 @@
               "title": "Whitelist of IP",
               "default": "0.0.0.0",
               "x-onyxia": {
+                "hidden": true,
                 "overwriteDefaultWith": "{{user.ip}}"
               },
               "hidden": {
@@ -112,6 +113,7 @@
               "description": "Only pod from the same namespace will be allowed",
               "default": true,
               "x-onyxia": {
+                "hidden": true,
                 "overwriteDefaultWith": "region.defaultNetworkPolicy"
               }
             },
@@ -137,7 +139,9 @@
           "title": "Enable service entry",
           "description": "Enable access to external services",
           "default": true,
-          "hidden": true
+          "x-onyxia": {
+            "hidden": true
+          }
         },
         "hosts": {
           "type": "array",
@@ -292,8 +296,8 @@
               "type": "string",
               "title": "User",
               "default": "user",
-              "hidden": true,
               "x-onyxia": {
+                "hidden": true,
                 "overwriteDefaultWith": "{{project.id}}"
               }
             },
@@ -301,8 +305,8 @@
               "type": "string",
               "title": "User Password",
               "default": "changeme",
-              "hidden": true,
               "x-onyxia": {
+                "hidden": true,
                 "overwriteDefaultWith": "{{project.password}}"
               }
             },
@@ -310,8 +314,8 @@
               "type": "string",
               "title": "Admin Password",
               "default": "changeme",
-              "hidden": true,
               "x-onyxia": {
+                "hidden": true,
                 "overwriteDefaultWith": "{{project.password}}"
               }
             },
