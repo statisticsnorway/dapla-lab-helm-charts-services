@@ -180,6 +180,7 @@
                             "description": "the white list of IP is whitespace",
                             "title": "Whitelist of IP",
                             "x-onyxia": {
+                                "hidden": true,
                                 "overwriteDefaultWith": "{{user.ip}}"
                             },
                             "hidden": {
