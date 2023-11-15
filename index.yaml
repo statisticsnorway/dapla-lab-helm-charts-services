@@ -2,6 +2,29 @@ apiVersion: v1
 entries:
   datadoc:
   - apiVersion: v2
+    created: "2023-11-15T18:42:00.870808058Z"
+    dependencies:
+    - name: library-chart
+      repository: https://statisticsnorway.github.io/dapla-lab-helm-charts-services
+      version: 1.0.0
+    description: Document datasets in Statistics Norway.
+    digest: 631be9a7e410b6359150503b6b58078273c94e85ee55a143e9c15fddea57a1dc
+    home: https://github.com/statisticsnorway/datadoc
+    icon: https://avatars.githubusercontent.com/u/5849578
+    keywords:
+    - Datadoc
+    - Metadata
+    - Variables
+    - Units
+    - Classifications
+    name: datadoc
+    sources:
+    - https://github.com/statisticsnorway/dapla-lab-helm-charts-services
+    type: application
+    urls:
+    - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/datadoc-0.2.27/datadoc-0.2.27.tgz
+    version: 0.2.27
+  - apiVersion: v2
     created: "2023-11-15T18:28:19.068797914Z"
     dependencies:
     - name: library-chart
@@ -1130,6 +1153,27 @@ entries:
     version: 0.0.1
   rstudio-dapla:
   - apiVersion: v2
+    created: "2023-11-15T18:42:01.072284329Z"
+    dependencies:
+    - name: library-chart
+      repository: https://statisticsnorway.github.io/dapla-lab-helm-charts-services
+      version: 1.0.0
+    description: The RStudio IDE with a collection of standard data science packages,
+      adapted to work for Dapla.
+    digest: ce2e8e4d576a8680c0a22c94c7df1ebbdaf7bc8b6d45c89916918cb316855ea5
+    home: https://www.rstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/rstudio.png
+    keywords:
+    - RStudio
+    - R
+    name: rstudio-dapla
+    sources:
+    - https://statisticsnorway.github.io/dapla-lab-helm-charts-services
+    type: application
+    urls:
+    - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/rstudio-dapla-1.1.6/rstudio-dapla-1.1.6.tgz
+    version: 1.1.6
+  - apiVersion: v2
     created: "2023-11-15T18:28:19.592748594Z"
     dependencies:
     - name: library-chart
@@ -1612,6 +1656,28 @@ entries:
     - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/rstudio-dapla-0.1.0/rstudio-dapla-0.1.0.tgz
     version: 0.1.0
   statbank-pxwebapi:
+  - apiVersion: v2
+    created: "2023-11-15T18:42:01.290215503Z"
+    dependencies:
+    - name: library-chart
+      repository: https://statisticsnorway.github.io/dapla-lab-helm-charts-services
+      version: 1.0.0
+    description: API for queries towards all StatBank Norway’s tables. Output formats
+      are JSON-stat, csv and xlsx.
+    digest: 7935610e55a5cefd4d357b8e92b46d4eb5245c3ec1c0120c4a334554ad7cecba
+    home: https://github.com/statisticsnorway/statbank-pxwebapi
+    icon: https://avatars.githubusercontent.com/u/148870020
+    keywords:
+    - Statbank
+    - Statistikkbanken
+    - JSON-stat
+    name: statbank-pxwebapi
+    sources:
+    - https://github.com/statisticsnorway/dapla-lab-helm-charts-services
+    type: application
+    urls:
+    - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/statbank-pxwebapi-0.1.2/statbank-pxwebapi-0.1.2.tgz
+    version: 0.1.2
   - apiVersion: v2
     created: "2023-11-14T12:28:22.154138024Z"
     dependencies:
@@ -2141,4 +2207,4 @@ entries:
     urls:
     - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/vscode-python-0.0.1/vscode-python-0.0.1.tgz
     version: 0.0.1
-generated: "2023-11-15T18:28:19.78286737Z"
+generated: "2023-11-15T18:42:01.290531763Z"
