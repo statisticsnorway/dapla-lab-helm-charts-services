@@ -2,6 +2,9 @@
 - You can connect to this rstudio with your browser on this [link](https://{{ .Values.istio.hostname }})
 {{- end }}
 
+- The login is **{{ .Values.environment.user }}**
+- The password is **{{ .Values.security.password }}**
+
 *NOTES about deletion :*
 
 {{- if and .Values.persistence.enabled (not .Values.persistence.existingClaim) }}

@@ -61,6 +61,9 @@ coresite:
 metaflow:
   configMapName: ""
 
+fauxpilot:
+  enabled: false
+  server: "http://fauxpilot-proxy.fauxpilot:5000/v1/engines"
 
 git:
   # Specifies whether a config map should be created

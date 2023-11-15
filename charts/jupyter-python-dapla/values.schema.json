@@ -39,22 +39,19 @@
                 "type": "boolean",
                 "title": "Enable hive metastore discovery",
                 "description": "discover your hive metastore service",
-                "default": true,
-                "hidden": true
+                "default": true
               },
               "mlflow": {
                 "type": "boolean",
                 "title": "Enable mlflow discovery",
                 "description": "discover your mlflow service",
-                "default": true,
-                "hidden": true
+                "default": true
               },
               "metaflow": {
                 "type": "boolean",
                 "title": "Enable metaflow discovery",
                 "description": "discover your metaflow service",
-                "default": true,
-                "hidden": true
+                "default": true
               }
             }
         },
@@ -183,6 +180,15 @@
             "description": "security specific configuration",
             "type": "object",
             "properties": {
+                "password": {
+                    "type": "string",
+                    "description": "Password",
+                    "default": "changeme",
+                    "render": "password",
+                    "x-onyxia": {
+                        "overwriteDefaultWith": "{{project.password}}"
+                    }
+                },
                 "allowlist": {
                     "type": "object",
                     "description": "IP protection",
@@ -192,7 +198,6 @@
                         "title": "Enable IP protection",
                         "description": "Only the configured set of IPs will be able to reach the service",
                         "default": true,
-                        "hidden": true,
                         "x-onyxia": {
                             "overwriteDefaultWith": "region.defaultIpProtection"
                         }
@@ -220,7 +225,6 @@
                         "title": "Enable network policy",
                         "description": "Only pod from the same namespace will be allowed",
                         "default": true,
-                        "hidden": true,
                         "x-onyxia": {
                             "overwriteDefaultWith": "region.defaultNetworkPolicy"
                         }
@@ -244,8 +248,7 @@
                       "type": "boolean",
                       "title": "Enable service entry",
                       "description": "Enable access to external services",
-                      "default": true,
-                      "hidden": true
+                      "default": true
                     },
                     "hosts": {
                       "type": "array",
@@ -484,8 +487,7 @@
                     "type": "boolean",
                     "title": "Enable a custom service port",
                     "description": "Enable a custom service port",
-                    "default": false,
-                    "hidden": true
+                    "default": false
                   },
                   "port": {
                     "type": "integer",

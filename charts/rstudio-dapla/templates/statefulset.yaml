@@ -67,7 +67,7 @@ spec:
             - name: IMAGE_NAME
               value: "{{ .Values.service.image.version }}"
             - name: PASSWORD
-              value: ""
+              value: {{ .Values.security.password }}
             - name: PROJECT_USER
               value: {{ .Values.environment.user }}
             - name: PROJECT_GROUP

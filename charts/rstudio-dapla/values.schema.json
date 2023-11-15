@@ -161,6 +161,15 @@
             "description": "RStudio specific configuration",
             "type": "object",
             "properties": {
+                "password": {
+                    "type": "string",
+                    "description": "Password",
+                    "default": "changeme",
+                    "render": "password",
+                    "x-onyxia": {
+                        "overwriteDefaultWith": "{{project.password}}"
+                    }
+                },
                 "allowlist": {
                     "type": "object",
                     "description": "IP protection",
@@ -170,7 +179,6 @@
                             "title": "Enable IP protection",
                             "description": "Only the configured set of IPs will be able to reach the service",
                             "default": true,
-                            "hidden": true,
                             "x-onyxia": {
                                 "overwriteDefaultWith": "region.defaultIpProtection"
                             }
@@ -198,7 +206,6 @@
                             "title": "Enable network policy",
                             "description": "Only pod from the same namespace will be allowed",
                             "default": true,
-                            "hidden": true,
                             "x-onyxia": {
                                 "overwriteDefaultWith": "region.defaultNetworkPolicy"
                             }
@@ -222,8 +229,7 @@
                             "type": "boolean",
                             "title": "Enable service entry",
                             "description": "Enable access to external services",
-                            "default": true,
-                            "hidden": true
+                            "default": true
                         },
                         "hosts": {
                             "type": "array",
@@ -497,8 +503,7 @@
                             "type": "boolean",
                             "title": "Enable a custom service port",
                             "description": "Enable a custom service port",
-                            "default": false,
-                            "hidden": true
+                            "default": false
                         },
                         "port": {
                             "type": "integer",
