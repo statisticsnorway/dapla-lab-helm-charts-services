@@ -1,0 +1,31 @@
+apiVersion: v2
+name: dapla-lab-mageai
+description: A Helm chart for Mage AI
+icon: https://avatars.githubusercontent.com/u/69371472
+appVersion: "0.9.46"
+
+
+home: https://www.mage.ai
+sources:
+  - https://statisticsnorway.github.io/dapla-lab-helm-charts-services
+
+# A chart can be either an 'application' or a 'library' chart.
+#
+# Application charts are a collection of templates that can be packaged into versioned archives
+# to be deployed.
+#
+# Library charts provide useful utilities or functions for the chart developer. They're included as
+# a dependency of application charts to inject those utilities and functions into the rendering
+# pipeline. Library charts do not define any templates and therefore cannot be deployed.
+type: application
+
+# This is the chart version. This version number should be incremented each time you make changes
+# to the chart and its templates, including the app version.
+# Versions are expected to follow Semantic Versioning (https://semver.org/)
+version: 0.0.1
+
+dependencies:
+  - name: redis
+    version: 18.1.1
+    repository: https://charts.bitnami.com/bitnami
+    condition: redis.enabled
