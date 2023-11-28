@@ -94,7 +94,7 @@
                     "default": ""
                 },
                 "replicaCount": {
-                    "type": "integer"
+                    "type": "integer",
                     "default": 1
                 }
             }
