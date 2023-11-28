@@ -10,100 +10,9 @@
             "type": "object",
             "default": ""
         },
-        "customLivenessProbe": {
-            "type": "object",
-            "default": ""
-        },
-        "customReadinessProbe": {
-            "type": "object",
-            "default": ""
-        },
         "existingSecret": {
             "type": "string",
             "default": ""
-        },
-        "extraEnvs": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "default": ""
-                    },
-                    "valueFrom": {
-                        "type": "object",
-                        "properties": {
-                            "fieldRef": {
-                                "type": "object",
-                                "properties": {
-                                    "fieldPath": {
-                                        "type": "string",
-                                        "default": ""
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "extraVolumeMounts": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "mountPath": {
-                        "type": "string",
-                        "default": ""
-                    },
-                    "name": {
-                        "type": "string",
-                        "default": ""
-                    }
-                }
-            }
-        },
-        "extraVolumes": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "type": "string",
-                        "default": ""
-                    },
-                    "persistentVolumeClaim": {
-                        "type": "object",
-                        "properties": {
-                            "claimName": {
-                                "type": "string",
-                                "default": ""
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "fullnameOverride": {
-            "type": "string",
-            "default": ""
-        },
-        "image": {
-            "type": "object",
-            "properties": {
-                "pullPolicy": {
-                    "type": "string",
-                    "default": ""
-                },
-                "repository": {
-                    "type": "string",
-                    "default": ""
-                }
-            }
-        },
-        "imagePullSecrets": {
-            "type": "array"
         },
         "ingress": {
             "type": "object",
@@ -151,41 +60,6 @@
                 }
             }
         },
-        "livenessProbe": {
-            "type": "object",
-            "properties": {
-                "enabled": {
-                    "type": "boolean"
-                },
-                "initialDelaySeconds": {
-                    "type": "integer"
-                },
-                "path": {
-                    "type": "string",
-                    "default": ""
-                },
-                "port": {
-                    "type": "string",
-                    "default": ""
-                },
-                "timeoutSeconds": {
-                    "type": "integer"
-                }
-            }
-        },
-        "nameOverride": {
-            "type": "string",
-            "default": ""
-        },
-        "nodeSelector": {
-            "type": "object"
-        },
-        "podAnnotations": {
-            "type": "object"
-        },
-        "podSecurityContext": {
-            "type": "object"
-        },
         "readinessProbe": {
             "type": "object",
             "properties": {
@@ -208,35 +82,9 @@
                 }
             }
         },
-        "redis": {
-            "type": "object",
-            "properties": {
-                "architecture": {
-                    "type": "string",
-                    "default": ""
-                },
-                "auth": {
-                    "type": "object",
-                    "properties": {
-                        "enabled": {
-                            "type": "boolean"
-                        }
-                    }
-                },
-                "customRedisURL": {
-                    "type": "string",
-                    "default": ""
-                },
-                "enabled": {
-                    "type": "boolean"
-                }
-            }
-        },
         "replicaCount": {
-            "type": "integer"
-        },
-        "resources": {
-            "type": "object"
+            "type": "integer",
+            "default": 1
         },
         "scheduler": {
             "type": "object",
@@ -247,6 +95,7 @@
                 },
                 "replicaCount": {
                     "type": "integer"
+                    "default": 1
                 }
             }
         },
@@ -259,9 +108,6 @@
         "service": {
             "type": "object",
             "properties": {
-                "annotations": {
-                    "type": "object"
-                },
                 "port": {
                     "type": "integer"
                 },
@@ -274,11 +120,9 @@
         "serviceAccount": {
             "type": "object",
             "properties": {
-                "annotations": {
-                    "type": "object"
-                },
                 "create": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "default": true
                 },
                 "name": {
                     "type": "string",
@@ -286,21 +130,16 @@
                 }
             }
         },
-        "standaloneScheduler": {
-            "type": "boolean"
-        },
-        "tolerations": {
-            "type": "array"
-        },
         "webServer": {
             "type": "object",
             "properties": {
                 "name": {
                     "type": "string",
-                    "default": ""
+                    "default": "mageai-webserver"
                 },
                 "replicaCount": {
-                    "type": "integer"
+                    "type": "integer",
+                    "default": 1
                 }
             }
         }
