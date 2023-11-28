@@ -3,19 +3,24 @@
     "type": "object",
     "properties": {
         "affinity": {
-            "type": "object"
+            "type": "object",
+            "default": ""
         },
         "config": {
-            "type": "object"
+            "type": "object",
+            "default": ""
         },
         "customLivenessProbe": {
-            "type": "object"
+            "type": "object",
+            "default": ""
         },
         "customReadinessProbe": {
-            "type": "object"
+            "type": "object",
+            "default": ""
         },
         "existingSecret": {
-            "type": "string"
+            "type": "string",
+            "default": ""
         },
         "extraEnvs": {
             "type": "array",
@@ -23,7 +28,8 @@
                 "type": "object",
                 "properties": {
                     "name": {
-                        "type": "string"
+                        "type": "string",
+                        "default": ""
                     },
                     "valueFrom": {
                         "type": "object",
@@ -32,7 +38,8 @@
                                 "type": "object",
                                 "properties": {
                                     "fieldPath": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "default": ""
                                     }
                                 }
                             }
@@ -47,10 +54,12 @@
                 "type": "object",
                 "properties": {
                     "mountPath": {
-                        "type": "string"
+                        "type": "string",
+                        "default": ""
                     },
                     "name": {
-                        "type": "string"
+                        "type": "string",
+                        "default": ""
                     }
                 }
             }
@@ -61,13 +70,15 @@
                 "type": "object",
                 "properties": {
                     "name": {
-                        "type": "string"
+                        "type": "string",
+                        "default": ""
                     },
                     "persistentVolumeClaim": {
                         "type": "object",
                         "properties": {
                             "claimName": {
-                                "type": "string"
+                                "type": "string",
+                                "default": ""
                             }
                         }
                     }
@@ -75,16 +86,19 @@
             }
         },
         "fullnameOverride": {
-            "type": "string"
+            "type": "string",
+            "default": ""
         },
         "image": {
             "type": "object",
             "properties": {
                 "pullPolicy": {
-                    "type": "string"
+                    "type": "string",
+                    "default": ""
                 },
                 "repository": {
-                    "type": "string"
+                    "type": "string",
+                    "default": ""
                 }
             }
         },
@@ -98,7 +112,8 @@
                     "type": "object"
                 },
                 "className": {
-                    "type": "string"
+                    "type": "string",
+                    "default": ""
                 },
                 "enabled": {
                     "type": "boolean"
@@ -109,7 +124,8 @@
                         "type": "object",
                         "properties": {
                             "host": {
-                                "type": "string"
+                                "type": "string",
+                                "default": ""
                             },
                             "paths": {
                                 "type": "array",
@@ -117,10 +133,12 @@
                                     "type": "object",
                                     "properties": {
                                         "path": {
-                                            "type": "string"
+                                            "type": "string",
+                                            "default": ""
                                         },
                                         "pathType": {
-                                            "type": "string"
+                                            "type": "string",
+                                            "default": ""
                                         }
                                     }
                                 }
@@ -143,10 +161,12 @@
                     "type": "integer"
                 },
                 "path": {
-                    "type": "string"
+                    "type": "string",
+                    "default": ""
                 },
                 "port": {
-                    "type": "string"
+                    "type": "string",
+                    "default": ""
                 },
                 "timeoutSeconds": {
                     "type": "integer"
@@ -154,7 +174,8 @@
             }
         },
         "nameOverride": {
-            "type": "string"
+            "type": "string",
+            "default": ""
         },
         "nodeSelector": {
             "type": "object"
@@ -175,10 +196,12 @@
                     "type": "integer"
                 },
                 "path": {
-                    "type": "string"
+                    "type": "string",
+                    "default": ""
                 },
                 "port": {
-                    "type": "string"
+                    "type": "string",
+                    "default": ""
                 },
                 "timeoutSeconds": {
                     "type": "integer"
@@ -189,7 +212,8 @@
             "type": "object",
             "properties": {
                 "architecture": {
-                    "type": "string"
+                    "type": "string",
+                    "default": ""
                 },
                 "auth": {
                     "type": "object",
@@ -200,7 +224,8 @@
                     }
                 },
                 "customRedisURL": {
-                    "type": "string"
+                    "type": "string",
+                    "default": ""
                 },
                 "enabled": {
                     "type": "boolean"
@@ -217,7 +242,8 @@
             "type": "object",
             "properties": {
                 "name": {
-                    "type": "string"
+                    "type": "string",
+                    "default": ""
                 },
                 "replicaCount": {
                     "type": "integer"
@@ -240,7 +266,8 @@
                     "type": "integer"
                 },
                 "type": {
-                    "type": "string"
+                    "type": "string",
+                    "default": ""
                 }
             }
         },
@@ -254,7 +281,8 @@
                     "type": "boolean"
                 },
                 "name": {
-                    "type": "string"
+                    "type": "string",
+                    "default": ""
                 }
             }
         },
@@ -268,7 +296,8 @@
             "type": "object",
             "properties": {
                 "name": {
-                    "type": "string"
+                    "type": "string",
+                    "default": ""
                 },
                 "replicaCount": {
                     "type": "integer"
