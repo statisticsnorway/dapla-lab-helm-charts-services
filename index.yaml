@@ -3,6 +3,25 @@ entries:
   dapla-lab-mageai:
   - apiVersion: v2
     appVersion: 0.9.46
+    created: "2023-11-28T13:08:52.699459956Z"
+    dependencies:
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 18.1.1
+    description: A Helm chart for Mage AI
+    digest: 0c14b0fa99766a0f3f0468b1335c354070c950fd59c6d1d26abb5b7ea8d4a3b8
+    home: https://www.mage.ai
+    icon: https://avatars.githubusercontent.com/u/69371472
+    name: dapla-lab-mageai
+    sources:
+    - https://statisticsnorway.github.io/dapla-lab-helm-charts-services
+    type: application
+    urls:
+    - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/dapla-lab-mageai-0.0.4/dapla-lab-mageai-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
+    appVersion: 0.9.46
     created: "2023-11-28T12:50:44.53432052Z"
     dependencies:
     - condition: redis.enabled
@@ -2287,4 +2306,4 @@ entries:
     urls:
     - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/vscode-python-0.0.1/vscode-python-0.0.1.tgz
     version: 0.0.1
-generated: "2023-11-28T12:50:44.534558404Z"
+generated: "2023-11-28T13:08:52.699697299Z"
