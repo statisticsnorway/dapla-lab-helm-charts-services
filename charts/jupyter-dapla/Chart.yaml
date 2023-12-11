@@ -1,5 +1,5 @@
 apiVersion: v2
-name: jupyter-python-dapla
+name: jupyter-dapla
 description: The JupyterLab IDE with Python, tailored for SSB's data platform (Dapla).
 icon: https://avatars.githubusercontent.com/u/5849578
 keywords:

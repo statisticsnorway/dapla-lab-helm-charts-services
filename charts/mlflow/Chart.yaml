@@ -1,5 +1,5 @@
 apiVersion: v2
-name: mlflow-dapla
+name: mlflow
 description: MLflow is an open source platform to manage the ML lifecycle, including experimentation, reproducibility, deployment, and a central model registry.
 icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/mlflow.png
 keywords:

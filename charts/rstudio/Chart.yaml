@@ -1,5 +1,5 @@
 apiVersion: v2
-name: rstudio-dapla
+name: rstudio
 description: The RStudio IDE with a collection of standard data science packages, adapted to work for Dapla.
 icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/rstudio.png
 keywords:
