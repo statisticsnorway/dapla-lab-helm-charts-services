@@ -1,14 +1,14 @@
 apiVersion: v2
-name: mlflow-dapla
-description: MLflow is an open source platform to manage the ML lifecycle, including experimentation, reproducibility, deployment, and a central model registry.
-icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/mlflow.png
+name: jupyter-dapla
+description: The JupyterLab IDE with Python, tailored for SSB's data platform (Dapla).
+icon: https://avatars.githubusercontent.com/u/5849578
 keywords:
-  - ML
-home: https://mlflow.org
+  - Jupyter
+  - Python
+home: https://jupyter.org/
 sources:
-  - https://github.com/statisticsnorway/dapla-lab-helm-charts-services
-
 # A chart can be either an 'application' or a 'library' chart.
+  - https://github.com/statisticsnorway/dapla-lab-helm-charts-services
 #
 # Application charts are a collection of templates that can be packaged into versioned archives
 # to be deployed.
@@ -21,13 +21,9 @@ type: application
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
-
-version: 1.0.5
+version: 1.0.0
 
 dependencies:
-  - name: postgresql
-    version: 12.6.6
-    repository: https://charts.bitnami.com/bitnami
   - name: library-chart
     version: 1.0.0
     repository: https://statisticsnorway.github.io/dapla-lab-helm-charts-services

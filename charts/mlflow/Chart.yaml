@@ -1,13 +1,13 @@
 apiVersion: v2
-name: rstudio-dapla
-description: The RStudio IDE with a collection of standard data science packages, adapted to work for Dapla.
-icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/rstudio.png
+name: mlflow
+description: MLflow is an open source platform to manage the ML lifecycle, including experimentation, reproducibility, deployment, and a central model registry.
+icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/mlflow.png
 keywords:
-  - RStudio
-  - R
-home: https://www.rstudio.com/
+  - ML
+home: https://mlflow.org
 sources:
-  - https://statisticsnorway.github.io/dapla-lab-helm-charts-services
+  - https://github.com/statisticsnorway/dapla-lab-helm-charts-services
+
 # A chart can be either an 'application' or a 'library' chart.
 #
 # Application charts are a collection of templates that can be packaged into versioned archives
@@ -21,9 +21,13 @@ type: application
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 1.1.6
+
+version: 1.0.0
 
 dependencies:
+  - name: postgresql
+    version: 12.6.6
+    repository: https://charts.bitnami.com/bitnami
   - name: library-chart
     version: 1.0.0
     repository: https://statisticsnorway.github.io/dapla-lab-helm-charts-services

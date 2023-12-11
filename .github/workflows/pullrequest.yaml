@@ -52,8 +52,8 @@ jobs:
       id: filter
       with:
         filters: |
-          jupyter-python-dapla:
-            - 'charts/jupyter-python-dapla/**'
+          jupyter-dapla:
+            - 'charts/jupyter-dapla/**'
   unittest:
     needs: changes
     if: ${{ needs.changes.outputs.charts != '[]' && needs.changes.outputs.charts != '' }}

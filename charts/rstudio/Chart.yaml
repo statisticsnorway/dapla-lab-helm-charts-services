@@ -1,14 +1,14 @@
 apiVersion: v2
-name: jupyter-python-dapla
-description: The JupyterLab IDE with Python, tailored for SSB's data platform (Dapla).
-icon: https://avatars.githubusercontent.com/u/5849578
+name: rstudio
+description: The RStudio IDE with a collection of standard data science packages, adapted to work for Dapla.
+icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/rstudio.png
 keywords:
-  - Jupyter
-  - Python
-home: https://jupyter.org/
+  - RStudio
+  - R
+home: https://www.rstudio.com/
 sources:
+  - https://statisticsnorway.github.io/dapla-lab-helm-charts-services
 # A chart can be either an 'application' or a 'library' chart.
-  - https://github.com/statisticsnorway/dapla-lab-helm-charts-services
 #
 # Application charts are a collection of templates that can be packaged into versioned archives
 # to be deployed.
@@ -21,7 +21,7 @@ type: application
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 1.1.11
+version: 1.0.0
 
 dependencies:
   - name: library-chart
