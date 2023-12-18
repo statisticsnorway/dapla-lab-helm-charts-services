@@ -45,12 +45,9 @@ oidc:
   configMapName: ""
 
 discovery:
-  hive: true
   mlflow: true
   metaflow: true
 
-hive:
-  configMapName: ""
 
 mlflow:
   configMapName: ""

@@ -31,9 +31,6 @@ spec:
         {{- if not (empty (trim (include "library-chart.configMapMLFlow" .)))}}
         checksum/mlflow: {{ include (print $.Template.BasePath "/configmap-mlflow.yaml") . | sha256sum }}
         {{- end }}
-        {{- if not (empty (trim (include "library-chart.configMapHive" .)))}}
-        checksum/hive: {{ include (print $.Template.BasePath "/configmap-hive.yaml") . | sha256sum }}
-        {{- end }}
       labels:
         {{- include "library-chart.selectorLabels" . | nindent 8 }}
     spec:
@@ -47,11 +44,6 @@ spec:
         {{- end }}
         {{- if .Values.security.oauth2.enabled }}
         - {{ include "library-chart.oauth2ProxyVolume" . | indent 10 | trim }}
-        {{- end }}
-        {{- if .Values.discovery.hive }}
-        - name: hive-config
-          configMap:
-            name: {{ include "library-chart.configMapNameHive" . }}
         {{- end }}
         {{- if .Values.discovery.metaflow }}
         - name: metaflow-config
@@ -133,11 +125,6 @@ spec:
           volumeMounts:
             - mountPath: /home/{{ .Values.environment.user}}/work
               name: home   
-            {{- if .Values.discovery.hive }}
-            - name: hive-config
-              mountPath: /opt/hive/conf/hive-site.xml
-              subPath: hive-site.xml
-            {{- end }}   
             {{- if .Values.discovery.metaflow }}
             - name: metaflow-config
               mountPath: /home/{{ .Values.environment.user}}/.metaflowconfig/config.json
