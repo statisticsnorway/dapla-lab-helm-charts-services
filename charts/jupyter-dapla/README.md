@@ -1,6 +1,6 @@
 # jupyter-dapla
 
-![Version: 1.1.1](https://img.shields.io/badge/Version-1.1.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 1.2.0](https://img.shields.io/badge/Version-1.2.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 The JupyterLab IDE with Python, tailored for SSB's data platform (Dapla).
 
@@ -25,9 +25,6 @@ The JupyterLab IDE with Python, tailored for SSB's data platform (Dapla).
 | autoscaling.maxReplicas | int | `100` |  |
 | autoscaling.minReplicas | int | `1` |  |
 | autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
-| coresite.configMapName | string | `""` |  |
-| discovery.hive | bool | `true` |  |
-| discovery.metaflow | bool | `true` |  |
 | discovery.mlflow | bool | `true` |  |
 | environment.group | string | `"users"` |  |
 | environment.user | string | `"onyxia"` |  |
@@ -40,7 +37,6 @@ The JupyterLab IDE with Python, tailored for SSB's data platform (Dapla).
 | git.name | string | `""` |  |
 | git.repository | string | `""` |  |
 | git.token | string | `""` |  |
-| hive.configMapName | string | `""` |  |
 | imagePullSecrets | list | `[]` |  |
 | init.personalInit | string | `""` |  |
 | init.personalInitArgs | string | `""` |  |
@@ -51,7 +47,7 @@ The JupyterLab IDE with Python, tailored for SSB's data platform (Dapla).
 | istio.hostname | string | `"chart-example.local"` |  |
 | kubernetes.enabled | bool | `false` |  |
 | kubernetes.role | string | `"view"` |  |
-| metaflow.configMapName | string | `""` |  |
+| mlflow.configMapName | string | `""` |  |
 | mlflow.configMapName | string | `""` |  |
 | nameOverride | string | `""` |  |
 | networking.clusterIP | string | `"None"` |  |
