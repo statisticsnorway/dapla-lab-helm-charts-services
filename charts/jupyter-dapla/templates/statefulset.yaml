@@ -48,11 +48,6 @@ spec:
         {{- if .Values.security.oauth2.enabled }}
         - {{ include "library-chart.oauth2ProxyVolume" . | indent 10 | trim }}
         {{- end }}
-        {{- if .Values.discovery.metaflow }}
-        - name: metaflow-config
-          configMap:
-            name: {{ include "library-chart.configMapNameMetaflow" . }}
-        {{- end }}
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
@@ -138,11 +133,6 @@ spec:
           volumeMounts:
             - mountPath: /home/{{ .Values.environment.user}}/work
               name: home
-            {{- if .Values.discovery.metaflow }}
-            - name: metaflow-config
-              mountPath: /home/{{ .Values.environment.user}}/.metaflowconfig/config.json
-              subPath: config.json
-            {{- end }}     
       {{- if .Values.security.oauth2.enabled }}
         - {{ include "library-chart.oauth2ProxyPod" . | indent 10 | trim }}
       {{ end }}

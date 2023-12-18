@@ -46,18 +46,12 @@ oidc:
 
 discovery:
   mlflow: true
-  metaflow: true
-
 
 mlflow:
   configMapName: ""
 
 coresite:
   configMapName: ""
-
-metaflow:
-  configMapName: ""
-
 
 git:
   # Specifies whether a config map should be created

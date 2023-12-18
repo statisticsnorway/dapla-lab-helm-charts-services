@@ -45,11 +45,6 @@ spec:
         {{- if .Values.security.oauth2.enabled }}
         - {{ include "library-chart.oauth2ProxyVolume" . | indent 10 | trim }}
         {{- end }}
-        {{- if .Values.discovery.metaflow }}
-        - name: metaflow-config
-          configMap:
-            name: {{ include "library-chart.configMapNameMetaflow" . }}
-        {{- end }}
         - name: dshm
           emptyDir:
             medium: Memory
@@ -124,12 +119,7 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
             - mountPath: /home/{{ .Values.environment.user}}/work
-              name: home   
-            {{- if .Values.discovery.metaflow }}
-            - name: metaflow-config
-              mountPath: /home/{{ .Values.environment.user}}/.metaflowconfig/config.json
-              subPath: config.json
-            {{- end }}
+              name: home
             - mountPath: /dev/shm
               name: dshm
         {{- if .Values.security.oauth2.enabled }}

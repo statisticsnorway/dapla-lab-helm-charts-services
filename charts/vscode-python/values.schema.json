@@ -104,15 +104,6 @@
           "x-onyxia": {
             "hidden": true
           }
-        },
-        "metaflow": {
-          "type": "boolean",
-          "title": "Enable metaflow discovery",
-          "description": "discover your metaflow service",
-          "default": true,
-          "x-onyxia": {
-            "hidden": true
-          }
         }
       }
     },
