@@ -306,10 +306,10 @@
                     "type": "string",
                     "title": "OIDC issuer url",
                     "description": "Url to the OIDC issuer",
-                    "default": "https://sso.dapla-dev.ssb.no/realms/ssb",
+                    "default": "",
                     "x-onyxia": {
                       "hidden": true,
-                      "overwriteDefaultWith": "region.oauth2.oidcIssuerUrl"
+                      "overwriteDefaultWith": "region.customValues.oidc.oidcIssuerUrl"
                     }
                   },
                   "clientId": {
@@ -627,6 +627,37 @@
                 "hidden": true,
                 "overwriteDefaultWith": "region.nodeSelector"
             }
+        },
+      "oidc": {
+        "description": "OIDC configuration",
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "description": "activate oidc",
+            "default": true,
+            "x-onyxia": {
+              "hidden": true
+            }
+          },
+          "tokenExchangeUrl": {
+            "type": "string",
+            "description": "token exchange url",
+            "default": "",
+            "x-onyxia": {
+              "hidden": true,
+              "overwriteDefaultWith": "region.customValues.oidc.tokenExchangeUrl"
+            }
+          },
+          "configMapName": {
+            "type": "string",
+            "description": "config map name",
+            "default": "",
+            "x-onyxia": {
+              "hidden": true
+            }
+          }
         }
+      }
     }
 }
