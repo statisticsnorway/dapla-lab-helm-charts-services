@@ -96,28 +96,10 @@
       "description": "configure your service to autodetect some ressources.",
       "type": "object",
       "properties": {
-        "hive": {
-          "type": "boolean",
-          "title": "Enable hive metastore discovery",
-          "description": "discover your hive metastore service",
-          "default": true,
-          "x-onyxia": {
-            "hidden": true
-          }
-        },
         "mlflow": {
           "type": "boolean",
           "title": "Enable mlflow discovery",
           "description": "discover your mlflow service",
-          "default": true,
-          "x-onyxia": {
-            "hidden": true
-          }
-        },
-        "metaflow": {
-          "type": "boolean",
-          "title": "Enable metaflow discovery",
-          "description": "discover your metaflow service",
           "default": true,
           "x-onyxia": {
             "hidden": true
