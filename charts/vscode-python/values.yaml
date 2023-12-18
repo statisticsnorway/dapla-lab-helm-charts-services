@@ -50,9 +50,6 @@ discovery:
 mlflow:
   configMapName: ""
 
-coresite:
-  configMapName: ""
-
 git:
   # Specifies whether a config map should be created
   enabled: true

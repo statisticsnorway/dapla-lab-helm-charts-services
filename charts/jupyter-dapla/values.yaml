@@ -72,7 +72,6 @@ discovery:
 mlflow:
   configMapName: ""
 
-coresite:
   configMapName: ""
 
 
