@@ -1,6 +1,6 @@
 # rstudio
 
-![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 1.1.0](https://img.shields.io/badge/Version-1.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 The RStudio IDE with a collection of standard data science packages, adapted to work for Dapla.
 
@@ -14,7 +14,7 @@ The RStudio IDE with a collection of standard data science packages, adapted to 
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 1.0.0 |
+| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 1.0.1 |
 
 ## Values
 
@@ -54,7 +54,7 @@ The RStudio IDE with a collection of standard data science packages, adapted to 
 | nodeSelector | object | `{}` |  |
 | oidc.configMapName | string | `""` |  |
 | oidc.enabled | bool | `true` |  |
-| oidc.tokenExchangeUrl | string | `"https://sso.dapla-dev.ssb.no/realms/ssb/protocol/openid-connect/token"` |  |
+| oidc.tokenExchangeUrl | string | `""` |  |
 | persistence.accessMode | string | `"ReadWriteOnce"` |  |
 | persistence.enabled | bool | `true` |  |
 | persistence.size | string | `"10Gi"` |  |
