@@ -231,24 +231,10 @@
                         "hosts": {
                             "type": "array",
                             "description": "Array of hosts allowed to be accessed from your service",
-                            "default": [
-                                "sso.dapla-dev.ssb.no",
-                                "data.ssb.no",
-                                "cran.uib.no",
-                                "packagemanager.rstudio.com",
-                                "packagemanager.posit.co",
-                                "rspm-sync.rstudio.com",
-                                "github.com",
-                                "api.github.com",
-                                "objects.githubusercontent.com",
-                                "oauth2.googleapis.com",
-                                "storage.googleapis.com",
-                                "www.googleapis.com",
-                                "codeload.github.com",
-                                "ws.geonorge.no"
-                            ],
+                            "default": [],
                             "x-onyxia": {
-                                "hidden": true
+                                "hidden": true,
+                                "overwriteDefaultWith": "region.customValues.rstudioEgress"
                             }
                         }
                     }

@@ -249,19 +249,10 @@
             "hosts": {
               "type": "array",
               "description": "Array of hosts allowed to be accessed from your service",
-              "default": [
-                "pypi.python.org",
-                "files.pythonhosted.org",
-                "pypi.org",
-                "github.com",
-                "install.python-poetry.org",
-                "oauth2.googleapis.com",
-                "sso.dapla-dev.ssb.no",
-                "storage.googleapis.com",
-                "www.googleapis.com"
-              ],
+              "default": [],
               "x-onyxia": {
-                "hidden": true
+                "hidden": true,
+                "overwriteDefaultWith": "region.customValues.vscodeEgress"
               }
             }
           }

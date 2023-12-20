@@ -72,9 +72,6 @@ discovery:
 mlflow:
   configMapName: ""
 
-  configMapName: ""
-
-
 replicaCount: 1
 
 
