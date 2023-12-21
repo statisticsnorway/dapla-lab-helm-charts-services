@@ -30,6 +30,6 @@ spec:
         - destination:
             host: {{ $fullName }}
             port:
-              number:  {{ if .Values.security.oauth2.enabled }}4180{{ else }}{{ $svcPort }}{{ end }}
+              number: 4180
 {{- end }}
 {{- end }}
