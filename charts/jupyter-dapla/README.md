@@ -1,6 +1,6 @@
 # jupyter-dapla
 
-![Version: 1.2.1](https://img.shields.io/badge/Version-1.2.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 1.3.0](https://img.shields.io/badge/Version-1.3.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 The JupyterLab IDE with Python, tailored for SSB's data platform (Dapla).
 
@@ -14,7 +14,7 @@ The JupyterLab IDE with Python, tailored for SSB's data platform (Dapla).
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 1.0.1 |
+| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 2.0.0 |
 
 ## Values
 
@@ -74,7 +74,6 @@ The JupyterLab IDE with Python, tailored for SSB's data platform (Dapla).
 | security.networkPolicy.from | list | `[]` |  |
 | security.oauth2.authenticatedEmails | string | `""` |  |
 | security.oauth2.clientId | string | `"my-client"` |  |
-| security.oauth2.enabled | bool | `false` |  |
 | security.oauth2.oidcIssuerUrl | string | `""` |  |
 | security.oauth2.provider | string | `"keycloak-oidc"` |  |
 | security.password | string | `"changeme"` |  |

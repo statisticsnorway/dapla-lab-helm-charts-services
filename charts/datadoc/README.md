@@ -1,6 +1,6 @@
 # datadoc
 
-![Version: 0.3.2](https://img.shields.io/badge/Version-0.3.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.4.0](https://img.shields.io/badge/Version-0.4.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Document datasets in Statistics Norway.
 
@@ -14,7 +14,7 @@ Document datasets in Statistics Norway.
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 1.0.1 |
+| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 2.0.0 |
 
 ## Values
 
@@ -59,7 +59,6 @@ Document datasets in Statistics Norway.
 | security.networkPolicy.from | list | `[]` |  |
 | security.oauth2.authenticatedEmails | string | `""` |  |
 | security.oauth2.clientId | string | `"my-client"` |  |
-| security.oauth2.enabled | bool | `false` |  |
 | security.oauth2.oidcIssuerUrl | string | `""` |  |
 | security.oauth2.provider | string | `"keycloak-oidc"` |  |
 | security.password | string | `"changeme"` |  |

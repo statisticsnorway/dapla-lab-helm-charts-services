@@ -1,6 +1,6 @@
 # rstudio
 
-![Version: 1.1.2](https://img.shields.io/badge/Version-1.1.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 1.2.0](https://img.shields.io/badge/Version-1.2.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 The RStudio IDE with a collection of standard data science packages, adapted to work for Dapla.
 
@@ -14,7 +14,7 @@ The RStudio IDE with a collection of standard data science packages, adapted to 
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 1.0.1 |
+| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 2.0.0 |
 
 ## Values
 
@@ -70,7 +70,6 @@ The RStudio IDE with a collection of standard data science packages, adapted to 
 | security.networkPolicy.from | list | `[]` |  |
 | security.oauth2.authenticatedEmails | string | `""` |  |
 | security.oauth2.clientId | string | `"my-client"` |  |
-| security.oauth2.enabled | bool | `false` |  |
 | security.oauth2.oidcIssuerUrl | string | `""` |  |
 | security.oauth2.provider | string | `"keycloak-oidc"` |  |
 | security.password | string | `"changeme"` |  |
