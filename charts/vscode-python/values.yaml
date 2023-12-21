@@ -1,8 +1,6 @@
-# Default values for rstudio.
-
 service:
   image:
-    version: "inseefrlab/onyxia-vscode-python:py3.10.13"
+    version: "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-lab-docker/onyxia/dapla-vscode-python:main"
     pullPolicy: IfNotPresent
 
 security:
@@ -41,20 +39,14 @@ oidc:
   tokenExchangeUrl: ""
   # The name of the configmap to use.
   # If not set and create is true, a name is generated using the fullname template
-  configMapName: ""
-
-discovery:
-  mlflow: true
-
-mlflow:
-  configMapName: ""
+  secretName: ""
 
 git:
   # Specifies whether a config map should be created
   enabled: true
   # The name of the configmap to use.
   # If not set and create is true, a name is generated using the fullname template
-  configMapName: ""
+  secretName: ""
   name: ""
   email: ""
   cache: ""
@@ -83,8 +75,8 @@ serviceAccount:
   name: ""
 
 environment:
-  user: onyxia
-  group: users
+  user: coder
+  group: coder
 
 kubernetes:
   enabled: true

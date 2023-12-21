@@ -92,21 +92,6 @@
           }
       }
     },
-    "discovery": {
-      "description": "configure your service to autodetect some ressources.",
-      "type": "object",
-      "properties": {
-        "mlflow": {
-          "type": "boolean",
-          "title": "Enable mlflow discovery",
-          "description": "discover your mlflow service",
-          "default": true,
-          "x-onyxia": {
-            "hidden": true
-          }
-        }
-      }
-    },
     "service": {
     "description": "spark-history specific configuration",
     "type": "object",
@@ -664,7 +649,7 @@
             "overwriteDefaultWith": "region.customValues.oidc.tokenExchangeUrl"
           }
         },
-        "configMapName": {
+        "secretName": {
           "type": "string",
           "description": "config map name",
           "default": "",

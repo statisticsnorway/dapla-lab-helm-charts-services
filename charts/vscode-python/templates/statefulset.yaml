@@ -17,19 +17,16 @@ spec:
     metadata:
       annotations:
         {{- if .Values.git.enabled }}
-        checksum/git: {{ include (print $.Template.BasePath "/configmap-git.yaml") . | sha256sum }}
+        checksum/git: {{ include (print $.Template.BasePath "/secret-git.yaml") . | sha256sum }}
         {{- end }}
         {{- if .Values.oidc.enabled }}
-        checksum/oidc: {{ include (print $.Template.BasePath "/configmap-oidc.yaml") . | sha256sum }}
+        checksum/oidc: {{ include (print $.Template.BasePath "/secret-oidc.yaml") . | sha256sum }}
         {{- end }}
         {{- if (include "library-chart.repository.enabled"  .) }}
         checksum/repository: {{ include (print $.Template.BasePath "/configmap-repository.yaml") . | sha256sum }}
         {{- end }}
         {{- with .Values.podAnnotations }}
         {{- toYaml . | nindent 8 }}
-        {{- end }}
-        {{- if not (empty (trim (include "library-chart.configMapMLFlow" .)))}}
-        checksum/mlflow: {{ include (print $.Template.BasePath "/configmap-mlflow.yaml") . | sha256sum }}
         {{- end }}
       labels:
         {{- include "library-chart.selectorLabels" . | nindent 8 }}
@@ -60,7 +57,7 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.service.image.version }}"
           command: ["/bin/sh","-c"]
-          args: ["{{ .Values.init.standardInitPath }} /usr/bin/code-server --host 0.0.0.0 --auth none /home/coder/work"]
+          args: ["{{ .Values.init.standardInitPath }} /usr/bin/code-server --host 0.0.0.0 --auth none /home/{{ .Values.environment.user }}/work"]
           imagePullPolicy: {{ .Values.service.image.pullPolicy }}
           env:
             {{- if .Values.init.regionInit }}
@@ -86,28 +83,24 @@ spec:
             - name: PROJECT_GROUP
               value: {{ .Values.environment.group }}
             - name: ROOT_PROJECT_DIRECTORY
-              value: /home/{{ .Values.environment.user }}/work  
+              value: /home/{{ .Values.environment.user }}/work
           envFrom:
             {{- if .Values.oidc.enabled }}
-            - configMapRef:
-                name: {{ include "library-chart.configMapNameOidc" . }}
+            - secretRef:
+                name: {{ include "library-chart.secretNameOidc" . }}
             {{- end }}
             {{- if .Values.git.enabled }}
-            - configMapRef:
-                name: {{ include "library-chart.configMapNameGit" . }}
+            - secretRef:
+                name: {{ include "library-chart.secretNameGit" . }}
             {{- end }}
             {{- if (include "library-chart.repository.enabled"  .) }}
             - configMapRef:
                 name: {{ include "library-chart.configMapNameRepository" . }}
             {{- end }}
-            {{- if not (empty (trim (include "library-chart.configMapMLFlow" .)))}}
-            - configMapRef:
-                name: {{ include "library-chart.configMapNameMLFlow" . }}
-            {{- end }}
           livenessProbe:
             httpGet:
               path: /
-              port: {{ .Values.networking.service.port }} 
+              port: {{ .Values.networking.service.port }}
           readinessProbe:
             httpGet:
               path: /
@@ -116,6 +109,7 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
             - mountPath: /home/{{ .Values.environment.user}}/work
+              subPath: work
               name: home
             - mountPath: /dev/shm
               name: dshm
