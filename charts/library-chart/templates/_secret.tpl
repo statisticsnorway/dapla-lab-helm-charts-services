@@ -68,7 +68,7 @@ metadata:
   name: {{ include "library-chart.secretNameOidc" . }}
   labels:
     {{- include "library-chart.labels" . | nindent 4 }}
-data:
+stringData:
   OIDC_TOKEN_EXCHANGE_URL: "{{ .Values.oidc.tokenExchangeUrl }}"
   {{ .Values.userAttributes.environmentVariableName }}: "{{ .Values.userAttributes.value }}"
 {{- end }}
