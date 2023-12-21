@@ -1,7 +1,7 @@
 apiVersion: v2
 name: jupyter-dapla
 description: The JupyterLab IDE with Python, tailored for SSB's data platform (Dapla).
-icon: https://avatars.githubusercontent.com/u/5849578
+icon: https://raw.githubusercontent.com/statisticsnorway/dapla-lab-helm-charts-services/d881cef65161a7209ac7c85fbcb6608581249dc1/icons/jupyter.png
 keywords:
   - Jupyter
   - Python
@@ -21,7 +21,7 @@ type: application
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 1.3.0
+version: 1.3.1
 
 dependencies:
   - name: library-chart
