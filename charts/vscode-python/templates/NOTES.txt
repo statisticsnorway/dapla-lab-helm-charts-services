@@ -1,3 +1,11 @@
 {{- if .Values.istio.enabled }}
-- You can connect to this vscode with your browser on this [link](https://{{ .Values.istio.hostname }})
+- You can connect to this Jupyter-service when you see **Open the service** in the bottom right of this box.
+{{- end }}
+
+*Important:*
+
+{{- if and .Values.persistence.enabled (not .Values.persistence.existingClaim) }}
+- The volume/disc associated with the service will be deleted every day.
+- Always save data in Google-buckets and not in the temporary volume/disc og the service. 
+- You should always save your code in GitHub. Remember to push code frequently to GitHub. 
 {{- end }}
