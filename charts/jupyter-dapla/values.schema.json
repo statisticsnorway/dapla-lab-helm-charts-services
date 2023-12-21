@@ -622,6 +622,32 @@
             }
           }
         }
+      },
+      "deleteJob": {
+        "description": "Configuration for automatic deletion of job",
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "description": "Whenever or not to create a job to delete this release",
+            "default": true
+          },
+          "hourAtDayUTC": {
+            "type": "string",
+            "title": "Hour at day",
+            "description": "Which hour at day the job should run",
+            "default": "20",
+            "form": true,
+            "render": "slider",
+            "sliderMin": 0,
+            "sliderMax": 23,
+            "sliderStep": 1,
+            "sliderUnit": "",
+            "x-onyxia": {
+              "hidden": true
+            }
+          }
+        }
       }
     }
 }
