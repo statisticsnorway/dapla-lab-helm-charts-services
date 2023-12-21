@@ -1,16 +1,11 @@
 {{/* Create the name of the config map oauth2proxy to use */}}
 {{- define "library-chart.configMapNameOAuth2" -}}
-{{- if .Values.security.oauth2.enabled }}
 {{- $name:= (printf "%s-configmap-oauth2" (include "library-chart.fullname" .) )  }}
 {{- default $name .Values.security.oauth2.configMapName }}
-{{- else }}
-{{- default "oauth2-proxy-client-config" .Values.security.oauth2.configMapName }}
-{{- end }}
 {{- end }}
 
 {{/* Template to generate a ConfigMap for oauth2proxy */}}
 {{- define "library-chart.configMapOAuth2" -}}
-{{- if .Values.security.oauth2.enabled }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -142,5 +137,4 @@ data:
     reverse_proxy = true
     real_client_ip_header = "X-Forwarded-For"
 
-{{- end }}
 {{- end }}
