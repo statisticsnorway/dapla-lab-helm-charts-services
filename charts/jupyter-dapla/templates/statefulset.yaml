@@ -45,9 +45,7 @@ spec:
         {{- else }}
           emptyDir: {}
         {{- end }}
-        {{- if .Values.security.oauth2.enabled }}
         - {{ include "library-chart.oauth2ProxyVolume" . | indent 10 | trim }}
-        {{- end }}
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
@@ -133,9 +131,7 @@ spec:
           volumeMounts:
             - mountPath: /home/{{ .Values.environment.user}}/work
               name: home
-      {{- if .Values.security.oauth2.enabled }}
         - {{ include "library-chart.oauth2ProxyPod" . | indent 10 | trim }}
-      {{ end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

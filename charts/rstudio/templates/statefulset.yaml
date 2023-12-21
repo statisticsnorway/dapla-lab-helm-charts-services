@@ -39,9 +39,7 @@ spec:
         {{- else }}
           emptyDir: {}
         {{- end }}
-        {{- if .Values.security.oauth2.enabled }}
         - {{ include "library-chart.oauth2ProxyVolume" . | indent 10 | trim }}
-        {{- end }}
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
@@ -86,10 +84,8 @@ spec:
             - name: PERSONAL_INIT_ARGS
               value: {{ .Values.init.personalInitArgs }}
             {{- end }}
-            {{- if .Values.security.oauth2.enabled}}
             - name: DISABLE_AUTH
               value: "true"
-            {{- end }}
           envFrom:
             {{- if .Values.oidc.enabled }}
             - configMapRef:
@@ -125,9 +121,7 @@ spec:
           volumeMounts:
             - mountPath: /home/{{ .Values.environment.user }}/work
               name: home
-        {{- if .Values.security.oauth2.enabled }}
         - {{ include "library-chart.oauth2ProxyPod" . | indent 10 | trim }}
-        {{ end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

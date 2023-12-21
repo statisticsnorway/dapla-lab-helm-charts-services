@@ -42,9 +42,7 @@ spec:
         {{- else }}
           emptyDir: {}
         {{- end }}
-        {{- if .Values.security.oauth2.enabled }}
         - {{ include "library-chart.oauth2ProxyVolume" . | indent 10 | trim }}
-        {{- end }}
         - name: dshm
           emptyDir:
             medium: Memory
@@ -62,8 +60,7 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.service.image.version }}"
           command: ["/bin/sh","-c"]
-          {{- $authMethod := ternary "none" "password" .Values.security.oauth2.enabled }}
-          args: ["{{ .Values.init.standardInitPath }} /usr/bin/code-server --host 0.0.0.0 --auth {{ $authMethod }} /home/coder/work"]
+          args: ["{{ .Values.init.standardInitPath }} /usr/bin/code-server --host 0.0.0.0 --auth none /home/coder/work"]
           imagePullPolicy: {{ .Values.service.image.pullPolicy }}
           env:
             {{- if .Values.init.regionInit }}
@@ -122,9 +119,7 @@ spec:
               name: home
             - mountPath: /dev/shm
               name: dshm
-        {{- if .Values.security.oauth2.enabled }}
         - {{ include "library-chart.oauth2ProxyPod" . | indent 10 | trim }}
-        {{ end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
