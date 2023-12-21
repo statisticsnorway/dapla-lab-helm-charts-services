@@ -1,5 +1,5 @@
 {{- if .Values.istio.enabled }}
-- You can connect to this Jupyter-service when you see **Open the service** in the bottom right of this box.
+- You can connect to this VSCode-service when you see **Open the service** in the bottom right of this box.
 {{- end }}
 
 *Important:*
