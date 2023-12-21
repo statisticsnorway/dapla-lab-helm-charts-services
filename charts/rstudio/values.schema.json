@@ -243,15 +243,6 @@
                     "type": "object",
                     "description": "OAuth2 configuration",
                     "properties": {
-                        "enabled": {
-                            "type": "boolean",
-                            "title": "Enable OAuth2",
-                            "description": "Enable authorization of your service with OAuth2",
-                            "default": true,
-                            "x-onyxia": {
-                                "hidden": true
-                            }
-                        },
                         "provider": {
                             "type": "string",
                             "title": "OAuth2 provider",
