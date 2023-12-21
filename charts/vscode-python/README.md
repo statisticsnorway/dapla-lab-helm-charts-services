@@ -1,6 +1,6 @@
 # vscode-python
 
-![Version: 2.3.2](https://img.shields.io/badge/Version-2.3.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 2.4.0](https://img.shields.io/badge/Version-2.4.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 The Visual Studio Code IDE with Python, Julia, and a collection of standard data science packages.
 
@@ -15,7 +15,7 @@ The Visual Studio Code IDE with Python, Julia, and a collection of standard data
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 2.0.0 |
+| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 3.0.1 |
 
 ## Values
 
@@ -26,16 +26,15 @@ The Visual Studio Code IDE with Python, Julia, and a collection of standard data
 | autoscaling.maxReplicas | int | `100` |  |
 | autoscaling.minReplicas | int | `1` |  |
 | autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
-| discovery.mlflow | bool | `true` |  |
-| environment.group | string | `"users"` |  |
-| environment.user | string | `"onyxia"` |  |
+| environment.group | string | `"coder"` |  |
+| environment.user | string | `"coder"` |  |
 | fullnameOverride | string | `""` |  |
 | git.branch | string | `""` |  |
 | git.cache | string | `""` |  |
-| git.configMapName | string | `""` |  |
 | git.email | string | `""` |  |
 | git.enabled | bool | `true` |  |
 | git.name | string | `""` |  |
+| git.secretName | string | `""` |  |
 | imagePullSecrets | list | `[]` |  |
 | init.personalInit | string | `""` |  |
 | init.personalInitArgs | string | `""` |  |
@@ -47,14 +46,13 @@ The Visual Studio Code IDE with Python, Julia, and a collection of standard data
 | istio.hostname | string | `"chart-example.local"` |  |
 | kubernetes.enabled | bool | `true` |  |
 | kubernetes.role | string | `"view"` |  |
-| mlflow.configMapName | string | `""` |  |
 | nameOverride | string | `""` |  |
 | networking.clusterIP | string | `"None"` |  |
 | networking.service.port | int | `8080` |  |
 | networking.type | string | `"ClusterIP"` |  |
 | nodeSelector | object | `{}` |  |
-| oidc.configMapName | string | `""` |  |
 | oidc.enabled | bool | `true` |  |
+| oidc.secretName | string | `""` |  |
 | oidc.tokenExchangeUrl | string | `""` |  |
 | persistence.accessMode | string | `"ReadWriteOnce"` |  |
 | persistence.enabled | bool | `true` |  |
@@ -79,7 +77,7 @@ The Visual Studio Code IDE with Python, Julia, and a collection of standard data
 | security.serviceEntry.hosts[0] | string | `"storage.googleapis.com"` |  |
 | securityContext | object | `{}` |  |
 | service.image.pullPolicy | string | `"IfNotPresent"` |  |
-| service.image.version | string | `"inseefrlab/onyxia-vscode-python:py3.10.13"` |  |
+| service.image.version | string | `"europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-lab-docker/onyxia/dapla-vscode-python:main"` |  |
 | serviceAccount.annotations | object | `{}` |  |
 | serviceAccount.create | bool | `true` |  |
 | serviceAccount.name | string | `""` |  |
