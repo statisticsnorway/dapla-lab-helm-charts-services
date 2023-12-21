@@ -4,6 +4,4 @@
 
 *Important:*
 
-{{- if and .Values.persistence.enabled (not .Values.persistence.existingClaim) }}
 - This service is under active development.
-{{- end }}
