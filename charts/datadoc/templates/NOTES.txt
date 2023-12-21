@@ -1,7 +1,9 @@
 {{- if .Values.istio.enabled }}
-- You can connect to datadoc with your browser on this [link](https://{{ .Values.istio.hostname }})
-{{- if .Values.networking.user.enabled }}
-- You can connect to your custom port on this [link](https://{{ .Values.istio.userHostname }})
-If you don't run your custom service you will get a 502 bad gateway error.
+- You can connect to this Datadoc-service when you see **Open the service** in the bottom right of this box.
 {{- end }}
+
+*Important:*
+
+{{- if and .Values.persistence.enabled (not .Values.persistence.existingClaim) }}
+- This service is under active development.
 {{- end }}
