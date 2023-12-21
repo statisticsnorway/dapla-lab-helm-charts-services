@@ -17,16 +17,13 @@ spec:
     metadata:
       annotations:
         {{- if .Values.git.enabled }}
-        checksum/git: {{ include (print $.Template.BasePath "/configmap-git.yaml") . | sha256sum }}
+        checksum/git: {{ include (print $.Template.BasePath "/secret-git.yaml") . | sha256sum }}
         {{- end }}
         {{- if .Values.oidc.enabled }}
-        checksum/oidc: {{ include (print $.Template.BasePath "/configmap-oidc.yaml") . | sha256sum }}
+        checksum/oidc: {{ include (print $.Template.BasePath "/secret-oidc.yaml") . | sha256sum }}
         {{- end }}
         {{- if (include "library-chart.repository.enabled"  .) }}
         checksum/repository: {{ include (print $.Template.BasePath "/configmap-repository.yaml") . | sha256sum }}
-        {{- end }}
-        {{- if not (empty (trim (include "library-chart.configMapMLFlow" .)))}}
-        checksum/mlflow: {{ include (print $.Template.BasePath "/configmap-mlflow.yaml") . | sha256sum }}
         {{- end }}
         {{- with .Values.podAnnotations }}
         {{- toYaml . | nindent 8 }}
@@ -98,20 +95,16 @@ spec:
             {{- end }}
           envFrom:
             {{- if .Values.git.enabled }}
-            - configMapRef:
-                name: {{ include "library-chart.configMapNameGit" . }}
+            - secretRef:
+                name: {{ include "library-chart.secretNameGit" . }}
             {{- end }}
             {{- if .Values.oidc.enabled }}
-            - configMapRef:
-                name: {{ include "library-chart.configMapNameOidc" . }}
+            - secretRef:
+                name: {{ include "library-chart.secretNameOidc" . }}
             {{- end }}
             {{- if (include "library-chart.repository.enabled"  .) }}
             - configMapRef:
                 name: {{ include "library-chart.configMapNameRepository" . }}
-            {{- end }}
-            {{- if not (empty (trim (include "library-chart.configMapMLFlow" .)))}}
-            - configMapRef:
-                name: {{ include "library-chart.configMapNameMLFlow" . }}
             {{- end }}
           livenessProbe:
             httpGet:
