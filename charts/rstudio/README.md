@@ -1,6 +1,6 @@
 # rstudio
 
-![Version: 1.2.1](https://img.shields.io/badge/Version-1.2.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 1.3.0](https://img.shields.io/badge/Version-1.3.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 The RStudio IDE with a collection of standard data science packages, adapted to work for Dapla.
 
@@ -14,7 +14,7 @@ The RStudio IDE with a collection of standard data science packages, adapted to 
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 2.0.0 |
+| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 3.0.1 |
 
 ## Values
 
@@ -30,11 +30,11 @@ The RStudio IDE with a collection of standard data science packages, adapted to 
 | fullnameOverride | string | `""` |  |
 | git.branch | string | `""` |  |
 | git.cache | string | `""` |  |
-| git.configMapName | string | `""` |  |
 | git.email | string | `""` |  |
 | git.enabled | bool | `true` |  |
 | git.name | string | `""` |  |
 | git.repository | string | `""` |  |
+| git.secretName | string | `""` |  |
 | git.token | string | `""` |  |
 | imagePullSecrets | list | `[]` |  |
 | init.personalInit | string | `""` |  |
@@ -52,8 +52,8 @@ The RStudio IDE with a collection of standard data science packages, adapted to 
 | networking.sparkui.port | int | `4040` |  |
 | networking.type | string | `"ClusterIP"` |  |
 | nodeSelector | object | `{}` |  |
-| oidc.configMapName | string | `""` |  |
 | oidc.enabled | bool | `true` |  |
+| oidc.secretName | string | `""` |  |
 | oidc.tokenExchangeUrl | string | `""` |  |
 | persistence.accessMode | string | `"ReadWriteOnce"` |  |
 | persistence.enabled | bool | `true` |  |
