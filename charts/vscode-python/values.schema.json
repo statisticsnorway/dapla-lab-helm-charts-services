@@ -666,7 +666,7 @@
         "enabled": {
           "type": "boolean",
           "description": "Whenever or not to create a job to delete this release",
-          "default": "true",
+          "default": true,
           "x-onyxia": {
             "hidden": false
           }
