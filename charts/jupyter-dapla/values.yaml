@@ -169,4 +169,8 @@ startupProbe:
 
 deleteJob:
   enabled: true
-  hourAtDayUTC: "20"
+  cronMinuteAtDay: "0"
+  cronHourAtDay: "20"
+  imageVersion: "v1.0.0"
+  serviceAccount:
+    annotations: {}

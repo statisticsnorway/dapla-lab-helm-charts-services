@@ -129,3 +129,11 @@ startupProbe:
   periodSeconds: 10
   successThreshold: 1
   timeoutSeconds: 30
+
+deleteJob:
+  enabled: true
+  cronMinuteAtDay: "0"
+  cronHourAtDay: "20"
+  imageVersion: "v1.0.0"
+  serviceAccount:
+    annotations: {}
