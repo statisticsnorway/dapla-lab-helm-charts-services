@@ -44,14 +44,14 @@ oidc:
   tokenExchangeUrl: ""
   # The name of the configmap to use.
   # If not set and create is true, a name is generated using the fullname template
-  configMapName: ""
+  secretName: ""
 
 git:
   # Specifies whether a config map should be created
   enabled: true
   # The name of the configmap to use.
   # If not set and create is true, a name is generated using the fullname template
-  configMapName: ""
+  secretName: ""
   name: ""
   email: ""
   cache: ""

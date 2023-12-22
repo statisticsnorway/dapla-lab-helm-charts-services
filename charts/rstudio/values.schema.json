@@ -593,7 +593,7 @@
                         "overwriteDefaultWith": "region.customValues.oidc.tokenExchangeUrl"
                     }
                 },
-                "configMapName": {
+                "secretName": {
                     "type": "string",
                     "description": "config map name",
                     "default": "",
