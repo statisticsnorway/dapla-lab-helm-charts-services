@@ -460,6 +460,7 @@
         "enabled": {
           "type": "boolean",
           "description": "Whenever or not to create a job to delete this release",
+          "default": "true",
           "x-onyxia": {
             "hidden": false
           }
@@ -468,7 +469,7 @@
           "type": "string",
           "title": "Minute at day",
           "description": "Which minute at day the job should run",
-          "default": "20",
+          "default": "0",
           "form": true,
           "render": "slider",
           "sliderMin": 0,
