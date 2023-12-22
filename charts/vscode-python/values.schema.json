@@ -109,9 +109,9 @@
               "version": {
                 "description": "vscode supported version",
                 "type": "string",
-                "default": "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-lab-docker/onyxia/dapla-vscode-python:main",
+                "default": "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-lab-docker/onyxia/dapla-vscode-python:1.0.0",
                 "listEnum": [
-                  "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-lab-docker/onyxia/dapla-vscode-python:main"
+                  "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-lab-docker/onyxia/dapla-vscode-python:1.0.0"
                 ],
                 "render": "list",
                 "pattern": "^[a-z0-9-_./]+(:[a-z0-9-_.]+)?$"
