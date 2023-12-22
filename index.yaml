@@ -494,6 +494,28 @@ entries:
     version: 1.0.0
   vscode-python:
   - apiVersion: v2
+    created: "2023-12-22T10:34:19.761634804Z"
+    dependencies:
+    - name: library-chart
+      repository: https://statisticsnorway.github.io/dapla-lab-helm-charts-services
+      version: 3.0.1
+    description: The Visual Studio Code IDE with Python, Julia, and a collection of
+      standard data science packages.
+    digest: 9922a8fb580e89f4ec94fdbbb9bf0f0a6ca96035cb1b69e175bf45efa8bf2fc0
+    home: https://code.visualstudio.com/
+    icon: https://minio.lab.sspcloud.fr/projet-onyxia/assets/servicesImg/vscode.png
+    keywords:
+    - VSCode
+    - Python
+    name: vscode-python
+    sources:
+    - https://github.com/InseeFrLab/images-datascience
+    - https://github.com/InseeFrLab/helm-charts-interactive-services
+    type: application
+    urls:
+    - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/vscode-python-2.4.1/vscode-python-2.4.1.tgz
+    version: 2.4.1
+  - apiVersion: v2
     created: "2023-12-21T22:50:01.749960637Z"
     dependencies:
     - name: library-chart
@@ -647,4 +669,4 @@ entries:
     urls:
     - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/vscode-python-2.1.1/vscode-python-2.1.1.tgz
     version: 2.1.1
-generated: "2023-12-22T10:02:19.512920624Z"
+generated: "2023-12-22T10:34:19.761709543Z"
