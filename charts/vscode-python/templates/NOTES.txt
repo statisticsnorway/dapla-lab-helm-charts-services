@@ -5,5 +5,5 @@
 *Important:*
 
 - The volume/disc associated with the service will be deleted every day.
-- Always save data in Google-buckets and not in the temporary volume/disc og the service. 
+- Always save data in Google-buckets and not on the temporary volume/disc provided by the service.
 - You should always save your code in GitHub. Remember to push code frequently to GitHub. 
