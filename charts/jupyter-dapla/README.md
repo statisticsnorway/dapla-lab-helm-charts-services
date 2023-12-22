@@ -1,6 +1,6 @@
 # jupyter-dapla
 
-![Version: 1.4.0](https://img.shields.io/badge/Version-1.4.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 1.4.1](https://img.shields.io/badge/Version-1.4.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 The JupyterLab IDE with Python, tailored for SSB's data platform (Dapla).
 
@@ -14,7 +14,7 @@ The JupyterLab IDE with Python, tailored for SSB's data platform (Dapla).
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 3.0.1 |
+| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 3.1.1 |
 
 ## Values
 
@@ -25,8 +25,11 @@ The JupyterLab IDE with Python, tailored for SSB's data platform (Dapla).
 | autoscaling.maxReplicas | int | `100` |  |
 | autoscaling.minReplicas | int | `1` |  |
 | autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
+| deleteJob.cronHourAtDay | string | `"20"` |  |
+| deleteJob.cronMinuteAtDay | string | `"0"` |  |
 | deleteJob.enabled | bool | `true` |  |
-| deleteJob.hourAtDayUTC | string | `"20"` |  |
+| deleteJob.imageVersion | string | `"v1.0.0"` |  |
+| deleteJob.serviceAccount.annotations | object | `{}` |  |
 | discovery.mlflow | bool | `true` |  |
 | environment.group | string | `"users"` |  |
 | environment.user | string | `"onyxia"` |  |

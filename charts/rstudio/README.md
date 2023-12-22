@@ -1,6 +1,6 @@
 # rstudio
 
-![Version: 1.3.0](https://img.shields.io/badge/Version-1.3.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 1.4.0](https://img.shields.io/badge/Version-1.4.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 The RStudio IDE with a collection of standard data science packages, adapted to work for Dapla.
 
@@ -14,7 +14,7 @@ The RStudio IDE with a collection of standard data science packages, adapted to 
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 3.0.1 |
+| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 3.1.1 |
 
 ## Values
 
@@ -25,6 +25,11 @@ The RStudio IDE with a collection of standard data science packages, adapted to 
 | autoscaling.maxReplicas | int | `100` |  |
 | autoscaling.minReplicas | int | `1` |  |
 | autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
+| deleteJob.cronHourAtDay | string | `"20"` |  |
+| deleteJob.cronMinuteAtDay | string | `"0"` |  |
+| deleteJob.enabled | bool | `true` |  |
+| deleteJob.imageVersion | string | `"v1.0.0"` |  |
+| deleteJob.serviceAccount.annotations | object | `{}` |  |
 | environment.group | string | `"users"` |  |
 | environment.user | string | `"onyxia"` |  |
 | fullnameOverride | string | `""` |  |
@@ -70,7 +75,7 @@ The RStudio IDE with a collection of standard data science packages, adapted to 
 | security.networkPolicy.from | list | `[]` |  |
 | security.oauth2.authenticatedEmails | string | `""` |  |
 | security.oauth2.clientId | string | `"my-client"` |  |
-| security.oauth2.oidcIssuerUrl | string | `""` |  |
+| security.oauth2.oidcIssuerUrl | string | `"a"` |  |
 | security.oauth2.provider | string | `"keycloak-oidc"` |  |
 | security.password | string | `"changeme"` |  |
 | security.serviceEntry.enabled | bool | `true` |  |
