@@ -19,7 +19,7 @@ security:
       - "storage.googleapis.com"
   oauth2:
     provider: keycloak-oidc
-    oidcIssuerUrl: ""
+    oidcIssuerUrl: "a"
     clientId: "my-client"
     authenticatedEmails: ""
 
@@ -149,3 +149,12 @@ affinity: {}
 repository:
   configMapName: ""
   rRepository: ""
+
+
+deleteJob:
+  enabled: true
+  cronMinuteAtDay: "0"
+  cronHourAtDay: "20" # Server use UTC
+  imageVersion: "v1.0.0"
+  serviceAccount:
+    annotations: {}

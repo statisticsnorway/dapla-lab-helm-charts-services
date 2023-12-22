@@ -147,3 +147,12 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+deleteJob:
+  enabled: true
+  cronMinuteAtDay: "0"
+  cronHourAtDay: "20" # Server use UTC
+  imageVersion: "v1.0.0"
+  serviceAccount:
+    annotations: {}
+

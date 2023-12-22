@@ -658,6 +658,57 @@
           }
         }
       }
+    },
+    "deleteJob": {
+      "description": "Configuration for automatic deletion of job",
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "Whenever or not to create a job to delete this release",
+          "x-onyxia": {
+            "hidden": false
+          }
+        },
+        "cronMinuteAtDay": {
+          "type": "string",
+          "title": "Minute at day",
+          "description": "Which minute at day the job should run",
+          "default": "20",
+          "form": true,
+          "render": "slider",
+          "sliderMin": 0,
+          "sliderMax": 59,
+          "sliderStep": 1,
+          "sliderUnit": "",
+          "x-onyxia": {
+            "hidden": true
+          }
+        },
+        "cronHourAtDay": {
+          "type": "string",
+          "title": "Hour at day",
+          "description": "Which hour at day the job should run",
+          "default": "20",
+          "form": true,
+          "render": "slider",
+          "sliderMin": 0,
+          "sliderMax": 23,
+          "sliderStep": 1,
+          "sliderUnit": "",
+          "x-onyxia": {
+            "hidden": true
+          }
+        },
+        "imageVersion": {
+          "type": "string",
+          "title": "Version of helm-cli image",
+          "description": "Which version of the helm-cli image",
+          "x-onyxia": {
+            "hidden": true
+          }
+        }
+      }
     }
   }
 }
