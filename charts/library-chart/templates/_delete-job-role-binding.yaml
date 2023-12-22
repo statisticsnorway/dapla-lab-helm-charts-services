@@ -1,3 +1,4 @@
+{{- define "library-chart.deleteJobRoleBinding" -}}
 {{ if .Values.deleteJob.enabled }}
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
@@ -13,4 +14,5 @@ subjects:
 - kind: ServiceAccount
   name: {{ include "library-chart.serviceAccountName" . }}-delete
   namespace: {{ .Release.Namespace }}
+{{- end }}
 {{- end }}
