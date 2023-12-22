@@ -17,10 +17,10 @@ spec:
     metadata:
       annotations:
         {{- if .Values.git.enabled }}
-        checksum/git: {{ include (print $.Template.BasePath "/configmap-git.yaml") . | sha256sum }}
+        checksum/git: {{ include (print $.Template.BasePath "/secret-git.yaml") . | sha256sum }}
         {{- end }}
         {{- if .Values.oidc.enabled }}
-        checksum/oidc: {{ include (print $.Template.BasePath "/configmap-oidc.yaml") . | sha256sum }}
+        checksum/oidc: {{ include (print $.Template.BasePath "/secret-oidc.yaml") . | sha256sum }}
         {{- end }}
         {{- if (include "library-chart.repository.enabled"  .) }}
         checksum/repository: {{ include (print $.Template.BasePath "/configmap-repository.yaml") . | sha256sum }}
@@ -88,12 +88,12 @@ spec:
               value: "true"
           envFrom:
             {{- if .Values.oidc.enabled }}
-            - configMapRef:
-                name: {{ include "library-chart.configMapNameOidc" . }}
+            - secretRef:
+                name: {{ include "library-chart.secretNameOidc" . }}
             {{- end }}
             {{- if .Values.git.enabled }}
-            - configMapRef:
-                name: {{ include "library-chart.configMapNameGit" . }}
+            - secretRef:
+                name: {{ include "library-chart.secretNameGit" . }}
             {{- end }}
             {{- if (include "library-chart.repository.enabled"  .) }}
             - configMapRef:
