@@ -151,8 +151,7 @@ affinity: {}
 deleteJob:
   enabled: true
   cronMinuteAtDay: "0"
-  cronHourAtDay: "20" # Server use UTC
+  cronHourAtDay: "20"
   imageVersion: "v1.0.0"
   serviceAccount:
     annotations: {}
-
