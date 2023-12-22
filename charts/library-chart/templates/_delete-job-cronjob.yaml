@@ -1,3 +1,4 @@
+{{- define "library-chart.deleteJobCron" -}}
 {{ if .Values.deleteJob.enabled }}
 apiVersion: batch/v1
 kind: CronJob
@@ -20,4 +21,5 @@ spec:
                 - delete
                 - {{ .Release.Name }}
           restartPolicy: OnFailure
+{{- end }}
 {{- end }}
