@@ -462,7 +462,7 @@
           "description": "Whenever or not to create a job to delete this release",
           "default": true,
           "x-onyxia": {
-            "hidden": false
+            "hidden": true
           }
         },
         "cronMinuteAtDay": {
@@ -499,6 +499,7 @@
           "type": "string",
           "title": "Version of helm-cli image",
           "description": "Which version of the helm-cli image",
+          "default": "v1.0.0",
           "x-onyxia": {
             "hidden": true
           }
