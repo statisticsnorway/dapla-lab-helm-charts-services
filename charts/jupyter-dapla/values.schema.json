@@ -20,12 +20,12 @@
                         "description": "supported versions",
                         "type": "string",
                         "listEnum": [
-                            "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-stat-docker/jupyter/jupyterlab-dapla:v1.6.14",
+                            "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-stat-docker/jupyter/jupyterlab-dapla:v1.6.15",
                             "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-stat-docker/jupyter/jupyterlab-dapla:latest"
                         ],
                         "render": "list",
                         "pattern": "^[a-z0-9-_./]+(:[a-z0-9-_.]+)?$",
-                        "default": "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-stat-docker/jupyter/jupyterlab-dapla:v1.6.14"
+                        "default": "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-stat-docker/jupyter/jupyterlab-dapla:v1.6.15"
                       }
                     }
                 }
