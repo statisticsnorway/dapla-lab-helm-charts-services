@@ -2,8 +2,8 @@
 
 service:
   image:
-    version: "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-lab-docker/onyxia/datadoc:v0.3.4"
-    pullPolicy: IfNotPresent
+    version: "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-metadata-docker/datadoc/datadoc:master"
+    pullPolicy: Always
 
 security:
   password: "changeme"
@@ -70,7 +70,8 @@ podLabels:
 podSecurityContext:
   fsGroup: 100
 
-securityContext: {}
+securityContext:
+  {}
   # capabilities:
   #   drop:
   #   - ALL
@@ -93,7 +94,8 @@ istio:
   hostname: chart-example.local
   userHostname: chart-example-user.local
 
-resources: {}
+resources:
+  {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
