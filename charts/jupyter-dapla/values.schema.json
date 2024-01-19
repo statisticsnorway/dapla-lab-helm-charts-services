@@ -675,6 +675,15 @@
             }
           }
         }
+      },
+      "deployEnvironment": {
+        "type": "string",
+        "description": "Environment in which a service is deployed",
+        "default": "",
+        "x-onyxia": {
+          "hidden": true,
+          "overwriteDefaultWith": "region.customValues.deployEnvironment"
+        }
       }
     }
 }

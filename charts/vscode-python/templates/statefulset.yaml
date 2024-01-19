@@ -76,6 +76,12 @@ spec:
             - name: PERSONAL_INIT_ARGS
               value: {{ .Values.init.personalInitArgs }}
             {{- end }}
+            - name: DAPLA_ENVIRONMENT
+              value: {{ .Values.deployEnvironment }}
+            - name: DAPLA_REGION
+              value: DAPLA_LAB
+            - name: DAPLA_SERVICE
+              value: VS_CODE
             - name: PASSWORD
               value: ""
             - name: PROJECT_USER
