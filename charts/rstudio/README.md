@@ -1,6 +1,6 @@
 # rstudio
 
-![Version: 1.4.5](https://img.shields.io/badge/Version-1.4.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 1.4.6](https://img.shields.io/badge/Version-1.4.6-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 The RStudio IDE with a collection of standard data science packages, adapted to work for Dapla.
 
@@ -30,6 +30,7 @@ The RStudio IDE with a collection of standard data science packages, adapted to 
 | deleteJob.enabled | bool | `true` |  |
 | deleteJob.imageVersion | string | `"v1.0.0"` |  |
 | deleteJob.serviceAccount.annotations | object | `{}` |  |
+| deployEnvironment | string | `"DEV"` |  |
 | environment.group | string | `"users"` |  |
 | environment.user | string | `"onyxia"` |  |
 | fullnameOverride | string | `""` |  |

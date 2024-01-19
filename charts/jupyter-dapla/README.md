@@ -1,6 +1,6 @@
 # jupyter-dapla
 
-![Version: 1.4.10](https://img.shields.io/badge/Version-1.4.10-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 1.4.11](https://img.shields.io/badge/Version-1.4.11-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 The JupyterLab IDE with Python, tailored for SSB's data platform (Dapla).
 
@@ -30,6 +30,7 @@ The JupyterLab IDE with Python, tailored for SSB's data platform (Dapla).
 | deleteJob.enabled | bool | `true` |  |
 | deleteJob.imageVersion | string | `"v1.0.0"` |  |
 | deleteJob.serviceAccount.annotations | object | `{}` |  |
+| deployEnvironment | string | `"DEV"` |  |
 | discovery.mlflow | bool | `true` |  |
 | environment.group | string | `"users"` |  |
 | environment.user | string | `"jovyan"` |  |
