@@ -158,3 +158,4 @@ deleteJob:
   imageVersion: "v1.0.0"
   serviceAccount:
     annotations: {}
+deployEnvironment: "DEV"
