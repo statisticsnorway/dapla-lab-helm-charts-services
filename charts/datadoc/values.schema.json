@@ -38,9 +38,9 @@
             "version": {
               "description": "datadoc supported versions",
               "type": "string",
-              "default": "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-lab-docker/onyxia/datadoc:v0.3.4",
+              "default": "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-metadata-docker/datadoc/datadoc:master",
               "listEnum": [
-                "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-lab-docker/onyxia/datadoc:v0.3.4"
+                "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-metadata-docker/datadoc/datadoc:v0"
               ],
               "render": "list",
               "pattern": "^[a-z0-9-_./]+(:[a-z0-9-_.]+)?$"
@@ -343,34 +343,34 @@
       "form": true,
       "title": "Networking detail",
       "properties": {
-          "user": {
-              "type": "object",
-              "description": "user defined port",
-              "properties": {
-                  "enabled": {
-                      "type": "boolean",
-                      "title": "Enable a custom service port",
-                      "description": "Enable a custom service port",
-                      "default": false,
-                      "x-onyxia": {
-                        "hidden": true
-                      }
-                  },
-                  "port": {
-                      "type": "integer",
-                      "description": "port of the custom service",
-                      "title": "Custom service port",
-                      "x-onyxia": {
-                        "hidden": true
-                      },
-                      "hidden": {
-                          "value": false,
-                          "path": "networking/user/enabled"
-                      },
-                      "default": 8050
-                  }
+        "user": {
+          "type": "object",
+          "description": "user defined port",
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "title": "Enable a custom service port",
+              "description": "Enable a custom service port",
+              "default": false,
+              "x-onyxia": {
+                "hidden": true
               }
+            },
+            "port": {
+              "type": "integer",
+              "description": "port of the custom service",
+              "title": "Custom service port",
+              "x-onyxia": {
+                "hidden": true
+              },
+              "hidden": {
+                "value": false,
+                "path": "networking/user/enabled"
+              },
+              "default": 8050
+            }
           }
+        }
       }
     },
     "userAttributes": {
