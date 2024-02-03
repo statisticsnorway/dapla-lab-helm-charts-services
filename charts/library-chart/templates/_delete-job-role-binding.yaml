@@ -9,7 +9,7 @@ metadata:
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: admin
+  name: {{ .Values.deleteJob.clusterRoleName | default "admin" }}
 subjects:
 - kind: ServiceAccount
   name: {{ include "library-chart.serviceAccountName" . }}-delete
