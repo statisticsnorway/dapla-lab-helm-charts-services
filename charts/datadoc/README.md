@@ -1,6 +1,6 @@
 # datadoc
 
-![Version: 0.5.4](https://img.shields.io/badge/Version-0.5.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.5.5](https://img.shields.io/badge/Version-0.5.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Document datasets in Statistics Norway.
 
@@ -31,6 +31,7 @@ Document datasets in Statistics Norway.
 | deleteJob.enabled | bool | `true` |  |
 | deleteJob.imageVersion | string | `"v1.0.0"` |  |
 | deleteJob.serviceAccount.annotations | object | `{}` |  |
+| environment.DATADOC_STATISTICAL_SUBJECT_SOURCE_URL | string | `"https://www.ssb.no/xp/_/service/mimir/subjectStructurStatistics"` |  |
 | environment.group | string | `"users"` |  |
 | environment.user | string | `"onyxia"` |  |
 | fullnameOverride | string | `""` |  |
