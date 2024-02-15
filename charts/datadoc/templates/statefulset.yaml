@@ -65,6 +65,8 @@ spec:
               value: {{ .Values.environment.user }}
             - name: PROJECT_GROUP
               value: {{ .Values.environment.group }}
+            - name: DATADOC_STATISTICAL_SUBJECT_SOURCE_URL
+              value: {{ .Values.environment.DATADOC_STATISTICAL_SUBJECT_SOURCE_URL }}
           envFrom:
             {{- if .Values.oidc.enabled }}
             - secretRef:

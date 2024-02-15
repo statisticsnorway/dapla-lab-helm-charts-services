@@ -26,6 +26,7 @@ security:
 environment:
   user: onyxia
   group: users
+  DATADOC_STATISTICAL_SUBJECT_SOURCE_URL: "https://www.ssb.no/xp/_/service/mimir/subjectStructurStatistics"
 
 dataset:
   dataset_path: "Undefined"
