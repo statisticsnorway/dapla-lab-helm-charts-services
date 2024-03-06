@@ -14,6 +14,17 @@
         }
       }
     },
+    "features": {
+      "description": "Feature toggles",
+      "type": "object",
+      "properties": {
+        "toggle_new_variables_workspace": {
+          "type": "boolean",
+          "description": "Enable the new variables workspace",
+          "default": false
+        }
+      }
+    },
     "service": {
       "description": "Service specific configuration",
       "type": "object",
@@ -29,11 +40,7 @@
               "x-onyxia": {
                 "hidden": true
               },
-              "enum": [
-                "IfNotPresent",
-                "Always",
-                "Never"
-              ]
+              "enum": ["IfNotPresent", "Always", "Never"]
             },
             "version": {
               "description": "datadoc supported versions",
@@ -261,9 +268,7 @@
               "title": "OAuth2 provider",
               "description": "Which OAuth2 provider to use, keycloak-oidc is the only one available for now",
               "default": "keycloak-oidc",
-              "enum": [
-                "keycloak-oidc"
-              ],
+              "enum": ["keycloak-oidc"],
               "x-onyxia": {
                 "hidden": true,
                 "overwriteDefaultWith": "region.oauth2.provider"
