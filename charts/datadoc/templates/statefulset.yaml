@@ -68,7 +68,7 @@ spec:
             - name: DATADOC_DATASET_PATH
               value: {{ .Values.dataset.dataset_path }}
             - name: DATADOC_TOGGLE_NEW_VARIABLE_WORKSPACE
-              value: {{ ternary "True" "False" .Values.features.toggle_new_variables_workspace }}
+              value: "{{ ternary "True" "False" .Values.features.toggle_new_variables_workspace }}"
             - name: PROJECT_USER
               value: {{ .Values.environment.user }}
             - name: PROJECT_GROUP
