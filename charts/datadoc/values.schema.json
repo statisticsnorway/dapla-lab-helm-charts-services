@@ -17,13 +17,7 @@
     "features": {
       "description": "Feature toggles",
       "type": "object",
-      "properties": {
-        "toggle_new_variables_workspace": {
-          "type": "boolean",
-          "description": "Enable the new variables workspace",
-          "default": false
-        }
-      }
+      "properties": {}
     },
     "service": {
       "description": "Service specific configuration",
@@ -36,7 +30,7 @@
             "pullPolicy": {
               "type": "string",
               "description": "option when pulling the docker image",
-              "default": "Always",
+              "default": "IfNotPresent",
               "x-onyxia": {
                 "hidden": true
               },
@@ -45,9 +39,10 @@
             "version": {
               "description": "datadoc supported versions",
               "type": "string",
-              "default": "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-metadata-docker/datadoc/datadoc:master",
+              "default": "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-metadata-docker/datadoc/datadoc:v0",
               "listEnum": [
-                "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-metadata-docker/datadoc/datadoc:v0"
+                "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-metadata-docker/datadoc/datadoc:v0",
+                "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-metadata-docker/datadoc/datadoc:master"
               ],
               "render": "list",
               "pattern": "^[a-z0-9-_./]+(:[a-z0-9-_.]+)?$"
