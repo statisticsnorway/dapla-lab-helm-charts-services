@@ -27,6 +27,7 @@ environment:
   user: onyxia
   group: users
   DATADOC_STATISTICAL_SUBJECT_SOURCE_URL: "https://www.ssb.no/xp/_/service/mimir/subjectStructurStatistics"
+  DAPLA_MANUAL_NAMING_STANDARD_URL: "https://probable-waddle-o4w1og1.pages.github.io/statistikkere/navnestandard-datalagring.html"
 
 dataset:
   dataset_path: "Undefined"
