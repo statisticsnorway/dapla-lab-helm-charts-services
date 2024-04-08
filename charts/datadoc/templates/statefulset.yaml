@@ -75,6 +75,8 @@ spec:
               value: {{ .Values.environment.group }}
             - name: DATADOC_STATISTICAL_SUBJECT_SOURCE_URL
               value: {{ .Values.environment.DATADOC_STATISTICAL_SUBJECT_SOURCE_URL }}
+            - name: DAPLA_MANUAL_NAMING_STANDARD_URL
+              value: {{ .Values.environment.DAPLA_MANUAL_NAMING_STANDARD_URL }}
           envFrom:
             {{- if .Values.oidc.enabled }}
             - secretRef:
