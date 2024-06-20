@@ -10,7 +10,7 @@
 
 {{- define "library-chart.daplaSimpleProxyClient" -}}
 apiVersion: dapla.ssb.no/v1alpha1
-kind: DaplaSimpleProxyClient
+kind: SimpleProxyClient
 metadata:
   name: {{ include "library-chart.daplaSimpleProxyClientName" . }}
   labels:
