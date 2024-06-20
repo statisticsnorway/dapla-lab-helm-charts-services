@@ -1,1 +1,1 @@
-{{ include "library-chart.daplaCommonClientRedirectUri" . }}
+{{ include "library-chart.daplaSimpleProxyClient" . }}
