@@ -23,17 +23,17 @@ env:
   - name: OAUTH2_PROXY_CLIENT_ID
     valueFrom:
       secretKeyRef:
-        name: {{ include "library-chart.daplaCommonClientRedirectUriSecretName" . | quote }}
+        name: {{ include "library-chart.daplaSimpleProxyClientSecretName" . | quote }}
         key: client-id
   - name: OAUTH2_PROXY_CLIENT_SECRET
     valueFrom:
       secretKeyRef:
-        name: {{ include "library-chart.daplaCommonClientRedirectUriSecretName" . | quote }}
+        name: {{ include "library-chart.daplaSimpleProxyClientSecretName" . | quote }}
         key: client-secret
   - name: OAUTH2_PROXY_COOKIE_SECRET
     valueFrom:
       secretKeyRef:
-        name: {{ include "library-chart.daplaCommonClientRedirectUriSecretName" . | quote }}
+        name: {{ include "library-chart.daplaSimpleProxyClientSecretName" . | quote }}
         key: cookie-secret
 volumeMounts:
   - name: oauth2-proxy-client-config
