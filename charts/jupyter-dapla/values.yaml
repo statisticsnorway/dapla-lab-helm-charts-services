@@ -1,5 +1,8 @@
 # Default values for jupyter.
 
+global:
+  suspend: false
+
 service:
   image:
     version: "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-stat-docker/jupyter/jupyterlab-dapla:v1"
