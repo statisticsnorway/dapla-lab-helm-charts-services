@@ -29,7 +29,7 @@ Document datasets in Statistics Norway.
 | deleteJob.cronHourAtDay | string | `"20"` |  |
 | deleteJob.cronMinuteAtDay | string | `"0"` |  |
 | deleteJob.enabled | bool | `true` |  |
-| deleteJob.imageVersion | string | `"v1.0.0"` |  |
+| deleteJob.imageVersion | string | `"v1.1.0"` |  |
 | deleteJob.serviceAccount.annotations | object | `{}` |  |
 | environment.DAPLA_MANUAL_NAMING_STANDARD_URL | string | `"https://probable-waddle-o4w1og1.pages.github.io/statistikkere/navnestandard-datalagring.html"` |  |
 | environment.DATADOC_STATISTICAL_SUBJECT_SOURCE_URL | string | `"https://www.ssb.no/xp/_/service/mimir/subjectStructurStatistics"` |  |
