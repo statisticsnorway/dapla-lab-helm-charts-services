@@ -1,4 +1,6 @@
 # Default values.
+global:
+  suspend: false
 
 service:
   image:
