@@ -1,3 +1,6 @@
+global:
+  suspend: false
+
 service:
   image:
     version: "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-lab-docker/onyxia/dapla-vscode-python:main"
