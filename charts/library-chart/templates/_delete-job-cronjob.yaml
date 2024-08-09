@@ -13,7 +13,7 @@ spec:
           serviceAccountName: {{ include "library-chart.serviceAccountName" . }}-delete
           containers:
             - name: delete-job
-              image: "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-lab-docker/helm-cli:{{ .Values.deleteJob.imageVersion }}"
+              image: "europe-west4-docker.pkg.dev/artifact-registry-5n/dapla-lab-docker/helm-cli:{{ .Values.deleteJob.imageVersion }}"
               imagePullPolicy: IfNotPresent
               command:
                 - helm
