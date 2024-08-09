@@ -14,7 +14,7 @@ Document datasets in Statistics Norway.
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 3.2.2 |
+| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 3.2.3 |
 
 ## Values
 
@@ -76,7 +76,7 @@ Document datasets in Statistics Norway.
 | security.serviceEntry.hosts[0] | string | `"storage.googleapis.com"` |  |
 | securityContext | object | `{}` |  |
 | service.image.pullPolicy | string | `"IfNotPresent"` |  |
-| service.image.version | string | `"europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-metadata-docker/datadoc/datadoc:v0"` |  |
+| service.image.version | string | `"europe-west4-docker.pkg.dev/artifact-registry-5n/dapla-metadata-docker/datadoc/datadoc:v0"` |  |
 | serviceAccount.annotations | object | `{}` |  |
 | serviceAccount.create | bool | `true` |  |
 | serviceAccount.name | string | `""` |  |
