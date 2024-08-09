@@ -4,7 +4,7 @@ global:
 
 service:
   image:
-    version: "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-metadata-docker/datadoc/datadoc:v0"
+    version: "europe-west4-docker.pkg.dev/artifact-registry-5n/dapla-metadata-docker/datadoc/datadoc:v0"
     pullPolicy: IfNotPresent
 
 security:
