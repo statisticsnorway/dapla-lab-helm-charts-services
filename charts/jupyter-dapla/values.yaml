@@ -5,7 +5,7 @@ global:
 
 service:
   image:
-    version: "europe-west4-docker.pkg.dev/artifact-registry-5n/dapla-stat-docker/jupyter/jupyterlab-dapla:v1"
+    version: "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-stat-docker/jupyter/jupyterlab-dapla:v1"
     pullPolicy: IfNotPresent
 
 security:
