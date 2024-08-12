@@ -39,10 +39,10 @@
             "version": {
               "description": "datadoc supported versions",
               "type": "string",
-              "default": "europe-west4-docker.pkg.dev/artifact-registry-5n/dapla-metadata-docker/datadoc/datadoc:v0",
+              "default": "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-metadata-docker/datadoc/datadoc:v0",
               "listEnum": [
-                "europe-west4-docker.pkg.dev/artifact-registry-5n/dapla-metadata-docker/datadoc/datadoc:v0",
-                "europe-west4-docker.pkg.dev/artifact-registry-5n/dapla-metadata-docker/datadoc/datadoc:master"
+                "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-metadata-docker/datadoc/datadoc:v0",
+                "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-metadata-docker/datadoc/datadoc:master"
               ],
               "render": "list",
               "pattern": "^[a-z0-9-_./]+(:[a-z0-9-_.]+)?$"
