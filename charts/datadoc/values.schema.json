@@ -30,7 +30,7 @@
             "pullPolicy": {
               "type": "string",
               "description": "option when pulling the docker image",
-              "default": "IfNotPresent",
+              "default": "Always",
               "x-onyxia": {
                 "hidden": true
               },
@@ -516,18 +516,18 @@
       }
     },
     "global": {
-        "description": "Suspend",
-        "type": "object",
-        "properties": {
-            "suspend": {
-                "type": "boolean",
-                "description": "Suspend this service",
-                "default": false,
-                "x-onyxia": {
-                    "hidden": true
-                }
-            }
+      "description": "Suspend",
+      "type": "object",
+      "properties": {
+        "suspend": {
+          "type": "boolean",
+          "description": "Suspend this service",
+          "default": false,
+          "x-onyxia": {
+            "hidden": true
+          }
         }
       }
+    }
   }
 }
