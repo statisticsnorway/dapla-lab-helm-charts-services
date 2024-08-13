@@ -1,7 +1,7 @@
+Create and update metadata for datasets and variables.
+
+*Remember to save your work regularly, there is no auto-save functionality!*
+
 {{- if .Values.istio.enabled }}
 - You can connect to this Datadoc-service when you see **Open the service** in the bottom right of this box.
 {{- end }}
-
-*Important:*
-
-- This service is under active development.
