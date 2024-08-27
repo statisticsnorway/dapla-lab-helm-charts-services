@@ -1148,6 +1148,14 @@ entries:
     version: 1.1.1
   library-chart:
   - apiVersion: v2
+    created: "2024-08-27T11:18:53.35859001Z"
+    digest: adbbd275ea5552630ceba16660c9b926c5bc6563f5e38f64615067db3b21e717
+    name: library-chart
+    type: library
+    urls:
+    - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/library-chart-3.2.4/library-chart-3.2.4.tgz
+    version: 3.2.4
+  - apiVersion: v2
     created: "2024-08-09T07:46:44.764762028Z"
     digest: 3014e55f28ea042764e6ff8f9ba2a3654f5c850f85439f18852971c058f26136
     name: library-chart
@@ -2136,4 +2144,4 @@ entries:
     urls:
     - https://github.com/statisticsnorway/dapla-lab-helm-charts-services/releases/download/vscode-python-2.1.1/vscode-python-2.1.1.tgz
     version: 2.1.1
-generated: "2024-08-14T06:43:58.094529207Z"
+generated: "2024-08-27T11:18:53.358782714Z"
