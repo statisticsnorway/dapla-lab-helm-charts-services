@@ -2,7 +2,7 @@
 
 {{/* Template to generate a PVC */}}
 {{- define "library-chart.persistentVolumeClaim" -}}
-{{- if and .Values.persistence.enabled (not .Values.persistence.existingClaim) }}
+{{- if and .Values.diskplass.enabled (not .Values.diskplass.existingClaim) }}
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
@@ -11,15 +11,15 @@ metadata:
     {{- include "library-chart.labels" . | nindent 4 }}
 spec:
   accessModes:
-    - {{ .Values.persistence.accessMode | quote }}
+    - {{ .Values.diskplass.accessMode | quote }}
   resources:
     requests:
-      storage: {{ .Values.persistence.size | quote }}
-{{- if .Values.persistence.storageClass }}
-{{- if (eq "-" .Values.persistence.storageClass) }}
+      storage: {{ .Values.diskplass.size | quote }}
+{{- if .Values.diskplass.storageClass }}
+{{- if (eq "-" .Values.diskplass.storageClass) }}
   storageClassName: ""
 {{- else }}
-  storageClassName: "{{ .Values.persistence.storageClass }}"
+  storageClassName: "{{ .Values.diskplass.storageClass }}"
 {{- end }}
 {{- end }}
 {{- end }}
