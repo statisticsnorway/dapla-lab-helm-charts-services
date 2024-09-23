@@ -1,4 +1,4 @@
-# Legacy repository
+# 🚫 Deprecated repository
 
 This repository has been deprecated. Services have been moved to <https://statisticsnorway.github.io/dapla-lab-helm-charts-standard> and <https://statisticsnorway.github.io/dapla-lab-helm-charts-standard>. Common libraries have been moved to <https://statisticsnorway.github.io/dapla-lab-helm-charts-library>.
 
