@@ -1,4 +1,8 @@
-# dapla-lab-helm-charts-services
+# Legacy repository
+
+This repository has been deprecated. Services have been moved to <https://statisticsnorway.github.io/dapla-lab-helm-charts-standard> and <https://statisticsnorway.github.io/dapla-lab-helm-charts-standard>. Common libraries have been moved to <https://statisticsnorway.github.io/dapla-lab-helm-charts-library>.
+
+## dapla-lab-helm-charts-services
 
 Helm charts for services meant to be run on Dapla Lab.
 
